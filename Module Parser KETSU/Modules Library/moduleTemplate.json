@@ -41,7 +41,7 @@
   "mainPage": [
     {
       "request": {
-        "url": "https://modketuser.github.io/Modules-KETSU/index.html",
+        "url": "https://mprotmod.github.io/Modules-KETSU/index.html",
         "method": "get",
         "headers": [
           {
