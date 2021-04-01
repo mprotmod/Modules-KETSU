@@ -12,6 +12,7 @@
     "baseURL": "https://www.readlightnovel.org/",
     "searchPlaceHolder": "search",
     "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/LightNovels/moduleTemplate.json",
     "preferedServer": "",
     "preferedDownloadServer": "",
     "blackListed": [

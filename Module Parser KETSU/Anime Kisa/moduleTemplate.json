@@ -11,7 +11,7 @@
     "moduleType": "Video",
     "baseURL": "https://animekisa.tv/",
     "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
-    "UpdateSite": "",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Anime%20Kisa/moduleTemplate.json",
     "preferedServer": "GOGO-PLAY",
     "preferedDownloadServer": "GOGO-PLAY",
     "blackListed": [

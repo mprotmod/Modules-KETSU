@@ -11,7 +11,7 @@
     "moduleType": "Video",
     "baseURL": "https://jkanime.net/",
     "moduleDeveloperSite": "https://modketuser.github.io/Modules-KETSU/index.html",
-    "UpdateSite": "",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/JKAnime/moduleTemplate.json",
     "preferedServer": "UM",
     "preferedDownloadServer": "UM",
     "blackListed": [

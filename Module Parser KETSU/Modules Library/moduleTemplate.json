@@ -11,7 +11,7 @@
     "moduleType": "Video",
     "baseURL": "",
     "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
-    "UpdateSite": "",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Modules%20Library/moduleTemplate.json",
     "preferedServer": "",
     "preferedDownloadServer": "",
     "blackListed": [

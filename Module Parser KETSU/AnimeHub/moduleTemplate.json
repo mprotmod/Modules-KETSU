@@ -11,7 +11,7 @@
     "moduleType": "Video",
     "baseURL": "https://animehub.ac/",
     "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
-    "UpdateSite": "",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimeHub/moduleTemplate.json",
     "preferedServer": "OSERVER",
     "preferedDownloadServer": "GSERVER",
     "blackListed": [

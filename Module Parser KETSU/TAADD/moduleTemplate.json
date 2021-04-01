@@ -12,6 +12,7 @@
     "baseURL": "https://www.taadd.com/",
     "searchPlaceHolder": "Search here",
     "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
+    "UpdateSite" : "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/TAADD/moduleTemplate.json",
     "preferedServer": "UM",
     "preferedDownloadServer": "UM",
     "blackListed": [
