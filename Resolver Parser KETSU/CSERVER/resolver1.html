@@ -1,0 +1,102 @@
+
+  <script type="text/javascript">function Resolver(request,extra,javascriptConfig,output) {
+    this.request = request;
+    this.extra = extra;
+    this.javascriptConfig = javascriptConfig;
+    this.output  = output;
+}
+
+function ModuleRequest(url,method,headers,httpBody) {
+    this.url = url;
+    this.method = method;
+    this.headers  = headers;
+    this.httpBody = httpBody;
+}
+
+function Extra(commands,extraInfo) {
+    this.commands = commands;
+    this.extraInfo = extraInfo;
+}
+
+function Commands(commandName,params) {
+    this.commandName = commandName;
+    this.params = params;
+}
+
+function JavascriptConfig(removeJavascript,loadInWebView,javaScript) {
+    this.removeJavascript = removeJavascript;
+    this.loadInWebView = loadInWebView;
+    this.javaScript = javaScript;
+}
+
+function KeyValue(key,value) {
+    this.key = key;
+    this.value = value;
+}
+
+function Output(video) {
+  this.video = video;
+}
+
+function Video(videoQuality,videoLink) {
+    this.videoQuality = videoQuality;
+    this.videoLink = videoLink;
+}
+
+
+
+function getNext(match,array) {
+for (var x = 0; x < array.length; x++) {
+  let mMatch = array[x];
+  if (mMatch.includes(match)) {
+      return  array[x + 1];
+  }
+}
+}
+
+
+var savedData = document.getElementById('ketsu-final-data');
+
+var parsedJson = JSON.parse(savedData.innerHTML); 
+var emptyKeyValue = [new KeyValue('Referer','https://static.crunchyroll.com/'),new KeyValue('accept','*/*')];
+
+var videos = [];
+
+var scripts = document.querySelectorAll('p');
+
+for (var x = 0; x < scripts.length; x++) {
+let script = scripts[x].innerText;
+if (script.includes('function buildPlayer()')) {
+  scripts = script;
+  break;
+}
+}
+
+scripts = scripts.split('media = ')[1].split('; vilos.config')[0];
+var newJson = JSON.parse(scripts); 
+
+for (var x = 0; x < newJson.streams.length;x++) {
+    let stream = newJson.streams[x];
+    if (stream.format.includes('hls') && !stream.format.includes('drm')) {
+        let newVid = new Video('DUB: ' + stream.audio_lang + ' SUB: ' + stream.hardsub_lang,new ModuleRequest(stream.url,'get',emptyKeyValue,null));
+        if (newVid.videoQuality.includes('enUS')) {
+            videos.unshift(newVid);
+        } else {
+            videos.push(newVid);
+
+        }
+    }
+
+}
+
+
+let emptyExtra = new Extra([new Commands('',emptyKeyValue)],emptyKeyValue);
+
+var chaptersObject = new Resolver(new ModuleRequest('','',emptyKeyValue,null),emptyExtra,new JavascriptConfig(false,false,''), new Output(videos));
+var finalJson = JSON.stringify(chaptersObject);
+savedData.innerHTML = finalJson;
+
+</script>
+
+</body>
+</html>

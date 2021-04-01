@@ -1,0 +1,225 @@
+
+    <script type="text/javascript">
+    const DefaultLayouts = {
+     ultraWideFull : 'ultraWideFull',
+     ultraWide : 'ultraWide',
+
+     wideFull : 'wideFull',
+     wide : 'wide',
+
+     wideStrechedFull : 'wideStrechedFull',
+     wideStrechedFullDouble : 'WideStrechedFullDouble',
+     wideStreched : 'wideStreched',
+     wideStrechedDouble : 'wideStrechedDouble',
+
+     wideStrechedFullList : 'wideStrechedFullList',
+     wideStrechedList : 'wideStrechedList',
+
+     doublets : 'doublets',
+     doubletsDouble : 'doubletsDouble',
+     doubletsFull : 'doubletsFull',
+     doubletsFullDouble : 'doubletsFullDouble',
+
+     doubletsConstant : 'doubletsConstant',
+     doubletsDoubleConstant : 'doubletsDoubleConstant',
+     doubletsFullConstant : 'doubletsFullConstant',
+     doubletsFullDoubleConstant : 'doubletsFullDoubleConstant',
+    
+     longDoublets : 'longDoublets',
+     longDoubletsDouble : 'longDoubletsDouble',
+     longDoubletsFull : 'longDoubletsFull',
+     longDoubletsFullDouble : 'longDoubletsFullDouble',
+
+     longDoubletsConstant : 'longDoubletsConstant',
+     longDoubletsDoubleConstant : 'longDoubletsDoubleConstant',
+     longDoubletsFullConstant : 'longDoubletsFullConstant',
+     longDoubletsFullDoubleConstant : 'longDoubletsFullDoubleConstant',
+
+     triplets : 'triplets',
+     tripletsDouble : 'tripletsDouble',
+     tripletsFull : 'tripletsFull',
+     tripletsFullDouble : 'tripletsFullDouble',
+
+     tripletsConstant : 'tripletsConstant',
+     tripletsDoubleConstant : 'tripletsDoubleConstant',
+     tripletsFullConstant : 'tripletsFullConstant',
+     tripletsFullDoubleConstant : 'tripletsFullDoubleConstant',
+
+     longTriplets : 'longTriplets',
+     longTripletsDouble : 'longTripletsDouble',
+     longTripletsFull : 'longTripletsFull',
+     longTripletsFullDouble : 'longTripletsFullDouble',
+
+     longTripletsConstant : 'longTripletsConstant',
+     longTripletsDoubleConstant : 'longTripletsDoubleConstant',
+     longTripletsFullConstant : 'longTripletsFullConstant',
+     longTripletsFullDoubleConstant : 'longTripletsFullDoubleConstant',
+
+     none: ''
+    };
+
+    const CellDesings = {
+      small1 : 'small1',
+
+      normal1 : 'normal1',
+      normal2 : 'normal2',
+      normal3 : 'normal3',
+      normal4 : 'normal4',
+      normal5 : 'normal5',
+      normal6 : 'normal6',
+      normal7 : 'normal7',
+
+      wide1 : 'wide1',
+      wide2 : 'wide2',
+      wide3 : 'wide3',
+      wide4 : 'wide4',
+      wide5 : 'wide5',
+      wide6 : 'wide6',
+      wide7 : 'wide7',
+      wide8 : 'wide8',
+      wide9 : 'wide9',
+      wide10 : 'wide10',
+      wide11 : 'wide11'
+    };
+
+    const Paging = {
+        leading : 'leading',
+        centered : 'centered',
+        none : ''
+    };
+
+    const Orientation = {
+        horizontal : 'horizontal',
+        vertical : 'vertical'
+    };
+
+    function Search(request,extra,separator,javascriptConfig,output) {
+        this.request = request;
+        this.extra = extra;
+        this.separator = separator;
+        this.javascriptConfig = javascriptConfig;
+        this.output  = output;
+    }
+
+    function ModuleRequest(url,method,headers,params) {
+        this.url = url;
+        this.method = method;
+        this.headers  = headers;
+        this.params = params;
+    }
+    
+    function Extra(commands,extraInfo) {
+        this.commands = commands;
+        this.extraInfo = extraInfo;
+    }
+
+    function Commands(commandName,params) {
+        this.commandName = commandName;
+        this.params = params;
+    }
+
+    function JavascriptConfig(removeJavascript,loadInWebView,javaScript) {
+        this.removeJavascript = removeJavascript;
+        this.loadInWebView = loadInWebView;
+        this.javaScript = javaScript;
+    }
+
+    function KeyValue(key,value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    function Output(cellDesing,orientation,defaultLayout,paging,section,layout,data) {
+        this.cellDesing = cellDesing;
+        this.orientation  = orientation;
+        this.defaultLayout = defaultLayout;
+        this.paging = paging;
+        this.section  = section;
+        this.layout = layout;
+        this.data = data;
+    }
+
+    function Section(sectionName,separator) {
+        this.sectionName  = sectionName;
+        this.separator = separator;
+    }
+
+    function Layout(insets,visibleCellsWidth,visibleCellsHeight,heightForVisibleCells,cellSize,ratio,constant,horizontalSpacing,verticalSpacing,ipadLayout) {
+        this.insets = insets;
+        this.visibleCellsWidth = visibleCellsWidth;
+        this.visibleCellsHeight  = visibleCellsHeight;
+        this.heightForVisibleCells = heightForVisibleCells;
+        this.cellSize  = cellSize;
+        this.ratio = ratio;
+        this.constant = constant;
+        this.horizontalSpacing  = horizontalSpacing;
+        this.verticalSpacing = verticalSpacing;
+        this.ipadLayout = ipadLayout;
+    }
+
+    function Insets(top,bottom,left,right) {
+        this.top = top;
+        this.bottom = bottom;
+        this.left = left;
+        this.right = right;
+    }
+
+    function Size(width,height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    function Ratio(inRelation,number1,number2) {
+        this.inRelation  = inRelation;
+        this.number1 = number1;
+        this.number2 = number2;
+
+    }
+
+    function Data(image,title,description,field1,field2,field3,field4,moduleID,isChapter,link) {
+        this.image = image;
+        this.title = title;
+        this.description = description;
+        this.field1 = field1;
+        this.field2 = field2;
+        this.field3 = field3;
+        this.field4 = field4;
+        this.moduleID  = moduleID;
+        this.isChapter  = isChapter;
+        this.link = link;
+    }
+
+    var savedData = document.getElementById('ketsu-final-data');
+
+    var parsedJson = JSON.parse(savedData.innerHTML); 
+
+    let output = [];
+    let emptyKeyValue = [new KeyValue('','')];
+    let moduleID = 234234823;
+
+    let lastAdded = document.querySelectorAll('.portada-box');
+    let lastAddedArray = [];
+    for (var x = 0; x < lastAdded.length;x++) {
+        try {
+        var last = lastAdded[x];
+        var image = last.querySelector('img').src;
+        image = new ModuleRequest(image,'get',emptyKeyValue,emptyKeyValue);
+        let title = last.querySelector('a').title;
+        var link = last.querySelector('a').href;
+        link = new ModuleRequest(link,'get',emptyKeyValue,emptyKeyValue);
+        let data = new Data(image,title,'This is the description','Anime','Ongoing','This is the description','This is the description',moduleID,false,link);
+        lastAddedArray.push(data);
+        } catch (e) {}
+    }
+
+    output.push(new Output(CellDesings.wide9,Orientation.vertical,DefaultLayouts.wideStrechedFullList,Paging.none,new Section('',true),null,lastAddedArray));
+
+
+    let searchPageObject = new Search(new ModuleRequest('','',emptyKeyValue,emptyKeyValue),new Extra([new Commands('',emptyKeyValue)],emptyKeyValue),'',new JavascriptConfig(false,false,''),output);
+
+    var finalJson = JSON.stringify(searchPageObject);
+    savedData.innerHTML = finalJson;
+    
+    </script>
+    
+    

@@ -1,0 +1,95 @@
+
+  <script type="text/javascript">
+function Chapters(request, extra, javascriptConfig, output) {
+    this.request = request;
+    this.extra = extra;
+    this.javascriptConfig = javascriptConfig;
+    this.output = output;
+}
+
+function ModuleRequest(url, method, headers, params) {
+    this.url = url;
+    this.method = method;
+    this.headers = headers;
+    this.params = params;
+}
+
+function Extra(commands, extraInfo) {
+    this.commands = commands;
+    this.extraInfo = extraInfo;
+}
+
+function Commands(commandName, params) {
+    this.commandName = commandName;
+    this.params = params;
+}
+
+function JavascriptConfig(removeJavascript, loadInWebView, javaScript) {
+    this.removeJavascript = removeJavascript;
+    this.loadInWebView = loadInWebView;
+    this.javaScript = javaScript;
+}
+
+function KeyValue(key, value) {
+    this.key = key;
+    this.value = value;
+}
+
+function Output(moduleID, videos, images, text) {
+    this.moduleID = moduleID;
+    this.videos = videos;
+    this.images = images;
+    this.text = text;
+}
+
+function Videos(needsResolver, rawVideo) {
+    this.needsResolver = needsResolver;
+    this.rawVideo = rawVideo;
+}
+
+function NeedsResolver(resolverIdentifier, link) {
+    this.resolverIdentifier = resolverIdentifier;
+    this.link = link;
+}
+
+function RawVideo(video) {
+    this.video = video;
+}
+
+function Video(videoQuality, videoLink) {
+    this.videoQuality = videoQuality;
+    this.videoLink = videoLink;
+}
+
+
+function Text(text) {
+    this.text = text;
+}
+var moduleID = '423948723487';
+var output = [];
+var emptyKeyValue = [new KeyValue('', '')];
+var savedData = document.getElementById('ketsu-final-data');
+var parsedJson = JSON.parse(savedData.innerHTML);
+var scripts = document.querySelectorAll('p');
+for (var x = 0; x < scripts.length; x++) {
+    try {
+        var selected = scripts[x];
+        if (selected.innerHTML.includes('all_imgs_url')) {
+            var contents = selected.innerHTML.split('"');
+            for (var y = 0; y < contents.length; y++) {
+                var image = contents[y];
+                if (image.includes('http')) {
+                    output.push(new ModuleRequest(image, 'get', emptyKeyValue, emptyKeyValue));
+                }
+            }
+            break;
+        }
+    } catch {}
+}
+let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);
+var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, emptyKeyValue), emptyExtra, new JavascriptConfig(false, false, ''), new Output(moduleID, null, output, null));
+var finalJson = JSON.stringify(chaptersObject);
+savedData.innerHTML = finalJson;
+</script>
+ </body>
+</html>

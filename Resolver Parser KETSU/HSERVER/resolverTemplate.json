@@ -1,0 +1,70 @@
+{
+    "resolverInfo": {
+      "resolverName": "HSERVER",
+      "nameMatches": [
+        "HSERVER"
+      ],
+      "developer": "Uknown",
+      "moduleID": "74237472347372",
+      "resolverVersion": 1.2,
+      "baseURL": ""
+    },
+    "resolver": [
+      {
+        "request": {
+          "url": "empty",
+          "method": "get",
+          "headers": [
+            {
+              "key": "key",
+              "value": "value"
+            }
+          ],
+          "httpBody": null
+        },
+        "extra": {
+          "commands": [
+            {
+              "commandName": "",
+              "params": [
+                {
+                  "key": "",
+                  "value": ""
+                }
+              ]
+            }
+          ],
+          "extraInfo": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ]
+        },
+        "javascriptConfig": {
+          "removeJavascript": false,
+          "loadInWebView": false,
+          "javaScript": ""
+        },
+        "output": {
+          "moduleID": "234234823",
+          "video": [
+            {
+              "videoQuality": "720",
+              "videoLink": {
+                "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "key",
+                    "value": "value"
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }

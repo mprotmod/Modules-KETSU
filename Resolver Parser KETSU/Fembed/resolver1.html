@@ -1,0 +1,85 @@
+
+  <script type="text/javascript">
+function Resolver(request,extra,javascriptConfig,output) {
+          this.request = request;
+          this.extra = extra;
+          this.javascriptConfig = javascriptConfig;
+          this.output  = output;
+      }
+    
+      function ModuleRequest(url,method,headers,httpBody) {
+          this.url = url;
+          this.method = method;
+          this.headers  = headers;
+          this.httpBody = httpBody;
+      }
+      
+      function Extra(commands,extraInfo) {
+          this.commands = commands;
+          this.extraInfo = extraInfo;
+      }
+    
+      function Commands(commandName,params) {
+          this.commandName = commandName;
+          this.params = params;
+      }
+    
+      function JavascriptConfig(removeJavascript,loadInWebView,javaScript) {
+          this.removeJavascript = removeJavascript;
+          this.loadInWebView = loadInWebView;
+          this.javaScript = javaScript;
+      }
+    
+      function KeyValue(key,value) {
+          this.key = key;
+          this.value = value;
+      }
+    
+      function Output(video) {
+        this.video = video;
+      }
+      
+      function Video(videoQuality,videoLink) {
+          this.videoQuality = videoQuality;
+          this.videoLink = videoLink;
+      }
+    
+
+
+function getNext(match,array) {
+    for (var x = 0; x < array.length; x++) {
+        let mMatch = array[x];
+        if (mMatch.includes(match)) {
+            return  array[x + 1];
+        }
+    }
+}
+
+    
+var savedData = document.getElementById('ketsu-final-data');
+
+var parsedJson = JSON.parse(savedData.innerHTML); 
+var emptyKeyValue = [new KeyValue('Referer',parsedJson.request.url)];
+
+var videos = [];
+
+
+
+let nextRequest = parsedJson.request.url.replace('/v/', '/api/source/');
+if (parsedJson.request.method == 'post') {
+    var script = document.querySelector('script');
+    let js = JSON.parse(script.innerHTML.replace('/*', '').replace('*/', '')).data;
+    for (var x = 0; x < js.length; x++) {
+        videos.push(new Video(js[x].label,new ModuleRequest(js[x].file,'get',emptyKeyValue,null)));
+    }
+    nextRequest = '';
+} 
+
+
+let emptyExtra = new Extra([new Commands('',emptyKeyValue)],emptyKeyValue);
+
+var chaptersObject = new Resolver(new ModuleRequest(nextRequest,'post',emptyKeyValue,null),emptyExtra,new JavascriptConfig(false,false,''), new Output(videos));
+var finalJson = JSON.stringify(chaptersObject);
+savedData.innerHTML = finalJson;
+
+</script>

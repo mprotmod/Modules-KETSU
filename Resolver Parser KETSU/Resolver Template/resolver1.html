@@ -1,0 +1,62 @@
+
+<script>
+    function Resolver(request,extra,javascriptConfig,output) {
+          this.request = request;
+          this.extra = extra;
+          this.javascriptConfig = javascriptConfig;
+          this.output  = output;
+      }
+    
+      function ModuleRequest(url,method,headers,params) {
+          this.url = url;
+          this.method = method;
+          this.headers  = headers;
+          this.params = params;
+      }
+      
+      function Extra(commands,extraInfo) {
+          this.commands = commands;
+          this.extraInfo = extraInfo;
+      }
+    
+      function Commands(commandName,params) {
+          this.commandName = commandName;
+          this.params = params;
+      }
+    
+      function JavascriptConfig(removeJavascript,loadInWebView,javaScript) {
+          this.removeJavascript = removeJavascript;
+          this.loadInWebView = loadInWebView;
+          this.javaScript = javaScript;
+      }
+    
+      function KeyValue(key,value) {
+          this.key = key;
+          this.value = value;
+      }
+    
+      function Output(moduleID,video) {
+        this.video = video;
+
+      }
+      
+      function Video(videoQuality,videoLink) {
+          this.videoQuality = videoQuality;
+          this.videoLink = videoLink;
+      }
+    
+    
+var emptyKeyValue = [new KeyValue('','')];
+var savedData = document.getElementById('ketsu-final-data');
+
+var parsedJson = JSON.parse(savedData.innerHTML); 
+var videos = [];
+
+// Fill the videos with video objects.
+
+let emptyExtra = new Extra([new Commands('',emptyKeyValue)],emptyKeyValue);
+
+var chaptersObject = new Resolver(new ModuleRequest('','',emptyKeyValue,null),emptyExtra,new JavascriptConfig(false,false,''), new Output(videos));
+var finalJson = JSON.stringify(chaptersObject);
+savedData.innerHTML = finalJson;
+</script>

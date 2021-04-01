@@ -1,0 +1,105 @@
+
+  <script type="text/javascript">
+function Info(request, extra, javascriptConfig, output) {
+    this.request = request;
+    this.extra = extra;
+    this.javascriptConfig = javascriptConfig;
+    this.output = output;
+}
+
+function ModuleRequest(url, method, headers, params) {
+    this.url = url;
+    this.method = method;
+    this.headers = headers;
+    this.params = params;
+}
+
+function Extra(commands, extraInfo) {
+    this.commands = commands;
+    this.extraInfo = extraInfo;
+}
+
+function Commands(commandName, params) {
+    this.commandName = commandName;
+    this.params = params;
+}
+
+function JavascriptConfig(removeJavascript, loadInWebView, javaScript) {
+    this.removeJavascript = removeJavascript;
+    this.loadInWebView = loadInWebView;
+    this.javaScript = javaScript;
+}
+
+function KeyValue(key, value) {
+    this.key = key;
+    this.value = value;
+}
+
+function Chapter(chapName, link,openInWebView) {
+    this.chapName = chapName;
+    this.link = link;
+    this.openInWebView = openInWebView;
+}
+
+function Output(image, title, link, description, moduleID, genres, field1, field2, field3, field4, chapters) {
+    this.image = image;
+    this.link = link;
+    this.title = title;
+    this.description = description;
+    this.genres = genres;
+    this.moduleID = moduleID;
+    this.field1 = field1;
+    this.field2 = field2;
+    this.field3 = field3;
+    this.field4 = field4;
+    this.chapters = chapters;
+}
+var savedData = document.getElementById('ketsu-final-data');
+var parsedJson = JSON.parse(savedData.innerHTML);
+let emptyKeyValue = [new KeyValue('', '')];
+let moduleID = '234234823';
+var image = document.querySelector('.cmtList').querySelector('img').src;
+image = new ModuleRequest(image, 'get', emptyKeyValue, emptyKeyValue);
+let title = document.querySelector('.cmtList').querySelector('h1').innerText;
+var data = document.querySelector('.cmtList').querySelector('table').querySelector('table').querySelectorAll('tr');
+var description = '';
+var status = '';
+var genres = [];
+for (var x = 0; x < data.length; x++) {
+    try {
+        var tds = data[x];
+        if (tds.innerText.includes('Categories:')) {
+            var newGenres = [];
+            var arrayOfGenres = tds.querySelectorAll('a');
+            for (var y = 0; y < arrayOfGenres.length; y++) {
+                var gen = arrayOfGenres[y].innerText;
+                newGenres.push(gen);
+            }
+            if (newGenres != []) {
+                genres = newGenres;
+            }
+        }
+        if (tds.innerText.includes('Status:')) {
+            status = tds.innerText.replace('Status: ', '');
+        }
+        if (tds.innerText.includes('Summary')) {
+            description = tds.innerText;
+        }
+    } catch {}
+}
+var chapters = [];
+var chaptersArray = document.querySelector('table[align=\"center\"]').querySelectorAll('tr');
+for (var x = 0; x < chaptersArray.length; x++) {
+    try {
+        var chapLink = 'https://www.taadd.com' + chaptersArray[x].querySelector('a').href;
+        let chapter = new Chapter('Episode ' + (chaptersArray.length - x) , new ModuleRequest(chapLink, 'get', emptyKeyValue, emptyKeyValue),false);
+        chapters.push(chapter);
+    } catch {}
+}
+chapters.reverse();
+let infoPageObject = new Info(new ModuleRequest('', '', emptyKeyValue, emptyKeyValue), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output(image, title, parsedJson.request, description, moduleID, genres, status, 'field2', 'field3', 'field4', chapters));
+var finalJson = JSON.stringify(infoPageObject);
+savedData.innerHTML = finalJson;
+</script>
+ </body>
+</html>

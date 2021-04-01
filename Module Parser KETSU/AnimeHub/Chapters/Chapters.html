@@ -1,0 +1,115 @@
+
+    <script type="text/javascript">    
+        function Chapters(request, extra, javascriptConfig, output) {
+        this.request = request;
+        this.extra = extra;
+        this.javascriptConfig = javascriptConfig;
+        this.output = output;
+    }
+    
+    function ModuleRequest(url, method, headers, httpBody) {
+        this.url = url;
+        this.method = method;
+        this.headers = headers;
+        this.httpBody = httpBody;
+    }
+    
+    function Extra(commands, extraInfo) {
+        this.commands = commands;
+        this.extraInfo = extraInfo;
+    }
+    
+    function Commands(commandName, params) {
+        this.commandName = commandName;
+        this.params = params;
+    }
+    
+    function JavascriptConfig(removeJavascript, loadInWebView, javaScript) {
+        this.removeJavascript = removeJavascript;
+        this.loadInWebView = loadInWebView;
+        this.javaScript = javaScript;
+    }
+    
+    function KeyValue(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+    
+    function Output( videos, images, text) {
+        this.videos = videos;
+        this.images = images;
+        this.text = text;
+    }
+    
+    function Videos(needsResolver, rawVideo) {
+        this.needsResolver = needsResolver;
+        this.rawVideo = rawVideo;
+    }
+    
+    function NeedsResolver(resolverIdentifier, link) {
+        this.resolverIdentifier = resolverIdentifier;
+        this.link = link;
+    }
+    
+    function RawVideo(video) {
+        this.video = video;
+    }
+    
+    function Video(videoQuality, videoLink) {
+        this.videoQuality = videoQuality;
+        this.videoLink = videoLink;
+    }
+    
+    function Images(images) {
+        this.images = images;
+    }
+    
+    function Text(text) {
+        this.text = text;
+    }
+    
+    var output = [];
+    var savedData = document.getElementById('ketsu-final-data');
+    var parsedJson = JSON.parse(savedData.innerHTML);
+    
+    var emptyKeyValue = [new KeyValue('Referer', 'https://animehub.ac/')];
+    var ctk = '';
+    var epId = parsedJson.request.url.split('?ep=')[1];
+    var ps = document.querySelectorAll('p');
+
+    var extraInfo = [new KeyValue('count','0')];
+
+    for (var x = 0; x < ps.length; x++) {
+        if (ps[x].innerText.includes('var ctk =')) {
+            ctk = ps[x].innerText.split('\'')[1];
+            break;
+        }
+    }
+
+    var httpBody = 'episode_id=' + epId + '&ctk=' + ctk;
+    extraInfo.push(new KeyValue('httpBody',httpBody));
+    var nextRequest = '';
+
+    let options = document.querySelector('#info_player').querySelectorAll('option');
+    for (var x = 0; x < options.length; x++) {
+        let option = options[x].getAttribute('sv');
+        if (x == 0) {
+            nextRequest = 'https://animehub.ac/ajax/anime/load_episodes_v2?s=' + option;
+        } else {
+            extraInfo.push(new KeyValue('server'+ (x - 1),'https://animehub.ac/ajax/anime/load_episodes_v2?s=' + option));
+        }
+ 
+    }
+
+    let emptyExtra = new Extra([new Commands('', emptyKeyValue)], extraInfo);
+    var chaptersObject = new Chapters(new ModuleRequest(nextRequest, 'post', emptyKeyValue, httpBody), emptyExtra, new JavascriptConfig(false, false, ''), new Output(new Videos([], []), null, null));
+    var finalJson = JSON.stringify(chaptersObject);
+    savedData.innerText = finalJson;
+
+    
+    
+    </script>
+
+</body></html>
+
+   
