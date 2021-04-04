@@ -1,4 +1,5 @@
 
+
     <script type="text/javascript">    
         function Chapters(request, extra, javascriptConfig, output) {
         this.request = request;
@@ -133,6 +134,17 @@
     var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(new Videos(null, output), null, null));
     var finalJson = JSON.stringify(chaptersObject);
     savedData.innerHTML = finalJson;
-    window.stop();
+    var request = new XMLHttpRequest();
+request.open('GET', 'https://www.google.com/', false);
+request.send(null);
+
+if (request.status === 200) {
+  console.log(request.responseText);
+}var request = new XMLHttpRequest();
+request.open('GET', 'https://www.google.com/', false); 
+
+if (request.status === 200) {
+  console.log(request.responseText);
+}
     </script>
    
