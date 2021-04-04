@@ -93,10 +93,10 @@
     } catch (err) {
         console.log(err);
     }
-    let scripts = document.querySelectorAll('p');
+    let scripts = document.querySelectorAll('script');
     for (var x = 0; x < scripts.length; x++) {
         let script = scripts[x].innerHTML;
-        if (script.includes('|controls|')) {
+        if (script.includes('|controls|') && !script.includes('data = data[data.length - 1].src;')) {
             console.log(script);
             eval(script);
             try {
