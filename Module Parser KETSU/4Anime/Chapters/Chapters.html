@@ -93,10 +93,11 @@
     } catch (err) {
         console.log(err);
     }
-    let scripts = document.querySelectorAll('script');
+    let scripts = document.querySelectorAll('p');
     for (var x = 0; x < scripts.length; x++) {
         let script = scripts[x].innerHTML;
         if (script.includes('|controls|')) {
+            console.log(script);
             eval(script);
             try {
                 var data = document.querySelectorAll('source');
@@ -132,6 +133,6 @@
     var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(new Videos(null, output), null, null));
     var finalJson = JSON.stringify(chaptersObject);
     savedData.innerHTML = finalJson;
-    
+    window.stop();
     </script>
    
