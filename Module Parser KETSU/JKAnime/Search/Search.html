@@ -197,16 +197,16 @@
     let emptyKeyValue = [new KeyValue('','')];
     let moduleID = 234234823;
 
-    let lastAdded = document.querySelectorAll('.portada-box');
+    let lastAdded = document.querySelectorAll('.anime__item');
     let lastAddedArray = [];
     for (var x = 0; x < lastAdded.length;x++) {
         try {
         var last = lastAdded[x];
-        var image = last.querySelector('img').src;
-        image = new ModuleRequest(image,'get',emptyKeyValue,emptyKeyValue);
-        let title = last.querySelector('a').title;
+        var image = last.querySelector('.set-bg').getAttribute('data-setbg');
+        image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+        let title = last.querySelector('h5').querySelector('a').textContent;
         var link = last.querySelector('a').href;
-        link = new ModuleRequest(link,'get',emptyKeyValue,emptyKeyValue);
+        link = new ModuleRequest(link, 'get', emptyKeyValue, null);
         let data = new Data(image,title,'This is the description','Anime','Ongoing','This is the description','This is the description',moduleID,false,link);
         lastAddedArray.push(data);
         } catch (e) {}

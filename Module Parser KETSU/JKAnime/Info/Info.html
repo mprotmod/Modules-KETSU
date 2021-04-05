@@ -1,103 +1,4 @@
 
-<script type="text/javascript">
-  
-    function Info(request,extra,javascriptConfig,output) {
-      this.request = request;
-      this.extra = extra;
-      this.javascriptConfig = javascriptConfig;
-      this.output  = output;
-  }
-
-  function ModuleRequest(url,method,headers,params) {
-      this.url = url;
-      this.method = method;
-      this.headers  = headers;
-      this.params = params;
-  }
-  
-  function Extra(commands,extraInfo) {
-      this.commands = commands;
-      this.extraInfo = extraInfo;
-  }
-
-  function Commands(commandName,params) {
-      this.commandName = commandName;
-      this.params = params;
-  }
-
-  function JavascriptConfig(removeJavascript,loadInWebView,javaScript) {
-      this.removeJavascript = removeJavascript;
-      this.loadInWebView = loadInWebView;
-      this.javaScript = javaScript;
-  }
-
-  function KeyValue(key,value) {
-      this.key = key;
-      this.value = value;
-  }
-
-  function Chapter(chapName,link,openInWebView) {
-      this.chapName = chapName;
-      this.link = link;
-      this.openInWebView = openInWebView;
-  }
-
-  function Output(image,title,link,description,moduleID,genres,field1,field2,field3,field4,chapters) {
-      this.image = image;
-      this.link = link;
-      this.title = title;
-      this.description = description;
-      this.genres = genres;
-      this.moduleID  = moduleID;
-      this.field1 = field1;
-      this.field2 = field2;
-      this.field3 = field3;
-      this.field4 = field4;
-      this.chapters = chapters;
-  }
-
-  function getStuff(array,match) {
-    for (var x = 0 ; x< array.length;x++) {
-        let data = array[x].innerText;
-        if (data.includes(match)) {
-            return data.replace(match,'').trim();
-        } 
-    }
-  }
-  var savedData = document.getElementById('ketsu-final-data');
-
-  var parsedJson = JSON.parse(savedData.innerHTML); 
-
-  let emptyKeyValue = [new KeyValue('','')];
-  let moduleID = 234234823;
-
-  var image = document.querySelector('.cap-portada').querySelector('img').src;
-  image = new ModuleRequest(image,'get',emptyKeyValue,emptyKeyValue)
-  let title = document.querySelector('.sinopsis-box').querySelector('h2').innerText;
-  let description = document.querySelector('.sinopsis-box').querySelector('.pc').innerText.replace('Sinopsis: ', '');
-  let arrayData = document.querySelector('.info-content').querySelectorAll('.info-field');
-  let field1 = getStuff(arrayData,'Tipo:');
-  let field2 = getStuff(arrayData,'Estado:');
-  let field3 = getStuff(arrayData,'Episodios:') + ' Episodes';
-  let field4 = getStuff(arrayData,'Idiomas:');
-  let genres = getStuff(arrayData,'Genero:').split(' , ');
-  let chaptersArray = [];
-
-  var chapters = document.querySelector('.navigation').querySelectorAll('a');
-var last = chapters[chapters.length - 1].innerText.split(' - ')[1];
-var chaptersInt = parseInt(last);
-for (var x = 0; x < chaptersInt; x++) {
-    var fixedLink = parsedJson.request.url + (x + 1);
-    let chapter = new Chapter('Episode ' + x + 1,new ModuleRequest(fixedLink,'get',emptyKeyValue,emptyKeyValue),false);
-    chaptersArray.push(chapter);
-}
-
-    let infoPageObject = new Info(new ModuleRequest('','',emptyKeyValue,emptyKeyValue),new Extra([new Commands('',emptyKeyValue)],emptyKeyValue),new JavascriptConfig(false,false,''),new Output(image,title,parsedJson.request,description,moduleID,genres,field1,field2,field3,field4,chaptersArray));
-
-    var finalJson = JSON.stringify(infoPageObject);
-    savedData.innerHTML = finalJson;
-  
-  </script>
 
   <script type="text/javascript">
   
@@ -158,7 +59,7 @@ for (var x = 0; x < chaptersInt; x++) {
 
   function getStuff(array,match) {
     for (var x = 0 ; x< array.length;x++) {
-        let data = array[x].innerText;
+        let data = array[x].textContent;
         if (data.includes(match)) {
             return data.replace(match,'').trim();
         } 
@@ -171,11 +72,11 @@ for (var x = 0; x < chaptersInt; x++) {
   let emptyKeyValue = [new KeyValue('','')];
   let moduleID = 234234823;
 
-  var image = document.querySelector('.cap-portada').querySelector('img').src;
+  var image = document.querySelector('.anime__details__pic').getAttribute('data-setbg');
   image = new ModuleRequest(image,'get',emptyKeyValue,emptyKeyValue);
-  let title = document.querySelector('.sinopsis-box').querySelector('h2').innerText;
-  let description = document.querySelector('.sinopsis-box').querySelector('.pc').innerText.replace('Sinopsis: ', '');
-  let arrayData = document.querySelector('.info-content').querySelectorAll('.info-field');
+  let title = document.querySelector('.anime__details__title').textContent.trim();
+  let description = document.querySelector('.anime__details__text').querySelector('p').textContent;
+  let arrayData = document.querySelector('.anime__details__widget').querySelectorAll('li');
   let field1 = getStuff(arrayData,'Tipo:');
   let field2 = getStuff(arrayData,'Estado:');
   let field3 = getStuff(arrayData,'Episodios:') + ' Episodes';
@@ -183,8 +84,8 @@ for (var x = 0; x < chaptersInt; x++) {
   let genres = getStuff(arrayData,'Genero:').split(' , ');
   let chaptersArray = [];
 
-  var chapters = document.querySelector('.navigation').querySelectorAll('a');
-var last = chapters[chapters.length - 1].innerText.split(' - ')[1];
+  var chapters = document.querySelector('.anime__pagination').querySelectorAll('a');
+var last = chapters[chapters.length - 1].textContent.split(' - ')[1];
 var chaptersInt = parseInt(last);
 for (var x = 0; x < chaptersInt; x++) {
     var fixedLink = parsedJson.request.url + (x + 1);
@@ -198,3 +99,5 @@ for (var x = 0; x < chaptersInt; x++) {
     savedData.innerHTML = finalJson;
   
   </script>
+ </body>
+ </html>

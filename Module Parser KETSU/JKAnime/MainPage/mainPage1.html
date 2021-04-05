@@ -1,4 +1,5 @@
 
+ 
     <script type="text/javascript">
     
     const DefaultLayouts = {
@@ -180,7 +181,7 @@ var parsedJson = JSON.parse(savedData.innerHTML);
 let output = [];
 let emptyKeyValue = [new KeyValue('', '')];
 let moduleID = '234234823';
-let episodes = document.querySelector('.overview').querySelectorAll('a');
+let episodes = document.querySelector('.listadoanime-home').querySelectorAll('.bloqq');
 let episodesArray = [];
 
 function shuffle(a) {
@@ -203,8 +204,8 @@ for (var x = 0; x < episodes.length; x++) {
     let episode = episodes[x];
     var image = episode.querySelector('img').src;
     image = new ModuleRequest(image, 'get', emptyKeyValue, null);
-    let title = episode.title;
-    var ep = episode.querySelector('.episode').innerHTML;
+    let title = episode.querySelector('.anime__sidebar__comment__item__text').querySelector('h5').textContent;
+    var ep = episode.querySelector('.anime__sidebar__comment__item__text').querySelector('h6').textContent;
     var link = episode.href.split('/');
     link.pop();
     link.pop();
@@ -220,14 +221,14 @@ output.push(new Output(CellDesings.normal2, Orientation.horizontal, DefaultLayou
 
 
 var testLayout = new Layout(new Insets(10, 10, 10, 10), 1, 3, 5, 1, 500, new Size(400, 400), new Ratio('width', 11, 10), new Size(-60, 0), 10, 10);
-let destacados = document.querySelector('#nivo1').querySelectorAll('a');
+let destacados = document.querySelectorAll('.hero__items');
 let destacadosArray = [];
 for (var x = 0; x < destacados.length; x++) {
     var destacado = destacados[x];
-    var image = destacado.querySelector('img').src;
+    var image = destacado.getAttribute('data-setbg');
     image = new ModuleRequest(image, 'get', emptyKeyValue, null);
-    let title = destacado.querySelector('img').title;
-    var link = destacado.href.split('/');
+    let title = destacado.querySelector('h2').textContent;
+    var link = destacado.querySelector('a').href.split('/');
     link.pop();
     link.pop();
     link = link.join('/') + '/';
@@ -236,42 +237,47 @@ for (var x = 0; x < destacados.length; x++) {
     destacadosArray.push(data);
 }
 output.push(new Output(CellDesings.Special2, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('Most Seen', true), testLayout, destacadosArray));
-let top2 = document.querySelector('.topten-ul').querySelectorAll('li');
+let top2 = document.querySelector('.destacados').querySelectorAll('.col-lg-4, .col-6');
 let topArray = [];
 for (var x = 0; x < top2.length; x++) {
     try {
         var topS = top2[x];
-        var image = topS.querySelector('img').src;
+        var image = topS.querySelector('.set-bg').getAttribute('data-setbg');
         image = new ModuleRequest(image, 'get', emptyKeyValue, null);
-        let title = topS.querySelector('img').title;
+        let title = topS.querySelector('.tituloblanco').textContent;
         var link = topS.querySelector('a').href;
         var place = '' + (x + 1);
         link = new ModuleRequest(link, 'get', emptyKeyValue, null);
         let data = new Data(image, title, 'Uknown', 'Place', 'Anime', 'Ongoing', 'This is a description', moduleID, false, link);
         topArray.push(data);
-    } catch (e) {}
+    } catch (e) {
+        console.log(e);
+    }
 }
+
 output.push(new Output(CellDesings.wide11, Orientation.horizontal, DefaultLayouts.wideFull, Paging.leading, new Section('Top', true), null, topArray));
-let lastAdded = document.querySelectorAll('.portada-box');
+let lastAdded = document.querySelector('.trending__anime').querySelectorAll('.col-md-6');
 let lastAddedArray = [];
 for (var x = 0; x < lastAdded.length; x++) {
     try {
         var last = lastAdded[x];
-        var image = last.querySelector('img').src;
+        var image = last.querySelector('.set-bg').getAttribute('data-setbg');
         image = new ModuleRequest(image, 'get', emptyKeyValue, null);
-        let title = last.querySelector('a').title;
+        let title = last.querySelector('h5').querySelector('a').textContent;
         var link = last.querySelector('a').href;
         link = new ModuleRequest(link, 'get', emptyKeyValue, null);
         let data = new Data(image, title, 'Uknown', 'Anime', 'Ongoing', 'Unknown', '', moduleID, false, link);
         lastAddedArray.push(data);
-    } catch (e) {}
+    } catch (e) {
+        console.log(e);
+    }
 }
-output.push(new Output(CellDesings.wide2, Orientation.horizontal, DefaultLayouts.wideStrechedList, Paging.leading, new Section('Most Seen', true), null, lastAddedArray));
-let list = document.querySelector('.side-box').querySelectorAll('li');
+output.push(new Output(CellDesings.wide2, Orientation.horizontal, DefaultLayouts.wideStrechedList, Paging.leading, new Section('Last Added', true), null, lastAddedArray));
+let list = document.querySelector('.side-menu').querySelectorAll('li');
 var dataArray = [];
 for (var x = 0; x < list.length; x++) {
     let listItm = list[x];
-    let title = listItm.innerText;
+    let title = listItm.textContent;
     var link = listItm.querySelector('a').href;
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
     let data = quickData(link, link, title, '');
