@@ -1,80 +1,111 @@
-<script type="text/javascript">
-  function Header(key, value) {
+<script type='text/javascript'>
+  function Chapters(request, extra, javascriptConfig, output) {
+    this.request = request;
+    this.extra = extra;
+    this.javascriptConfig = javascriptConfig;
+    this.output = output;
+  }
+
+  function ModuleRequest(url, method, headers, httpBody) {
+    this.url = url;
+    this.method = method;
+    this.headers = headers;
+    this.httpBody = httpBody;
+  }
+
+  function Extra(commands, extraInfo) {
+    this.commands = commands;
+    this.extraInfo = extraInfo;
+  }
+
+  function Commands(commandName, params) {
+    this.commandName = commandName;
+    this.params = params;
+  }
+
+  function JavascriptConfig(removeJavascript, loadInWebView, javaScript) {
+    this.removeJavascript = removeJavascript;
+    this.loadInWebView = loadInWebView;
+    this.javaScript = javaScript;
+  }
+
+  function KeyValue(key, value) {
     this.key = key;
     this.value = value;
   }
 
-  function ExtraInfo(value) {
-    this.value = value;
+  function Output(videos, images, text) {
+    this.videos = videos;
+    this.images = images;
+    this.text = text;
   }
 
-  function Output(link, linkIdentifier, moduleID, isDecodable, headers) {
+  function Videos(needsResolver, rawVideo) {
+    this.needsResolver = needsResolver;
+    this.rawVideo = rawVideo;
+  }
+
+  function NeedsResolver(resolverIdentifier, link) {
+    this.resolverIdentifier = resolverIdentifier;
     this.link = link;
-    this.moduleID = moduleID;
-    this.headers = headers;
   }
 
-  function ChaptersObject(
-    request,
-    method,
-    headers,
-    extraInfo,
-    loadJavascript,
-    javaScript,
-    output
-  ) {
-    this.request = request;
-    this.method = method;
-    this.headers = headers;
-    this.extraInfo = extraInfo;
-    this.loadJavascript = loadJavascript;
-    this.javaScript = javaScript;
-    this.output = output;
+  function RawVideo(video) {
+    this.video = video;
   }
 
-  const savedData = document.getElementById("ketsu-final-data");
+  function Video(videoQuality, videoLink) {
+    this.videoQuality = videoQuality;
+    this.videoLink = videoLink;
+  }
+
+  function Text(text) {
+    this.text = text;
+  }
+
+  const savedData = document.getElementById('ketsu-final-data');
   const parsedJson = JSON.parse(savedData.innerHTML);
-  const moduleID = "199809071";
-  const headers = [new Header("Referer", parsedJson.request)];
-  const extraInfo = [new ExtraInfo("")];
-  const output = [];
 
-  const pNodes = document.querySelectorAll("p");
+  let output = [];
+  const emptyKeyValue = [new KeyValue('Referer', parsedJson.request.url)];
+
+  const pNodes = document.querySelectorAll('p');
   const lastP = pNodes[pNodes.length - 1];
   const mangaworldScript = lastP.innerText;
 
   const firstImage = document
-    .querySelector("#page > img")
-    .getAttribute("src")
+    .querySelector('#page > img')
+    .getAttribute('src')
     .trim();
   const imageBaseLink = firstImage.substring(
     0,
-    firstImage.lastIndexOf("/") + 1
+    firstImage.lastIndexOf('/') + 1
   );
 
-  const marker = '"pages":[';
+  const marker = '\"pages\":[';
   const fromPages = mangaworldScript.substring(
     mangaworldScript.indexOf(marker) + marker.length
   );
-  const pagesRaw = fromPages.substring(0, fromPages.indexOf("]"));
-  const pagesStr = pagesRaw.split(",");
+  const pagesRaw = fromPages.substring(0, fromPages.indexOf(']'));
+  const pagesStr = pagesRaw.split(',');
 
   for (let x = 0; x < pagesStr.length; x++) {
-    const pageRoute = pagesStr[x].replaceAll('"', "");
-    const image = `${imageBaseLink}${pageRoute}`;
-    output.push(new Output(image, "", moduleID, "false", headers));
+    const pageRoute = pagesStr[x].replaceAll('\"', '');
+    const img = `${imageBaseLink}${pageRoute}`;
+    const image = new ModuleRequest(img, 'get', emptyKeyValue, null);
+    output.push(image);
   }
 
-  const chaptersObject = new ChaptersObject(
-    "",
-    "",
-    headers,
-    extraInfo,
-    "",
-    "",
-    output
+  const emptyExtra = new Extra(
+    [new Commands('', emptyKeyValue)],
+    emptyKeyValue
   );
-
+  const chaptersObject = new Chapters(
+    new ModuleRequest('', '', emptyKeyValue, null),
+    emptyExtra,
+    new JavascriptConfig(false, false, ''),
+    new Output(null, output, null)
+  );
   const finalJson = JSON.stringify(chaptersObject);
   savedData.innerHTML = finalJson;
 </script>
