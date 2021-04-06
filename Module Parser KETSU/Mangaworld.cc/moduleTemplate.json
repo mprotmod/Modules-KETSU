@@ -1,0 +1,614 @@
+{
+  "moduleInfo": {
+    "moduleName": "mangaworld.cc",
+    "moduleInitials": "MW.CC",
+    "moduleDesc": "Module to read from mangaworld.cc",
+    "developer": "Giorgio Bertolotti",
+    "moduleID": "199809071",
+    "moduleImage": "https://www.mangaworld.cc/public/assets/images/MangaWorldSquareLogo.png",
+    "moduleVersion": 1.0,
+    "moduleLenguage": "IT",
+    "moduleType": "Image",
+    "baseURL": "https://www.mangaworld.cc/",
+    "moduleDeveloperSite": "https://bertolotti.dev/",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangaworld.cc/moduleTemplate.json",
+    "preferedServer": "UM",
+    "preferedDownloadServer": "UM",
+    "blackListed": [""]
+  },
+  "global": {
+    "variables": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "cookies": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "headers": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ]
+  },
+  "mainPage": [
+    {
+      "request": {
+        "url": "https://www.mangaworld.cc/",
+        "method": "get",
+        "headers": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": true,
+        "loadInWebView": false,
+        "javaScript": " const DefaultLayouts = { ultraWideFull: 'ultraWideFull', ultraWide: 'ultraWide', wideFull: 'wideFull', wide: 'wide', wideStrechedFull: 'wideStrechedFull', wideStrechedFullDouble: 'WideStrechedFullDouble', wideStreched: 'wideStreched', wideStrechedDouble: 'wideStrechedDouble', wideStrechedFullList: 'wideStrechedFullList', wideStrechedList: 'wideStrechedList', doublets: 'doublets', doubletsDouble: 'doubletsDouble', doubletsFull: 'doubletsFull', doubletsFullDouble: 'doubletsFullDouble', doubletsConstant: 'doubletsConstant', doubletsDoubleConstant: 'doubletsDoubleConstant', doubletsFullConstant: 'doubletsFullConstant', doubletsFullDoubleConstant: 'doubletsFullDoubleConstant', longDoublets: 'longDoublets', longDoubletsDouble: 'longDoubletsDouble', longDoubletsFull: 'longDoubletsFull', longDoubletsFullDouble: 'longDoubletsFullDouble', longDoubletsConstant: 'longDoubletsConstant', longDoubletsDoubleConstant: 'longDoubletsDoubleConstant', longDoubletsFullConstant: 'longDoubletsFullConstant', longDoubletsFullDoubleConstant: 'longDoubletsFullDoubleConstant', triplets: 'triplets', tripletsDouble: 'tripletsDouble', tripletsFull: 'tripletsFull', tripletsFullDouble: 'tripletsFullDouble', tripletsConstant: 'tripletsConstant', tripletsDoubleConstant: 'tripletsDoubleConstant', tripletsFullConstant: 'tripletsFullConstant', tripletsFullDoubleConstant: 'tripletsFullDoubleConstant', longTriplets: 'longTriplets', longTripletsDouble: 'longTripletsDouble', longTripletsFull: 'longTripletsFull', longTripletsFullDouble: 'longTripletsFullDouble', longTripletsConstant: 'longTripletsConstant', longTripletsDoubleConstant: 'longTripletsDoubleConstant', longTripletsFullConstant: 'longTripletsFullConstant', longTripletsFullDoubleConstant: 'longTripletsFullDoubleConstant', none: '', }; const CellDesings = { Special1: 'Special1', Special2: 'Special2', Special3: 'Special3', small1: 'small1', small2: 'small2', normal1: 'normal1', normal2: 'normal2', normal3: 'normal3', normal4: 'normal4', normal5: 'normal5', normal6: 'normal6', normal7: 'normal7', wide1: 'wide1', wide2: 'wide2', wide3: 'wide3', wide4: 'wide4', wide5: 'wide5', wide6: 'wide6', wide7: 'wide7', wide8: 'wide8', wide9: 'wide9', wide10: 'wide10', wide11: 'wide11', }; const Paging = { leading: 'leading', centered: 'centered', none: '', }; const Orientation = { horizontal: 'horizontal', vertical: 'vertical', }; function MainPage(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Output( cellDesing, orientation, defaultLayout, paging, section, layout, data ) { this.cellDesing = cellDesing; this.orientation = orientation; this.defaultLayout = defaultLayout; this.paging = paging; this.section = section; this.layout = layout; this.data = data; } function Section(sectionName, separator) { this.sectionName = sectionName; this.separator = separator; } function Layout( insets, visibleCellsWidthS, visibleCellsWidthM, visibleCellsWidthL, visibleCellsHeight, heightForVisibleCells, cellSize, ratio, constant, horizontalSpacing, verticalSpacing ) { this.insets = insets; this.visibleCellsWidthS = visibleCellsWidthS; this.visibleCellsWidthM = visibleCellsWidthM; this.visibleCellsWidthL = visibleCellsWidthL; this.visibleCellsHeight = visibleCellsHeight; this.heightForVisibleCells = heightForVisibleCells; this.cellSize = cellSize; this.ratio = ratio; this.constant = constant; this.horizontalSpacing = horizontalSpacing; this.verticalSpacing = verticalSpacing; } function Insets(top, bottom, left, right) { this.top = top; this.bottom = bottom; this.left = left; this.right = right; } function Size(width, height) { this.width = width; this.height = height; } function Ratio(inRelation, number1, number2) { this.inRelation = inRelation; this.number1 = number1; this.number2 = number2; } function Data( image, title, description, field1, field2, field3, field4, isChapter, link ) { this.image = image; this.title = title; this.description = description; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.isChapter = isChapter; this.link = link; } function quickData(link, image, title, field1, field2 = 'unknown') { return new Data( image, title, 'unknown', field1, field2, 'unknown', 'unknown', false, link ); } function shuffle(a) { var j, x, i; for (i = a.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1)); x = a[i]; a[i] = a[j]; a[j] = x; } return a; } const savedData = document.getElementById('ketsu-final-data'); let output = []; const emptyKeyValue = [new KeyValue('', '')]; let sectionName = document.querySelector( 'body > div.container > div > div.col-sm-12.col-md-4.col-xl-3 > div:nth-child(4) > div > div.s-title > h3' ).innerText; let dataArray = []; let mangas = document .querySelector( 'body > div.container > div > div.col-sm-12.col-md-4.col-xl-3 > div:nth-child(4) > div > div.top-wrapper' ) .querySelectorAll('.entry'); for (let x = 0; x < mangas.length; x++) { const manga = mangas[x]; var link = manga.querySelector( '.long > .content > .d-flex.justify-content-between > a' ).href; link = new ModuleRequest(link, 'get', emptyKeyValue, null); var image = manga .querySelector( '.long > .content > .d-flex.flex-wrap.flex-row > .img-wrapper > a > .thumb > img' ) .getAttribute('src'); image = new ModuleRequest(image, 'get', emptyKeyValue, null); const title = manga.querySelector( '.long > .content > .d-flex.justify-content-between > a' ).title; const status = manga.querySelector( '.long > .content > .d-flex.flex-wrap.flex-row > .col-7.col-sm-9.col-md-12.p-0 > a:nth-child(6)' ).innerText; const finalData = quickData(link, image, title, title, status); dataArray.push(finalData); } const topLayout = new Layout( new Insets(0, 0, 0, 0), 1, 2, 3, 1, 500, new Size(400, 400), new Ratio('width', 1, 1), new Size(0, 0), 0, 0 ); output.push( new Output( CellDesings.Special3, Orientation.horizontal, DefaultLayouts.none, Paging.centered, new Section(sectionName, false), topLayout, dataArray ) ); sectionName = document.querySelector( 'body > div.container > div > div.col-sm-12.col-md-8.col-xl-9 > div.s-title > h3' ).innerText; dataArray = []; mangas = document .querySelector( 'body > div.container > div > div.col-sm-12.col-md-8.col-xl-9 > div.comics-grid' ) .querySelectorAll('.entry'); for (let x = 0; x < mangas.length; x++) { const manga = mangas[x]; var link = manga.querySelector('a').href; link = new ModuleRequest(link, 'get', emptyKeyValue, null); var image = manga.querySelector('a > img').getAttribute('src'); image = new ModuleRequest(image, 'get', emptyKeyValue, null); const title = manga.querySelector('div > p.name > a.manga-title').title; const status = manga.querySelector('div > div.status > a').innerText; const finalData = quickData(link, image, title, status); dataArray.push(finalData); } output.push( new Output( CellDesings.normal3, Orientation.horizontal, DefaultLayouts.longTripletsDouble, Paging.leading, new Section(sectionName, true), null, dataArray ) ); sectionName = document.querySelector( 'body > div.container > div > div.col-sm-12.col-md-4.col-xl-3 > div:nth-child(5) > div > div.row.m-0 > div > div > h3' ).innerText; dataArray = []; mangas = document .querySelector( 'body > div.container > div > div.col-sm-12.col-md-4.col-xl-3 > div:nth-child(5) > div > div.category.top-wrapper > div > div' ) .querySelectorAll('.entry'); for (let x = 0; x < mangas.length; x++) { const manga = mangas[x]; var link = manga.querySelector('div.content > a.manga-title').href; link = new ModuleRequest(link, 'get', emptyKeyValue, null); var image = manga.querySelector('div > a.thumb > img').getAttribute('src'); image = new ModuleRequest(image, 'get', emptyKeyValue, null); const title = manga.querySelector('div.content > a.manga-title').title; const status = manga.querySelector('div.content > a:nth-child(7)').innerText; const finalData = quickData(link, image, title, status); dataArray.push(finalData); } output.push( new Output( CellDesings.normal3, Orientation.horizontal, DefaultLayouts.longTripletsDouble, Paging.leading, new Section(sectionName, true), null, dataArray ) ); const MainPageObject = new MainPage( new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(true, false, ''), output ); const finalJson = JSON.stringify(MainPageObject); savedData.innerHTML = finalJson;"
+      },
+      "output": [
+        {
+          "cellDesing": "normal1",
+          "orientation": "vertical",
+          "defaultLayout": "wide",
+          "paging": "",
+          "section": {
+            "sectionName": "",
+            "separator": false
+          },
+          "layout": {
+            "insets": {
+              "top": 0,
+              "bottom": 0,
+              "left": 0,
+              "right": 0
+            },
+            "visibleCellsWidthS": 2,
+            "visibleCellsWidthM": 2,
+            "visibleCellsWidthL": 2,
+            "visibleCellsHeight": 2,
+            "heightForVisibleCells": 400,
+            "cellSize": {
+              "width": 300,
+              "height": 300
+            },
+            "ratio": {
+              "inRelation": "width",
+              "number1": 1,
+              "number2": 2
+            },
+            "constant": {
+              "width": 1,
+              "height": 2
+            },
+            "horizontalSpacing": 0,
+            "verticalSpacing": 0
+          },
+          "data": [
+            {
+              "image": {
+                "url": "https://www.mangaworld.cc/",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              },
+              "title": "",
+              "description": "",
+              "field1": "",
+              "field2": "",
+              "field3": "",
+              "field4": "",
+              "moduleID": "199809071",
+              "isChapter": false,
+              "link": {
+                "url": "empty",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "key",
+                    "value": "value"
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "search": [
+    {
+      "request": {
+        "url": "https://www.mangaworld.cc/archive?keyword=<searched>&page=<page>&sort=a-z",
+        "method": "get",
+        "headers": [
+          {
+            "key": "key",
+            "value": "value"
+          }
+        ],
+        "httpBody": null
+      },
+      "separator": "+",
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": true,
+        "loadInWebView": false,
+        "javaScript": " const DefaultLayouts = { ultraWideFull: 'ultraWideFull', ultraWide: 'ultraWide', wideFull: 'wideFull', wide: 'wide', wideStrechedFull: 'wideStrechedFull', wideStrechedFullDouble: 'WideStrechedFullDouble', wideStreched: 'wideStreched', wideStrechedDouble: 'wideStrechedDouble', wideStrechedFullList: 'wideStrechedFullList', wideStrechedList: 'wideStrechedList', doublets: 'doublets', doubletsDouble: 'doubletsDouble', doubletsFull: 'doubletsFull', doubletsFullDouble: 'doubletsFullDouble', doubletsConstant: 'doubletsConstant', doubletsDoubleConstant: 'doubletsDoubleConstant', doubletsFullConstant: 'doubletsFullConstant', doubletsFullDoubleConstant: 'doubletsFullDoubleConstant', longDoublets: 'longDoublets', longDoubletsDouble: 'longDoubletsDouble', longDoubletsFull: 'longDoubletsFull', longDoubletsFullDouble: 'longDoubletsFullDouble', longDoubletsConstant: 'longDoubletsConstant', longDoubletsDoubleConstant: 'longDoubletsDoubleConstant', longDoubletsFullConstant: 'longDoubletsFullConstant', longDoubletsFullDoubleConstant: 'longDoubletsFullDoubleConstant', triplets: 'triplets', tripletsDouble: 'tripletsDouble', tripletsFull: 'tripletsFull', tripletsFullDouble: 'tripletsFullDouble', tripletsConstant: 'tripletsConstant', tripletsDoubleConstant: 'tripletsDoubleConstant', tripletsFullConstant: 'tripletsFullConstant', tripletsFullDoubleConstant: 'tripletsFullDoubleConstant', longTriplets: 'longTriplets', longTripletsDouble: 'longTripletsDouble', longTripletsFull: 'longTripletsFull', longTripletsFullDouble: 'longTripletsFullDouble', longTripletsConstant: 'longTripletsConstant', longTripletsDoubleConstant: 'longTripletsDoubleConstant', longTripletsFullConstant: 'longTripletsFullConstant', longTripletsFullDoubleConstant: 'longTripletsFullDoubleConstant', none: '', }; const CellDesings = { small1: 'small1', normal1: 'normal1', normal2: 'normal2', normal3: 'normal3', normal4: 'normal4', normal5: 'normal5', normal6: 'normal6', normal7: 'normal7', wide1: 'wide1', wide2: 'wide2', wide3: 'wide3', wide4: 'wide4', wide5: 'wide5', wide6: 'wide6', wide7: 'wide7', wide8: 'wide8', wide9: 'wide9', wide10: 'wide10', wide11: 'wide11', }; const Paging = { leading: 'leading', centered: 'centered', none: '', }; const Orientation = { horizontal: 'horizontal', vertical: 'vertical', }; function Search(request, extra, separator, javascriptConfig, output) { this.request = request; this.extra = extra; this.separator = separator; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Output( cellDesing, orientation, defaultLayout, paging, section, layout, data ) { this.cellDesing = cellDesing; this.orientation = orientation; this.defaultLayout = defaultLayout; this.paging = paging; this.section = section; this.layout = layout; this.data = data; } function Section(sectionName, separator) { this.sectionName = sectionName; this.separator = separator; } function Layout( insets, visibleCellsWidthS, visibleCellsWidthM, visibleCellsWidthL, visibleCellsHeight, heightForVisibleCells, cellSize, ratio, constant, horizontalSpacing, verticalSpacing ) { this.insets = insets; this.visibleCellsWidthS = visibleCellsWidthS; this.visibleCellsWidthM = visibleCellsWidthM; this.visibleCellsWidthL = visibleCellsWidthL; this.visibleCellsHeight = visibleCellsHeight; this.heightForVisibleCells = heightForVisibleCells; this.cellSize = cellSize; this.ratio = ratio; this.constant = constant; this.horizontalSpacing = horizontalSpacing; this.verticalSpacing = verticalSpacing; } function Insets(top, bottom, left, right) { this.top = top; this.bottom = bottom; this.left = left; this.right = right; } function Size(width, height) { this.width = width; this.height = height; } function Ratio(inRelation, number1, number2) { this.inRelation = inRelation; this.number1 = number1; this.number2 = number2; } function Data( image, title, description, field1, field2, field3, field4, isChapter, link ) { this.image = image; this.title = title; this.description = description; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.isChapter = isChapter; this.link = link; } const randomProperty = function (obj) { const keys = Object.keys(obj); return obj[keys[(keys.length * Math.random()) << 0]]; }; const savedData = document.getElementById('ketsu-final-data'); let output = []; const emptyKeyValue = [new KeyValue('', '')]; let searchArray = []; const mangas = document .querySelector('.comics-grid') .querySelectorAll('.entry'); for (let x = 0; x < mangas.length; x++) { const manga = mangas[x]; var image = manga.querySelector('a > img').getAttribute('src'); image = new ModuleRequest(image, 'get', emptyKeyValue, null); const title = manga.querySelector('.content > .name > .manga-title').title; var link = manga.querySelector('a').href; link = new ModuleRequest(link, 'get', emptyKeyValue, null); const type = manga.querySelector('.content > .genre > a').innerText; const data = new Data( image, title, 'This is the description', type, '', 'This is the description', 'This is the description', false, link ); searchArray.push(data); } output.push( new Output( CellDesings.wide6, Orientation.vertical, DefaultLayouts.doubletsFull, Paging.none, new Section('', true), null, searchArray ) ); const searchPageObject = new Search( new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), '', new JavascriptConfig(false, false, ''), output ); const finalJson = JSON.stringify(searchPageObject); savedData.innerHTML = finalJson;"
+      },
+      "output": [
+        {
+          "cellDesing": "normal1",
+          "orientation": "vertical",
+          "defaultLayout": "wide",
+          "paging": "",
+          "section": {
+            "sectionName": "",
+            "separator": false
+          },
+          "layout": {
+            "insets": {
+              "top": 0,
+              "bottom": 0,
+              "left": 0,
+              "right": 0
+            },
+            "visibleCellsWidthS": 2,
+            "visibleCellsWidthM": 2,
+            "visibleCellsWidthL": 2,
+            "visibleCellsHeight": 2,
+            "heightForVisibleCells": 400,
+            "cellSize": {
+              "width": 300,
+              "height": 300
+            },
+            "ratio": {
+              "inRelation": "width",
+              "number1": 1,
+              "number2": 2
+            },
+            "constant": {
+              "width": 1,
+              "height": 2
+            },
+            "horizontalSpacing": 0,
+            "verticalSpacing": 0
+          },
+          "data": [
+            {
+              "image": {
+                "url": "https://www.mangaworld.cc/",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              },
+              "title": "",
+              "description": "",
+              "field1": "",
+              "field2": "",
+              "field3": "",
+              "field4": "",
+              "moduleID": "199809071",
+              "isChapter": false,
+              "link": {
+                "url": "empty",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "key",
+                    "value": "value"
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "info": [
+    {
+      "request": {
+        "url": "empty",
+        "method": "get",
+        "headers": [
+          {
+            "key": "key",
+            "value": "value"
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": true,
+        "loadInWebView": false,
+        "javaScript": " function Info(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, params) { this.url = url; this.method = method; this.headers = headers; this.params = params; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Chapter(chapName, link, openInWebView) { this.chapName = chapName; this.link = link; this.openInWebView = openInWebView; } function Output( image, title, link, description, moduleID, genres, field1, field2, field3, field4, chapters ) { this.image = image; this.link = link; this.title = title; this.description = description; this.genres = genres; this.moduleID = moduleID; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.chapters = chapters; } const savedData = document.getElementById('ketsu-final-data'); const parsedJson = JSON.parse(savedData.innerHTML); const moduleID = '199809071'; const emptyKeyValue = [new KeyValue('', '')]; const chapters = []; let type = ''; let status = ''; let genres = []; let desc = ''; var image = ''; let title = ''; image = document.querySelector('img.rounded').getAttribute('src'); image = new ModuleRequest(image, 'get', emptyKeyValue, emptyKeyValue); type = document.querySelector( '.info > div.meta-data.row > div:nth-child(5) > a' ).innerText; title = document.querySelector('.info > h1').innerText; status = document.querySelector( '.info > div.meta-data.row.px-1 > div:nth-child(6) > a' ).innerText; const genresBadges = document .querySelector('.info > div.meta-data.row.px-1 > div:nth-child(2)') .querySelectorAll('a'); for (let x = 0; x < genresBadges.length; x++) { const genreBadge = genresBadges[x]; genres.push(genreBadge.innerText); } desc = document.querySelector('#noidungm').innerHTML; const chaptersArray = document.querySelectorAll('.chapter'); for (let x = 0; x < chaptersArray.length; x++) { const chapter = chaptersArray[x]; const link = chapter.querySelector('a').href; chapters.push(new Chapter( 'Capitolo ' + (chaptersArray.length - x), new ModuleRequest(link, 'get', emptyKeyValue, emptyKeyValue), false )); } chapters.reverse(); const infoPageObject = new Info( new ModuleRequest('', '', emptyKeyValue, emptyKeyValue), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output( image, title, parsedJson.request, desc, moduleID, genres, status, 'field2', 'field3', 'field4', chapters ) ); const finalJson = JSON.stringify(infoPageObject); savedData.innerHTML = finalJson;"
+      },
+      "output": {
+        "image": {
+          "url": "https://www.mangaworld.cc/",
+          "method": "get",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "httpBody": null
+        },
+        "link": {
+          "url": "https://www.mangaworld.cc/",
+          "method": "get",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "httpBody": null
+        },
+        "title": "",
+        "description": "",
+        "moduleID": "199809071",
+        "genres": [""],
+        "field1": "",
+        "field2": "",
+        "field3": "",
+        "field4": "",
+        "chapters": [
+          {
+            "chapName": "",
+            "openInWebView": false,
+            "link": {
+              "url": "empty",
+              "method": "get",
+              "headers": [
+                {
+                  "key": "key",
+                  "value": "value"
+                }
+              ],
+              "httpBody": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "chapters": [
+    {
+      "request": {
+        "url": "empty",
+        "method": "get",
+        "headers": [
+          {
+            "key": "key",
+            "value": "value"
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": true,
+        "loadInWebView": false,
+        "javaScript": " function Chapters(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Output(videos, images, text) { this.videos = videos; this.images = images; this.text = text; } function Videos(needsResolver, rawVideo) { this.needsResolver = needsResolver; this.rawVideo = rawVideo; } function NeedsResolver(resolverIdentifier, link) { this.resolverIdentifier = resolverIdentifier; this.link = link; } function RawVideo(video) { this.video = video; } function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink; } function Text(text) { this.text = text; } const savedData = document.getElementById('ketsu-final-data'); const parsedJson = JSON.parse(savedData.innerHTML); let output = []; const emptyKeyValue = [new KeyValue('Referer', parsedJson.request.url)]; const pNodes = document.querySelectorAll('p'); const lastP = pNodes[pNodes.length - 1]; const mangaworldScript = lastP.innerText; const firstImage = document .querySelector('#page > img') .getAttribute('src') .trim(); const imageBaseLink = firstImage.substring( 0, firstImage.lastIndexOf('/') + 1 ); const marker = '\"pages\":['; const fromPages = mangaworldScript.substring( mangaworldScript.indexOf(marker) + marker.length ); const pagesRaw = fromPages.substring(0, fromPages.indexOf(']')); const pagesStr = pagesRaw.split(','); for (let x = 0; x < pagesStr.length; x++) { const pageRoute = pagesStr[x].replaceAll('\"', ''); const img = `${imageBaseLink}${pageRoute}`; const image = new ModuleRequest(img, 'get', emptyKeyValue, null); output.push(image); } const emptyExtra = new Extra( [new Commands('', emptyKeyValue)], emptyKeyValue ); const chaptersObject = new Chapters( new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(null, output, null) ); const finalJson = JSON.stringify(chaptersObject); savedData.innerHTML = finalJson;"
+      },
+      "output": {
+        "moduleID": "199809071",
+        "videos": {
+          "needsResolver": [
+            {
+              "resolverIdentifier": "",
+              "link": {
+                "url": "https://www.mangaworld.cc/",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "key",
+                    "value": "value"
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ],
+          "rawVideo": [
+            {
+              "video": [
+                {
+                  "videoQuality": "720",
+                  "videoLink": {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                    "method": "get",
+                    "headers": [
+                      {
+                        "key": "key",
+                        "value": "value"
+                      }
+                    ],
+                    "httpBody": null
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "images": [
+          {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "httpBody": null
+          }
+        ],
+        "text": {
+          "text": ""
+        }
+      }
+    }
+  ],
+  "moduleResolvers": [
+    {
+      "resolverInfo": {
+        "resolverName": "",
+        "nameMatches": [""],
+        "developer": "",
+        "moduleID": "",
+        "resolverVersion": 1,
+        "baseURL": ""
+      },
+      "resolver": [
+        {
+          "request": {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "httpBody": null
+          },
+          "extra": {
+            "commands": [
+              {
+                "commandName": "",
+                "params": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "extraInfo": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          },
+          "javascriptConfig": {
+            "removeJavascript": false,
+            "loadInWebView": false,
+            "javaScript": ""
+          },
+          "output": {
+            "moduleID": "199809071",
+            "video": [
+              {
+                "videoQuality": "720",
+                "videoLink": {
+                  "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                  "method": "get",
+                  "headers": [
+                    {
+                      "key": "key",
+                      "value": "value"
+                    }
+                  ],
+                  "httpBody": null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "responseCodeFunctions": [
+    {
+      "code": 0,
+      "msgTitle": "",
+      "msgBody": "",
+      "type": "normal",
+      "functions": [
+        {
+          "request": {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "httpBody": null
+          },
+          "extra": {
+            "commands": [
+              {
+                "commandName": "",
+                "params": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "extraInfo": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          },
+          "javascriptConfig": {
+            "removeJavascript": true,
+            "loadInWebView": false,
+            "javaScript": ""
+          }
+        }
+      ]
+    }
+  ],
+  "helperFunctions": [
+    {
+      "functionName": "example",
+      "msgTitle": "",
+      "msgBody": "",
+      "type": "normal",
+      "functions": [
+        {
+          "request": {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "httpBody": null
+          },
+          "extra": {
+            "commands": [
+              {
+                "commandName": "",
+                "params": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "extraInfo": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          },
+          "javascriptConfig": {
+            "removeJavascript": true,
+            "loadInWebView": false,
+            "javaScript": ""
+          }
+        }
+      ]
+    }
+  ]
+}
