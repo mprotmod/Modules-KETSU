@@ -10,8 +10,8 @@
     "moduleLenguage": "ENG",
     "moduleType": "Video",
     "baseURL": "https://www.wcostream.com/",
-    "moduleDeveloperSite": "",
-    "UpdateSite": "",
+    "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/WCOS/module.json",
     "preferedServer": "WCOSERV",
     "preferedDownloadServer": "WCOSERV",
     "blackListed": [
