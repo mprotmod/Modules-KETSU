@@ -11,7 +11,7 @@
     "moduleType": "Video",
     "baseURL": "https://www.wcostream.com/",
     "moduleDeveloperSite": "http://guyman624.github.com/wcos",
-    "UpdateSite": "https://raw.githubusercontent.com/guyman624/wcos/main/wcos.json",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/WCOS/module.json",
     "preferedServer": "WCOSERV",
     "preferedDownloadServer": "WCOSERV",
     "blackListed": [
