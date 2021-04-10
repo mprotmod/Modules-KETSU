@@ -16,7 +16,7 @@ New modules and updates will be pushed by contributors eventually, so bookmark t
 
 ## Documentation
 
-Click [here]( ) to acces to the KETSU documentation.
+Click [here](https://appketsu.github.io/KETSU-Documentation/) to acces to the KETSU documentation.
 
 ## Contribute
 
