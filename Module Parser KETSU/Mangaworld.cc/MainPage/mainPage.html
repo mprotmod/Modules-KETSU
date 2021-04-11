@@ -131,7 +131,7 @@
   }
 
   function Output(
-    cellDesing,
+    cellDesign,
     orientation,
     defaultLayout,
     paging,
@@ -139,7 +139,7 @@
     layout,
     data
   ) {
-    this.cellDesing = cellDesing;
+    this.cellDesing = cellDesign;
     this.orientation = orientation;
     this.defaultLayout = defaultLayout;
     this.paging = paging;
@@ -249,34 +249,20 @@
   const emptyKeyValue = [new KeyValue('', '')];
 
   let sectionName = document.querySelector(
-    'body > div.container > div > div.col-sm-12.col-md-4.col-xl-3 > div:nth-child(4) > div > div.s-title > h3'
+    '#popular > div > div > div.s-title > h3'
   ).innerText;
   let dataArray = [];
-  let mangas = document
-    .querySelector(
-      'body > div.container > div > div.col-sm-12.col-md-4.col-xl-3 > div:nth-child(4) > div > div.top-wrapper'
-    )
-    .querySelectorAll('.entry');
+  let mangas = document.querySelector('#chapters-slide').querySelectorAll('.entry');
 
   for (let x = 0; x < mangas.length; x++) {
     const manga = mangas[x];
-    var link = manga.querySelector(
-      '.long > .content > .d-flex.justify-content-between > a'
-    ).href;
+    var link = manga.querySelector('a.thumb').href;
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
-    var image = manga
-      .querySelector(
-        '.long > .content > .d-flex.flex-wrap.flex-row > .img-wrapper > a > .thumb > img'
-      )
-      .getAttribute('src');
+    var image = manga.querySelector('a.thumb > img').getAttribute('src');
     image = new ModuleRequest(image, 'get', emptyKeyValue, null);
-    const title = manga.querySelector(
-      '.long > .content > .d-flex.justify-content-between > a'
-    ).title;
-    const status = manga.querySelector(
-      '.long > .content > .d-flex.flex-wrap.flex-row > .col-7.col-sm-9.col-md-12.p-0 > a:nth-child(6)'
-    ).innerText;
-    const finalData = quickData(link, image, title, title, status);
+    const title = manga.querySelector('a.thumb').title;
+    const lastChapter = manga.querySelector('a.thumb > div.chapter').innerText;
+    const finalData = quickData(link, image, title, title, lastChapter);
     dataArray.push(finalData);
   }
 
@@ -340,6 +326,50 @@
   );
 
   sectionName = document.querySelector(
+    'body > div.container > div > div.col-sm-12.col-md-4.col-xl-3 > div:nth-child(4) > div > div.s-title > h3'
+  ).innerText;
+  dataArray = [];
+  mangas = document
+    .querySelector(
+      'body > div.container > div > div.col-sm-12.col-md-4.col-xl-3 > div:nth-child(4) > div > div.top-wrapper'
+    )
+    .querySelectorAll('.entry');
+
+  for (let x = 0; x < mangas.length; x++) {
+    const manga = mangas[x];
+    var link = manga.querySelector(
+      '.long > .content > .d-flex.justify-content-between > a'
+    ).href;
+    link = new ModuleRequest(link, 'get', emptyKeyValue, null);
+    var image = manga
+      .querySelector(
+        '.long > .content > .d-flex.flex-wrap.flex-row > .img-wrapper > a > .thumb > img'
+      )
+      .getAttribute('src');
+    image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+    const title = manga.querySelector(
+      '.long > .content > .d-flex.justify-content-between > a'
+    ).title;
+    const status = manga.querySelector(
+      '.long > .content > .d-flex.flex-wrap.flex-row > .col-7.col-sm-9.col-md-12.p-0 > a:nth-child(6)'
+    ).innerText;
+    const finalData = quickData(link, image, title, status);
+    dataArray.push(finalData);
+  }
+
+  output.push(
+    new Output(
+      CellDesings.normal3,
+      Orientation.horizontal,
+      DefaultLayouts.longDoublets,
+      Paging.leading,
+      new Section(sectionName, true),
+      null,
+      dataArray
+    )
+  );
+
+  sectionName = document.querySelector(
     'body > div.container > div > div.col-sm-12.col-md-4.col-xl-3 > div:nth-child(5) > div > div.row.m-0 > div > div > h3'
   ).innerText;
   dataArray = [];
@@ -363,9 +393,9 @@
 
   output.push(
     new Output(
-      CellDesings.normal3,
-      Orientation.horizontal,
-      DefaultLayouts.longTripletsDouble,
+      CellDesings.normal2,
+      Orientation.vertical,
+      DefaultLayouts.wideStrechedDouble,
       Paging.leading,
       new Section(sectionName, true),
       null,
