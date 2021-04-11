@@ -111,7 +111,7 @@ try {
     var chaptersArray = document.querySelector('.row-content-chapter').querySelectorAll('li');
     for (var x = 0; x < chaptersArray.length; x++) {
         var chapLink = chaptersArray[x].querySelector('a');
-        let chapter = new Chapter(chapLink.textContent , new ModuleRequest(chapLink.href, 'get', emptyKeyValue, null),false);
+        let chapter = new Chapter(chapLink.textContent.replace('Chapter ', 'Ch.').replace('Vol', 'V'), new ModuleRequest(chapLink.href, 'get', emptyKeyValue, null),false);
         chapters.push(chapter);
     }
     
