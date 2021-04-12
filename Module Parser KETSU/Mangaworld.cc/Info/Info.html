@@ -73,8 +73,10 @@
   const emptyKeyValue = [new KeyValue('', '')];
 
   const chapters = [];
-  let type = '';
   let status = '';
+  let type = '';
+  let year = '';
+  let author = '';
   let genres = [];
   let desc = '';
   var image = '';
@@ -83,14 +85,22 @@
   image = document.querySelector('img.rounded').getAttribute('src');
   image = new ModuleRequest(image, 'get', emptyKeyValue, emptyKeyValue);
 
-  type = document.querySelector(
-    '.info > div.meta-data.row > div:nth-child(5) > a'
-  ).innerText;
-
   title = document.querySelector('.info > h1').innerText;
 
   status = document.querySelector(
     '.info > div.meta-data.row.px-1 > div:nth-child(6) > a'
+  ).innerText;
+
+  type = document.querySelector(
+    '.info > div.meta-data.row > div:nth-child(5) > a'
+  ).innerText;
+
+  year = document.querySelector(
+    '.info > div.meta-data.row.px-1 > div:nth-child(8) > a'
+  ).innerText;
+
+  author = document.querySelector(
+    '.info > div.meta-data.row.px-1 > div:nth-child(3) > a'
   ).innerText;
 
   const genresBadges = document
@@ -129,9 +139,9 @@
       moduleID,
       genres,
       status,
-      'field2',
-      'field3',
-      'field4',
+      type,
+      year,
+      author,
       chapters
     )
   );
