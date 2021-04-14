@@ -6,7 +6,7 @@
     "developer": "user123",
     "moduleID": "223423423421",
     "moduleImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBsEsrLscpbphUvRKnkHIuv-sDYqs472PLxA&usqp=CAU",
-    "moduleVersion": 1.6,
+    "moduleVersion": 1.7,
     "moduleLenguage": "ENG",
     "moduleType": "Text",
     "baseURL": "https://www.readlightnovel.org/",
@@ -497,7 +497,7 @@
         ]
       },
       "javascriptConfig": {
-        "removeJavascript": false,
+        "removeJavascript": true,
         "loadInWebView": false,
         "javaScript": " function Chapters(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output;}function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody;}function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo;}function Commands(commandName, params) { this.commandName = commandName; this.params = params;}function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript;}function KeyValue(key, value) { this.key = key; this.value = value;}function Output( videos, images, text) { this.videos = videos; this.images = images; this.text = text;}function Videos(needsResolver, rawVideo) { this.needsResolver = needsResolver; this.rawVideo = rawVideo;}function NeedsResolver(resolverIdentifier, link) { this.resolverIdentifier = resolverIdentifier; this.link = link;}function RawVideo(video) { this.video = video;}function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink;}function Images(images) { this.images = images;}function Text(text) { this.text = text;}var output = [];var emptyKeyValue = [new KeyValue('', '')];var savedData = document.getElementById('ketsu-final-data');var parsedJson = JSON.parse(savedData.innerHTML);var text = document.querySelector('.hidden').innerText;let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output( null, null, new Text(text)));var finalJson = JSON.stringify(chaptersObject);savedData.innerHTML = finalJson;"
       },

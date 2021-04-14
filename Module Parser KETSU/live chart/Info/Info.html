@@ -1,4 +1,5 @@
 
+
   <script type="text/javascript">
 function Info(request, extra, javascriptConfig, output) {
     this.request = request;
@@ -74,50 +75,22 @@ function getHtmlStuff(array,match) {
 var savedData = document.getElementById('ketsu-final-data');
 var parsedJson = JSON.parse(savedData.innerHTML);
 let emptyKeyValue = [new KeyValue('', '')];
-var chapters = [];
-var type = 'Unknown';
-var status = '';
+
+var episodes = [];
+var type = 'empty';
+var status = 'Unknown';
 var genres = [];
 var desc = '';
-var image = '';
 var title = '';
-image = document.querySelector('.info-image').querySelector('img').src;
+var image = '';
 image = new ModuleRequest(image,'get',emptyKeyValue,null);
-var data = document.querySelector('.variations-tableInfo').querySelectorAll('tr');
-title = document.querySelector('.story-info-right').querySelector('h1').innerHTML;
-for (var x = 0; x < data.length; x++) {
-    var content = data[x].innerHTML;
-    if (content.includes('Genres :')) {
-        var genArray = data[x].querySelectorAll('a');
-        if (genArray == null || genArray.length == 0) {
-            genres.push('');
-            break;
-        }
-        for (var y = 0; y < genArray.length; y++) {
-            genres.push(genArray[y].innerHTML);
-        }
-    } else if (content.includes('Status :')) {
-        status = data[x].querySelector('.table-value').innerText;
-    }
-}
-try {
-    desc = document.querySelector('.panel-story-info-description').innerHTML.replace('Description :', '').trim();
-} catch {}
-try {
-    if (desc = '' || desc == false) {
-        desc = document.querySelector('.panel-story-info-depion').innerHTML.replace('Depion :', '').trim();
-    }
-} catch {}
-    var chaptersArray = document.querySelector('.row-content-chapter').querySelectorAll('li');
-    for (var x = 0; x < chaptersArray.length; x++) {
-        var chapLink = chaptersArray[x].querySelector('a');
-        let chapter = new Chapter(chapLink.textContent.replace('Chapter ', 'Ch.').replace('Vol', 'V'), new ModuleRequest(chapLink.href, 'get', emptyKeyValue, null),false);
-        chapters.push(chapter);
-    }
-    
+var genresArray = [];
 
-    chapters.reverse();
-let infoPageObject = new Info(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output(image, title, parsedJson.request, desc, genres, status, 'Manga', type, 'Eps: '  + chapters.length, chapters));
+// Fill the output object below with data. 
+    // Scripts cant use comments so delete them before loading them into KETSU.
+    // add a \ if you are going to use ""
+
+let infoPageObject = new Info(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output(image, title, parsedJson.request, desc, genres, status, 'Anime', type, 'Eps: '  + episodes.length, episodes));
 var finalJson = JSON.stringify(infoPageObject);
 savedData.innerHTML = finalJson;
 </script>

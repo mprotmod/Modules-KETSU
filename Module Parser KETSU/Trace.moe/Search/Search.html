@@ -1,0 +1,303 @@
+
+    <script type="text/javascript">
+
+const DefaultLayouts = {
+         ultraWideFull : 'ultraWideFull',
+         ultraWide : 'ultraWide',
+    
+         wideFull : 'wideFull',
+         wide : 'wide',
+    
+         wideStrechedFull : 'wideStrechedFull',
+         wideStrechedFullDouble : 'WideStrechedFullDouble',
+         wideStreched : 'wideStreched',
+         wideStrechedDouble : 'wideStrechedDouble',
+    
+         wideStrechedFullList : 'wideStrechedFullList',
+         wideStrechedList : 'wideStrechedList',
+    
+         doublets : 'doublets',
+         doubletsDouble : 'doubletsDouble',
+         doubletsFull : 'doubletsFull',
+         doubletsFullDouble : 'doubletsFullDouble',
+    
+         doubletsConstant : 'doubletsConstant',
+         doubletsDoubleConstant : 'doubletsDoubleConstant',
+         doubletsFullConstant : 'doubletsFullConstant',
+         doubletsFullDoubleConstant : 'doubletsFullDoubleConstant',
+        
+         longDoublets : 'longDoublets',
+         longDoubletsDouble : 'longDoubletsDouble',
+         longDoubletsFull : 'longDoubletsFull',
+         longDoubletsFullDouble : 'longDoubletsFullDouble',
+    
+         longDoubletsConstant : 'longDoubletsConstant',
+         longDoubletsDoubleConstant : 'longDoubletsDoubleConstant',
+         longDoubletsFullConstant : 'longDoubletsFullConstant',
+         longDoubletsFullDoubleConstant : 'longDoubletsFullDoubleConstant',
+    
+         triplets : 'triplets',
+         tripletsDouble : 'tripletsDouble',
+         tripletsFull : 'tripletsFull',
+         tripletsFullDouble : 'tripletsFullDouble',
+    
+         tripletsConstant : 'tripletsConstant',
+         tripletsDoubleConstant : 'tripletsDoubleConstant',
+         tripletsFullConstant : 'tripletsFullConstant',
+         tripletsFullDoubleConstant : 'tripletsFullDoubleConstant',
+    
+         longTriplets : 'longTriplets',
+         longTripletsDouble : 'longTripletsDouble',
+         longTripletsFull : 'longTripletsFull',
+         longTripletsFullDouble : 'longTripletsFullDouble',
+    
+         longTripletsConstant : 'longTripletsConstant',
+         longTripletsDoubleConstant : 'longTripletsDoubleConstant',
+         longTripletsFullConstant : 'longTripletsFullConstant',
+         longTripletsFullDoubleConstant : 'longTripletsFullDoubleConstant',
+    
+         none: ''
+        };
+    
+    const CellDesings = {
+        Special1 : 'Special1',
+    Special2 : 'Special2',
+    Special3 : 'Special3',
+    CELLHelperText : 'CELLHelperText',
+        small1 : 'small1',
+        small2 : 'small2',
+        normal1 : 'normal1',
+        normal2 : 'normal2',
+        normal3 : 'normal3',
+        normal4 : 'normal4',
+        normal5 : 'normal5',
+        normal6 : 'normal6',
+        normal7 : 'normal7',
+
+        wide1 : 'wide1',
+        wide2 : 'wide2',
+        wide3 : 'wide3',
+        wide4 : 'wide4',
+        wide5 : 'wide5',
+        wide6 : 'wide6',
+        wide7 : 'wide7',
+        wide8 : 'wide8',
+        wide9 : 'wide9',
+        wide10 : 'wide10',
+        wide11 : 'wide11'
+    };
+    
+    const Paging = {
+        leading : 'leading',
+        centered : 'centered',
+        none : ''
+    };
+
+    const Orientation = {
+        horizontal : 'horizontal',
+        vertical : 'vertical'
+    };
+    function Search(request,extra,separator,javascriptConfig,output) {
+            this.request = request;
+            this.extra = extra;
+            this.separator = separator;
+            this.javascriptConfig = javascriptConfig;
+            this.output  = output;
+        }
+    
+        function ModuleRequest(url,method,headers,httpBody) {
+            this.url = url;
+            this.method = method;
+            this.headers  = headers;
+            this.httpBody = httpBody;
+        }
+        
+        function Extra(commands,extraInfo) {
+            this.commands = commands;
+            this.extraInfo = extraInfo;
+        }
+    
+        function Commands(commandName,params) {
+            this.commandName = commandName;
+            this.params = params;
+        }
+    
+        function JavascriptConfig(removeJavascript,loadInWebView,javaScript) {
+            this.removeJavascript = removeJavascript;
+            this.loadInWebView = loadInWebView;
+            this.javaScript = javaScript;
+        }
+    
+        function KeyValue(key,value) {
+            this.key = key;
+            this.value = value;
+        }
+    
+        function Output(cellDesing,orientation,defaultLayout,paging,section,layout,data) {
+            this.cellDesing = cellDesing;
+            this.orientation  = orientation;
+            this.defaultLayout = defaultLayout;
+            this.paging = paging;
+            this.section  = section;
+            this.layout = layout;
+            this.data = data;
+        }
+    
+        function Section(sectionName,separator) {
+            this.sectionName  = sectionName;
+            this.separator = separator;
+        }
+    
+        function Layout(insets, visibleCellsWidthS,visibleCellsWidthM,visibleCellsWidthL, visibleCellsHeight, heightForVisibleCells, cellSize, ratio, constant, horizontalSpacing, verticalSpacing) {
+        this.insets = insets;
+        this.visibleCellsWidthS = visibleCellsWidthS;
+        this.visibleCellsWidthM = visibleCellsWidthM;
+        this.visibleCellsWidthL = visibleCellsWidthL;
+        this.visibleCellsHeight = visibleCellsHeight;
+        this.heightForVisibleCells = heightForVisibleCells;
+        this.cellSize = cellSize;
+        this.ratio = ratio;
+        this.constant = constant;
+        this.horizontalSpacing = horizontalSpacing;
+        this.verticalSpacing = verticalSpacing;
+    }
+    
+    
+        function Insets(top,bottom,left,right) {
+            this.top = top;
+            this.bottom = bottom;
+            this.left = left;
+            this.right = right;
+        }
+    
+        function Size(width,height) {
+            this.width = width;
+            this.height = height;
+        }
+    
+        function Ratio(inRelation,number1,number2) {
+            this.inRelation  = inRelation;
+            this.number1 = number1;
+            this.number2 = number2;
+    
+        } 
+    
+        function Data(image,title,description,field1,field2,field3,field4,isChapter,link,openInWebView) {
+            this.image = image;
+            this.title = title;
+            this.description = description;
+            this.field1 = field1;
+            this.field2 = field2;
+            this.field3 = field3;
+            this.field4 = field4;
+            this.isChapter  = isChapter;
+            this.link = link;
+            this.openInWebView = openInWebView;
+        }
+
+        function quickData(link,image,title,field1,field2)  {
+                return new Data(image,title,'unknown',field1,field2,'unknown','unknown',false,link);
+            }
+
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+
+
+        
+
+    var savedData = document.getElementById('ketsu-final-data');
+
+    var parsedJson = JSON.parse(savedData.innerText); 
+
+    let output = [];
+    let emptyKeyValue = [new KeyValue('Content-Type','application/json')];
+
+    let respJson = document.querySelector('script').textContent.replace('/*','').replace('*/','');
+    let parsedResp = JSON.parse(respJson);
+
+    var anilist = '';
+
+    let anilistGraph = '{\"query\":\"query media($id:Int,$type:MediaType,$isAdult:Boolean){Media(id:$id,type:$type,isAdult:$isAdult){id title{userPreferred romaji english native}coverImage{extraLarge large}bannerImage startDate{year month day}endDate{year month day}description season seasonYear type format status(version:2)episodes duration chapters volumes genres synonyms source(version:2)isAdult isLocked meanScore averageScore popularity favourites hashtag countryOfOrigin isLicensed isFavourite isRecommendationBlocked nextAiringEpisode{airingAt timeUntilAiring episode}relations{edges{id relationType(version:2)node{id title{userPreferred}format type status(version:2)bannerImage coverImage{large}}}}characterPreview:characters(perPage:6,sort:[ROLE,ID]){edges{id role voiceActors(language:JAPANESE){id name{full}language image{large}}node{id name{full}image{large}}}}staffPreview:staff(perPage:8){edges{id role node{id name{full}language image{large}}}}studios{edges{isMain node{id name}}}reviewPreview:reviews(perPage:2,sort:[RATING_DESC,ID]){pageInfo{total}nodes{id summary rating ratingAmount user{id name avatar{large}}}}recommendations(perPage:7,sort:[RATING_DESC,ID]){pageInfo{total}nodes{id rating userRating mediaRecommendation{id title{userPreferred}format type status(version:2)bannerImage coverImage{large}}user{id name avatar{large}}}}externalLinks{site url}streamingEpisodes{site title thumbnail url}trailer{id site}rankings{id rank type format year season allTime context}tags{id name description rank isMediaSpoiler isGeneralSpoiler}mediaListEntry{id status score}stats{statusDistribution{status amount}scoreDistribution{score amount}}}}\",\"variables\":{\"id\":\"{replaceID}\"}}';
+
+    
+    if (parsedResp.result.length > 0) {
+        anilist = parsedResp.result[0].anilist.id + '';
+    } 
+
+    var image = parsedJson.request.url;
+    image = image.split('url=')[1];
+    image = new ModuleRequest(image,'get',emptyKeyValue,null);
+    let link = new ModuleRequest('https://graphql.anilist.co','post',emptyKeyValue,anilistGraph.replace('{replaceID}',anilist));
+    var title = 'Image Used';
+    let field1 = 'Results Found';
+    let field2 = parsedResp.result.length + ' results';
+    let similarity = '';
+
+    output.push(new Output(CellDesings.wide6,Orientation.vertical,DefaultLayouts.wideFull,Paging.centered,new Section('Image Used',true),null,[quickData(link,image,title,field1,field2)]));
+
+    if (parsedResp.result.length > 0) {
+        let current = parsedResp.result[0];
+        image = new ModuleRequest(current.anilist.coverImage.large,'get',emptyKeyValue,null);
+        title = current.anilist.title.romaji;
+        field1 = current.anilist.type;
+        field2 = current.anilist.status;
+        let desc = 'Year ' + current.anilist.startDate.year;
+        similarity = '' + parseInt(current.similarity * 100);
+        output.push(new Output(CellDesings.wide5,Orientation.vertical,DefaultLayouts.wideFull,Paging.centered,new Section(`${similarity}% Similarity to`,true),null,[new Data(image,title,desc,field1,field2,'unknown','unknown',false,link)]));
+    }
+
+
+
+    let dataArray = [];
+    let secondSectionTitle = '';
+
+    if (parsedResp.result.length > 0) {
+        secondSectionTitle = 'No results found';
+    } else {
+        secondSectionTitle = 'Matches';
+    }
+var testLayout = new Layout(new Insets(0,0,10,10),1,2,3,1,500,new Size(400,400),new Ratio('width',4,11),new Size(0,0),10,10);
+
+    for (var x = 0; x < parsedResp.result.length; x++) {
+        let current = parsedResp.result[x];
+        let title = current.anilist.title.romaji;
+        let anilistID = current.anilist.id + '';
+        let image = current.image;
+        let link = new ModuleRequest('https://graphql.anilist.co','post',emptyKeyValue,anilistGraph.replace('{replaceID}',anilistID));
+        image = new ModuleRequest(image,'get',emptyKeyValue,null);
+        let similarity = '' + parseInt(current.similarity * 100);
+        let mins = parseInt((current.to - current.from  + current.from) / 60);
+        let seconds = parseInt((current.to - current.from  + current.from) % 60);
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+        let data = quickData(link,image,title,'Episode ' + current.episode + ` Minute: ${mins}:${seconds}`,similarity + '%');
+        output.push(new Output(CellDesings.wide7,Orientation.vertical,DefaultLayouts.wideFull,Paging.none,new Section('Result ' + (x + 1),true),null,[data]));
+
+        let field1 = current.anilist.type;
+        let field2 = current.anilist.status;
+        image = new ModuleRequest(current.anilist.coverImage.large,'get',emptyKeyValue,null);
+        let desc = 'Year ' + current.anilist.startDate.year;
+        output.push(new Output(CellDesings.wide11,Orientation.vertical,DefaultLayouts.none,Paging.none,new Section('',true),testLayout,[new Data(image,title,desc,field1,field2,'unknown','unknown',false,link)]));
+
+    }
+
+
+    if (dataArray.length > 0) {
+        output.push(new Output(CellDesings.wide7,Orientation.vertical,DefaultLayouts.wideFull,Paging.none,new Section('Results',true),null,dataArray));
+    }
+
+    let searchPageObject = new Search(new ModuleRequest('','post',emptyKeyValue,null),new Extra([new Commands('',emptyKeyValue)],emptyKeyValue),'',new JavascriptConfig(true,false,''),output);
+
+    var finalJson = JSON.stringify(searchPageObject);
+    savedData.innerHTML = finalJson;
+    </script>
+ </body></html>
