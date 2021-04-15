@@ -11,7 +11,7 @@
     "moduleType": "Video",
     "baseURL": "https://vostfree.com/",
     "moduleDeveloperSite": "",
-    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/Module%20Parser%20KETSU/VostFree/moduleTemplate.json",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/VostFree/moduleTemplate.json",
     "preferedServer": "UQLOAD",
     "preferedDownloadServer": "UQLOAD",
     "blackListed": [
