@@ -10,7 +10,7 @@
     "moduleLenguage": "FR",
     "moduleType": "Video",
     "baseURL": "https://vostfree.com/",
-    "moduleDeveloperSite": "",
+    "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/",
     "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/VostFree/moduleTemplate.json",
     "preferedServer": "UQLOAD",
     "preferedDownloadServer": "UQLOAD",
