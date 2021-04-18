@@ -1,5 +1,4 @@
-
-    <script type="text/javascript">
+<script type="text/javascript">
         const DefaultLayouts = {
     ultraWideFull: 'ultraWideFull',
     ultraWide: 'ultraWide',
@@ -201,7 +200,7 @@ var topLayout = new Layout(new Insets(0, 0, 0, 0), 1, 2, 3, 1, 500, new Size(400
 var scriptdata = JSON.parse(document.querySelector('script').innerText.replace('/*', '').replace('*/', '')).data;
 for (var x = 0; x < scriptdata.length; x++) {
     let image = scriptdata[x].snapshot;
-    let link = 'https://animepahe.com/anime/' + scriptdata[x].anime_session + '?id=' + scriptdata[x].anime_id;
+    let link = 'https://pahe.win/a/' + + scriptdata[x].anime_id + '?id=' + scriptdata[x].anime_id;
     image = new ModuleRequest(image, 'get', emptyKeyValue, null);
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
     let episode = 'Episode ' + scriptdata[x].episode;
@@ -220,5 +219,6 @@ var finalJson = JSON.stringify(MainPageObject);
 savedData.innerHTML = finalJson;
         
         </script>
+ 
        
  

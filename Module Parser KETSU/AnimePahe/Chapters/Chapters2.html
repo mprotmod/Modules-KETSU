@@ -1,5 +1,6 @@
- <script type="text/javascript">    
-       function Chapters(request, extra, javascriptConfig, output) {
+<script  type="text/javascript">
+
+function Chapters(request, extra, javascriptConfig, output) {
     this.request = request;
     this.extra = extra;
     this.javascriptConfig = javascriptConfig;
@@ -72,8 +73,14 @@ for (var x = 0; x < data.length; x++) {
     for (var i = 0; i < 1081; i++) {
         var serverjson = data[x][i];
         if (serverjson !== undefined) {
-            let servername = 'KWIK-' + i + 'p' + '-'+serverjson.audio;
-            output.push(new NeedsResolver(servername.toUpperCase(), new ModuleRequest(serverjson.kwik, 'get', keyValue, null)));
+            if (i == 360 || i == 480 || i == 720 || i == 800 || i == 1080) {
+                let servername = 'KWIK-' + i + 'p' + '-' + serverjson.audio;
+                output.push(new NeedsResolver(servername.toUpperCase(), new ModuleRequest(serverjson.kwik, 'get', keyValue, null)));
+            } else {
+                let servername = 'KWIK-' + serverjson.audio;
+                output.push(new NeedsResolver(servername.toUpperCase(), new ModuleRequest(serverjson.kwik, 'get', keyValue, null)));
+            }
+            
         }
     }
 }
@@ -83,4 +90,4 @@ var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null)
 var finalJson = JSON.stringify(chaptersObject);
 savedData.innerHTML = finalJson;
 
-    </script>
+</script>
