@@ -1,0 +1,70 @@
+{
+    "resolverInfo": {
+      "resolverName": "SIBNET",
+      "nameMatches": [
+        "VIDEO"
+      ],
+      "developer": "Uknown",
+      "moduleID": "382373784",
+      "resolverVersion": 1.1,
+      "baseURL": "https://video.sibnet.ru/"
+    },
+    "resolver": [
+      {
+        "request": {
+          "url": "",
+          "method": "get",
+          "headers": [
+            {
+              "key": "key",
+              "value": "value"
+            }
+          ],
+          "httpBody": null
+        },
+        "extra": {
+          "commands": [
+            {
+              "commandName": "",
+              "params": [
+                {
+                  "key": "",
+                  "value": ""
+                }
+              ]
+            }
+          ],
+          "extraInfo": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ]
+        },
+        "javascriptConfig": {
+          "removeJavascript": true,
+          "loadInWebView": false,
+          "javaScript": " function Resolver(request,extra,javascriptConfig,output ){ this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url,method,headers,params) { this.url = url; this.method = method; this.headers = headers; this.params = params; } function Extra(commands,extraInfo){ this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName,params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript,loadInWebView,javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key,value) { this.key = key; this.value = value; } function Output(video) { this.video = video; } function Video(videoQuality,videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink; } var emptyKeyValue = [new KeyValue('','')]; var savedData = document.getElementById('ketsu-final-data'); var parsedJson = JSON.parse(savedData.innerHTML); var videos = []; let scripts = document.querySelectorAll('p'); let videoLink = []; for (script of scripts) { let scriptText = script.innerText; if (scriptText.includes('player.src(')) { let json = scriptText.split('player.src(')[1].split(');')[0].replace('src','\"src\"').replace('type','\"type\"').replace(',]',']'); let parsedJ = JSON.parse(json); for (link of parsedJ) { let video = 'https://video.sibnet.ru' + link.src; let header = [new KeyValue('Referer','https://video.sibnet.ru/'),new KeyValue('Content-Type',link.type)]; videos.push(new Video(link.type,new ModuleRequest(video,'get',header,null))); } break; } } let emptyExtra = new Extra([new Commands('',emptyKeyValue)],emptyKeyValue); var chaptersObject = new Resolver(new ModuleRequest('','',emptyKeyValue,null),emptyExtra,new JavascriptConfig(false,false,''), new Output(videos)); var finalJson = JSON.stringify(chaptersObject); savedData.innerHTML = finalJson;"
+        },
+        "output": {
+          "moduleID": "",
+          "video": [
+            {
+              "videoQuality": "720",
+              "videoLink": {
+                "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "key",
+                    "value": "value"
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
