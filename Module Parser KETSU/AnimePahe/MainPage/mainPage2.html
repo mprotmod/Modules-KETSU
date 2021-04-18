@@ -201,7 +201,7 @@
     var scriptdata = JSON.parse(document.querySelector('script').innerText.replace('/*', '').replace('*/', '')).data;
     for (var x = 0; x < scriptdata.length; x++) {
         let image = scriptdata[x].snapshot;
-        let link = 'https://pahe.win/a/' + + scriptdata[x].anime_id + '?id=' + scriptdata[x].anime_id;
+        let link = 'https://pahe.win/a/' + scriptdata[x].anime_id + '?id=' + scriptdata[x].anime_id;
         
         image = new ModuleRequest(image, 'get', emptyKeyValue, null);
         link = new ModuleRequest(link, 'get', emptyKeyValue, null);
