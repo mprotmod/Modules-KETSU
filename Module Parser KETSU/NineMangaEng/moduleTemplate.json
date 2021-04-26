@@ -11,7 +11,7 @@
     "moduleType": "Image",
     "baseURL": "https://en.ninemanga.com/",
     "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
-    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/NineManga/moduleTemplate.json",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/NineMangaEng/moduleTemplate.json",
     "preferedServer": "UM",
     "preferedDownloadServer": "UM",
     "blackListed": [
