@@ -105,7 +105,7 @@ try {
 } catch {}
 var chaptersArray = document.querySelector('.silde').querySelectorAll('li');
 for (var x = 0; x < chaptersArray.length; x++) {
-    var chapLink = chaptersArray[x].querySelector('a').href.replace('.html', '-10-1.html');
+    var chapLink = chaptersArray[x].querySelector('a').href;
     let chapter = new Chapter('Chapter ' + (chaptersArray.length - x),new ModuleRequest(chapLink,'get',emptyKeyValue,null),false);
     chapters.push(chapter);
 }
