@@ -210,15 +210,14 @@ for (var x = 0; x < scriptdata.length; x++) {
     dataArray3.push(new Data(image, title, episode, episode, episode, 'field3', 'field4', false, link));
 }
 output.push(new Output(CellDesings.Special3, Orientation.horizontal, DefaultLayouts.none, Paging.centered, new Section('', false), topLayout, dataArray));
-output.push(new Output(CellDesings.normal2,Orientation.horizontal,DefaultLayouts.longTripletsDouble,Paging.leading,new Section('Latest',true),null,dataArray3)); 
+output.push(new Output(CellDesings.Special1, Orientation.horizontal, DefaultLayouts.triplets, Paging.leading, new Section('This week', true), null, shuffle(dataArray2)));
+output.push(new Output(CellDesings.normal2,Orientation.horizontal,DefaultLayouts.longTripletsDouble,Paging.leading,new Section('Last Episodes',true),null,dataArray3)); 
 var testLayout = new Layout(new Insets(10, 10, 10, 10), 1, 3, 5, 1, 500, new Size(400, 400), new Ratio('width', 11, 10), new Size(-60, 0), 10, 10);
 output.push(new Output(CellDesings.Special2, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('Latest - Page 1', true), testLayout, shuffle(dataArray)));
-output.push(new Output(CellDesings.wide2, Orientation.horizontal, DefaultLayouts.wideStrechedList, Paging.none, new Section('', true), null, dataArray2));
 let MainPageObject = new MainPage(new ModuleRequest('https://animepahe.com/api?m=airing&l=12&page=2', 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(true, false, ''), output);
 var finalJson = JSON.stringify(MainPageObject);
 savedData.innerHTML = finalJson;
-        
-        </script>
+</script>
  
        
  
