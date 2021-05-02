@@ -2,11 +2,11 @@
     "moduleInfo": {
         "moduleName": "9Anime",
         "moduleInitials": "NA",
-        "moduleDesc": "Module for 9Anime website, Verification everytime you open info page.",
+        "moduleDesc": "Module for 9Anime website, Verification everytime you open info page. Not the best module experience.",
         "developer": "jack_",
         "moduleID": "CC3Gg83tsjm",
         "moduleImage": "https://s2.bunnycdn.ru/assets/9anime/favicons/favicon.png?v1",
-        "moduleVersion": 1.0,
+        "moduleVersion": 1.1,
         "moduleLenguage": "ENG",
         "moduleType": "Video",
         "baseURL": "https://9anime.ru/",
