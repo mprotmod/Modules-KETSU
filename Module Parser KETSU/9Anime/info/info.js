@@ -122,6 +122,8 @@ if (dict['current'] != parsedJson.request.url) {
         ])
     ];
 } else {
+          commands = [new Commands('variable', [new KeyValue('current', '')])];
+
     let newEpisodes = decodeURIComponent(dict['data']);
 
     let htmlObject = document.createElement('div');
