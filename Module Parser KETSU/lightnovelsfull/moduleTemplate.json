@@ -10,8 +10,8 @@
     "moduleLenguage": "ENG",
     "moduleType": "Text",
     "baseURL": "https://readnovelfull.com/",
-    "moduleDeveloperSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/lightnovelsfull/moduleTemplate.json",
-    "UpdateSite": "",
+    "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/lightnovelsfull/moduleTemplate.json",
     "preferedServer": "",
     "preferedDownloadServer": "",
     "blackListed": [
