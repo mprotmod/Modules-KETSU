@@ -11,7 +11,7 @@
     "moduleType": "Video",
     "baseURL": "https://animepahe.com/",
     "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
-    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimePahe/moduleTemplate.json",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimePahe/module.json",
     "preferedServer": "KWIK-1080P-JPN",
     "preferedDownloadServer": "KWIK-1080P-JPN",
     "blackListed": [
