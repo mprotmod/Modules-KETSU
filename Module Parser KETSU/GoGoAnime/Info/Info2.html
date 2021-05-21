@@ -94,7 +94,7 @@ for (var x = 0; x < episodesdiv.length; x++) {
     let episode = episodesdiv[x];
     let link = domainURL + episode.querySelector('a').getAttribute('href').replace(' /','/');
     link = link.trim();
-    episodes.push(new Chapter('Episode ' + (x+1),new ModuleRequest(link, 'get', emptyKeyValue, null),false));
+    episodes.push(new Chapter('Episode ' + (episodesdiv.length - x),new ModuleRequest(link, 'get', emptyKeyValue, null),false));
    
 }
 
