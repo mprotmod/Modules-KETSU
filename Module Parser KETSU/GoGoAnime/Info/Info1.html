@@ -1,4 +1,5 @@
-  
+
+
   <script type="text/javascript">
 
 function Info(request, extra, javascriptConfig, output) {
@@ -109,8 +110,10 @@ for (var x = 0; x < forData.length; x++) {
 var chapters = document.querySelector('.active').getAttribute('ep_end');
 
 let anime_id = document.querySelector('.anime_info_episodes_next > input').getAttribute('value');
+let respUrl = 'https://' + parsedJson.responseInfo.responseUrl.split('/')[2];
+let extraInfo = [new KeyValue('respUrl', respUrl)];
 
-let infoPageObject = new Info(new ModuleRequest('https://ajax.gogo-load.com/ajax/load-list-episode?ep_start=0&ep_end='+chapters+'&id='+anime_id, 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output(image, title, parsedJson.request, desc, genres, status, show_year, type, 'Eps: '+chapters, episodes));
+let infoPageObject = new Info(new ModuleRequest('https://ajax.gogo-load.com/ajax/load-list-episode?ep_start=0&ep_end='+chapters+'&id='+anime_id, 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], extraInfo), new JavascriptConfig(false, false, ''), new Output(image, title, parsedJson.request, desc, genres, status, show_year, type, 'Eps: '+chapters, episodes));
 var finalJson = JSON.stringify(infoPageObject);
 savedData.innerHTML = finalJson;
 

@@ -1,3 +1,4 @@
+
 <script  type="text/javascript">
               
               
@@ -87,13 +88,15 @@ document.write(document.querySelector('script').innerHTML.replace('/*','').repla
 
 let episodesdiv = document.querySelectorAll('#episode_related > li');
 
+let domainURL = parsedJson.extra.extraInfo[0].value;
+
 for (var x = 0; x < episodesdiv.length; x++) {
     let episode = episodesdiv[x];
-    
-    let link = 'https://gogoanime.ai' + episode.querySelector('a').getAttribute('href').replace(' /','/');
+    let link = domainURL + episode.querySelector('a').getAttribute('href').replace(' /','/');
+    link = link.trim();
     let name = episode.querySelector('a > .name').innerText;
     name = name.replace('EP','Episode');
-    episodes.push(new Chapter(name,new ModuleRequest(link, 'get', emptyKeyValue, null),false))
+    episodes.push(new Chapter(name,new ModuleRequest(link, 'get', emptyKeyValue, null),false));
    
 }
 
