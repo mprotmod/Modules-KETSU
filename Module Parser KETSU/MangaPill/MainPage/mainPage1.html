@@ -232,7 +232,7 @@
     let output = [];
     let emptyKeyValue = [new KeyValue('','')];
     
-    let popularList = document.querySelector('div.container.mx-auto.py-5.px-2.md\\:px-0 > div.mb-12 > div').querySelectorAll('.relative');
+    let popularList = document.querySelector('div.container.mx-auto.py-5.px-2.md\\\\:px-0 > div.mb-12 > div').querySelectorAll('.relative');
     var dataArray = [];
     for (popular of popularList) {
         let image = popular.querySelector('img').dataset.src;
@@ -247,7 +247,7 @@
     output.push(new Output(CellDesings.normal1,Orientation.horizontal,DefaultLayouts.longTripletsConstant,Paging.leading,new Section('Popular',true),null,shuffle(dataArray.slice())));
     
     dataArray = [];
-    let lastChaptList = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-2.gap-3').querySelectorAll('.flex.bg-color-bg-secondary.p-2.rounded');
+    let lastChaptList = document.querySelector('.grid.grid-cols-1.md\\\\:grid-cols-2.gap-3').querySelectorAll('.flex.bg-color-bg-secondary.p-2.rounded');
 
     for (last of lastChaptList) {
         let image = last.querySelector('img');
