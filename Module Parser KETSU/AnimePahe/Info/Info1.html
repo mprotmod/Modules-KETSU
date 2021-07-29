@@ -1,5 +1,3 @@
-
-
   <script type="text/javascript">
 function Info(request, extra, javascriptConfig, output) {
     this.request = request;
@@ -81,7 +79,7 @@ var status = '';
 var genres = [];
 var desc = '';
 var title = document.querySelector('.title-wrapper > h1').innerText;
-var image = document.querySelector('.anime-poster > a > img').getAttribute('src');
+var image = document.querySelector('.anime-poster > a > img').getAttribute('data-src');
 image = new ModuleRequest(image, 'get', emptyKeyValue, null);
 var genresArray = [];
 var season = '';
