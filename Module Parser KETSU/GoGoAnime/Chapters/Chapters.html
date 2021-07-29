@@ -93,6 +93,12 @@ for (var x = 0; x < data.length; x++) {
         }
     }
 }
+if (output.length > 2) {
+    let prevLink = output[0];
+    output[0] = output[1];
+    output[1] = prevLink;
+}
+
 let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);
 var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output( new Videos(output, null), null, null));
 var finalJson = JSON.stringify(chaptersObject);
