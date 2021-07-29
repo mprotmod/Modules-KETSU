@@ -1,0 +1,57 @@
+linkData = script.split('https:\\/\\/');
+
+    for (link of linkData) {
+
+        if (link.includes('.')){
+            
+            fixedLink = link.replace(/[^-a-zA-Z0-9{};:/=?.+#!¡_ ]/g, '');
+            
+
+            if (fixedLink.includes('}{')) {
+
+                finalLink = 'https://' + fixedLink.split('}{')[0];
+                output.push(new NeedsResolver('', new ModuleRequest(finalLink, 'get', emptyKeyValue, null)));
+            }
+
+        }
+
+    }
+
+------------------------
+
+    var linksArray = [];
+    var linkData = script.split('https:\\/\\/');
+
+    for (link of linkData) {
+
+        if (link.includes('.')){
+            
+            fixedLink = link.replace(/[^-a-zA-Z0-9{};:/=?.+#!¡_ ]/g, '');
+            
+
+            if (fixedLink.includes('}{')) {
+
+                finalLink = 'https://' + fixedLink.split('}{')[0];
+                linksArray.push(finalLink);
+            }
+
+        }
+
+    }
+
+    linksArray.reverse();
+
+    for (var x = 0; x < linksArray.length; x++) {
+
+        if (!linksArray[x].includes('\\')) {
+            
+
+            if (linksArray[x].includes('embedsito')) {
+                linksArray[x] = linksArray[x].replace('embedsito','fembed');
+                
+            }
+            
+            output.push(new NeedsResolver('', new ModuleRequest(linksArray[x], 'get', emptyKeyValue, null)));
+        }
+
+    }

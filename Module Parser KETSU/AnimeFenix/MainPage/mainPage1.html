@@ -1781,20 +1781,49 @@ const DefaultLayouts = {
     for (popular of populares) {
         
         let title = popular.querySelector('figure.image').querySelector('a').getAttribute('title');
-        console.log(title);
         let year = popular.querySelector('figure.image').querySelector('span.tag.year.is-dark').textContent;
-        console.log(year);
+
         var image = popular.querySelector('figure.image').querySelector('img').getAttribute('src');
-        console.log(image);
         image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+
         var link = popular.querySelector('figure.image').querySelector('a').href;
-        console.log(link);
         link = new ModuleRequest(link, 'get', emptyKeyValue, null);
         let data = new Data(image,'','',title, year,'','',false,link);
         popuArray.push(data);
     }
 
-    output.push(new Output(CellDesings.Special3, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('Populares', true), topLayout, shuffle(popuArray.slice())));
+    let ultEp = document.querySelector('.capitulos-grid').querySelectorAll('.item');
+    let ultEpArray = [];
+
+    for (episodio of ultEp) {
+        
+        let title = episodio.querySelector('.overtitle').innerText;
+
+        var image = episodio.querySelector('img').src;
+
+        image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+        var link = episodio.querySelector('a').href.replace('ver/','');
+
+        var cont = 0, lastIndex = 0;
+        var linkArray = [];
+
+        for (var pos = 0; pos < link.length; pos++) {
+            if (link[pos] == '-') {
+                cont = pos;
+            }
+            linkArray.push(link[pos]);
+            lastIndex += 1;
+        }
+
+        linkArray.splice(cont, lastIndex);
+
+        link = linkArray.join('');
+
+        link = new ModuleRequest(link, 'get', emptyKeyValue, null);
+        let ep = episodio.querySelector('.overepisode').innerText.replace('EP', 'Episodio ');
+        let data = quickData(link, image, title, ep);
+        ultEpArray.push(data);
+    }
 
     let ultAnimes = document.querySelector('.list-series').querySelectorAll('article.serie-card');
     let ultAnArray = [];
@@ -1802,17 +1831,16 @@ const DefaultLayouts = {
     for (anime of ultAnimes) {
         
         let title = anime.querySelector('figure.image').querySelector('a').getAttribute('title');
-        console.log(title);
         var image = anime.querySelector('figure.image').querySelector('img').getAttribute('src');
-        console.log(image);
         image = new ModuleRequest(image, 'get', emptyKeyValue, null);
         var link = anime.querySelector('figure.image').querySelector('a').href;
-        console.log(link);
         link = new ModuleRequest(link, 'get', emptyKeyValue, null);
         let data = quickData(link, image, title, '');
         ultAnArray.push(data);
     }
 
+    output.push(new Output(CellDesings.Special3, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('Populares', true), topLayout, shuffle(popuArray.slice())));
+    output.push(new Output(CellDesings.normal2, Orientation.horizontal, DefaultLayouts.wideStrechedFullDouble, Paging.leading, new Section('Episodios Recientes', true), null, ultEpArray));
     output.push(new Output(CellDesings.normal2, Orientation.horizontal, DefaultLayouts.longTripletsFullDouble, Paging.leading, new Section('Últimos Animes', true), null, ultAnArray));
 
     let MainPageObject = new MainPage(new ModuleRequest('','get',emptyKeyValue,null),new Extra([new Commands('',emptyKeyValue)],emptyKeyValue),new JavascriptConfig(true,false,''),output);
