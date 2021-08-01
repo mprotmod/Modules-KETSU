@@ -722,9 +722,19 @@
                 if (modulesDict["Video Modules"].includes(link)) {
                     if (executing == link) {return}
                     executing = link;
-                    let elem = document.createElement('a');
-                    elem.href = "ketsuapp://?moduleData=" + link;
-                    elem.click();
+                    console.log("clicked")
+                    var a = document.createElement('a');
+                    a.setAttribute('href', "ketsuapp://?moduleData=" + link);
+                    var aj = $(a);
+                    aj.appendTo('body');
+                    aj[0].click();
+                    aj.remove();
+                    setTimeout(function() {
+                        if (link == executing) {
+                            executing = "";
+                        }
+                    }, 1000);
+
                     return
                 }
                 showAppSelector(link);
