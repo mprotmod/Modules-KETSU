@@ -713,16 +713,21 @@
             setButtonOnClick(button);
         }
 
-
+        var executing = "";
         function setButtonOnClick(button) {
             console.log(button)
             button.addEventListener("click", function() {
+                console.log(button)
                 let link = button.dataset.module;
                 if (modulesDict["Video Modules"].includes(link)) {
+                    if (executing == link) {return}
+                    executing = link;
                     button.href = "ketsuapp://?moduleData=" + link;
                     button.click();
+                    console.log("clicked")
                     setTimeout(function() {
                         button.removeAttribute("href");
+                        executing = "";
                         }, 2000);
                     return
                 }
