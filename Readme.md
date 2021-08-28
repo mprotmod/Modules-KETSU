@@ -42,7 +42,7 @@ Template
     </div>
     <div class="fullHeight addButton container-fluid fullHeight">
         <div class="row align-items-center fullHeight">
-            <a href="{Your module compressed encoded or the url to the raw .json}">
+            <a class="module-link" data-module="{Your module compressed encoded or the url to the raw .json}">
                 <button type="button" class="btn btn-dark shadow">Add</button>
             </a>
         </div>
