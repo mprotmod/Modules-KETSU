@@ -157,7 +157,8 @@ var data = JSON.parse(document.querySelector('script').innerText.replace('/*', '
 let results = [];
 for (var x = 0; x < data.length; x++) {
     let image = data[x].poster;
-    let link = 'https://pahe.win/a/' + data[x].id + '?id=' + data[x].id;
+    let anime_session = data[x].session;
+    let link = 'https://animepahe.com/anime/' + anime_session + '?id=' + data[x].id;
     image = new ModuleRequest(image, 'get', emptyKeyValue, null);
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
     let title = data[x].title;
@@ -172,4 +173,5 @@ let horizontalLayout = new Layout(new Insets(10, 10, 10, 10), 1, 2, 3, 1, 500, n
 output.push(new Output(CellDesings.wide11, Orientation.vertical, DefaultLayouts.none, Paging.none, new Section('', false), horizontalLayout, results));
 let searchPageObject = new Search(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), '', new JavascriptConfig(true, false, ''), output);
 var finalJson = JSON.stringify(searchPageObject);
-savedData.innerHTML = finalJson;</script>
+savedData.innerHTML = finalJson;
+</script>
