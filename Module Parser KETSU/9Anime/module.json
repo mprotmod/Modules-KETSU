@@ -6,10 +6,10 @@
         "developer": "jack_",
         "moduleID": "CC3Gg83tsjm",
         "moduleImage": "https://s2.bunnycdn.ru/assets/9anime/favicons/favicon.png?v1",
-        "moduleVersion": 1.5,
+        "moduleVersion": 1.6,
         "moduleLenguage": "ENG",
         "moduleType": "Video",
-        "baseURL": "https://9anime.ru/",
+        "baseURL": "https://9anime.to/",
         "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
         "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/9Anime/module.json",
         "preferedServer": "VIDSTREAM",
@@ -41,12 +41,12 @@
     "mainPage": [
         {
             "request": {
-                "url": "https://9anime.ru/home",
+                "url": "https://9anime.to/home",
                 "method": "get",
                 "headers": [
                     {
                         "key": "Referer",
-                        "value": "https://9anime.ru"
+                        "value": "https://9anime.to"
                     }
                 ],
                 "httpBody": null
@@ -154,7 +154,7 @@
     "search": [
         {
             "request": {
-                "url": "https://9anime.ru/home?keyword=<searched>&page=<page>",
+                "url": "https://9anime.to/home?keyword=<searched>&page=<page>",
                 "method": "get",
                 "headers": [
                     {
@@ -273,7 +273,7 @@
                 "headers": [
                     {
                         "key": "Referer",
-                        "value": "https://9anime.ru/home"
+                        "value": "https://9anime.to/home"
                     }
                 ],
                 "httpBody": null
@@ -616,3 +616,4 @@
         }
     ]
 }
+
