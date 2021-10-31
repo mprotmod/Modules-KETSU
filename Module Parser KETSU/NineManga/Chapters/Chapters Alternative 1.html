@@ -1,17 +1,19 @@
 
-  <script type="text/javascript">    
-    function Chapters(request, extra, javascriptConfig, output) {
+
+
+    <script type="text/javascript">    
+   function Chapters(request, extra, javascriptConfig, output) {
     this.request = request;
     this.extra = extra;
     this.javascriptConfig = javascriptConfig;
     this.output = output;
 }
 
-function ModuleRequest(url, method, headers, httpBody) {
+function ModuleRequest(url, method, headers, params) {
     this.url = url;
     this.method = method;
     this.headers = headers;
-    this.httpBody = httpBody;
+    this.params = params;
 }
 
 function Extra(commands, extraInfo) {
@@ -35,7 +37,8 @@ function KeyValue(key, value) {
     this.value = value;
 }
 
-function Output( videos, images, text) {
+function Output(moduleID, videos, images, text) {
+    this.moduleID = moduleID;
     this.videos = videos;
     this.images = images;
     this.text = text;
@@ -67,42 +70,32 @@ function Images(images) {
 function Text(text) {
     this.text = text;
 }
+var moduleID = '423948723487';
 var output = [];
 var emptyKeyValue = [new KeyValue('', '')];
 var savedData = document.getElementById('ketsu-final-data');
 var parsedJson = JSON.parse(savedData.innerHTML);
+var headers = [];
 
-var data = document.querySelector('.anime_muti_link').querySelectorAll('a');
-for (var x = 0; x < data.length; x++) {
-    var link = data[x].getAttribute('data-video');
-    if (link != null) {
-        if (!link.includes('https:') && link.includes('vidstreaming')) {
-            output.push(new Output('https:' + link, '', moduleID, 'false', videoHeaders));
-        } else {
-            var http = '';
-            if (!link.includes('http')) {
-                http = 'https:';
-            }
-            if (link == '') {
-                break;
-            }
-            if (link.includes('streamtape.com')) {
-                link = link.replace('streamtape.com', 'streamta.pe')
-            }
-            output.push(new NeedsResolver('', new ModuleRequest(http + link, 'get', emptyKeyValue, null)));
-        }
-    }
-}
-if (output.length > 2) {
-    let prevLink = output[0];
-    output[0] = output[1];
-    output[1] = prevLink;
-}
+headers.push(new KeyValue('referer', parsedJson.request,url));
+headers.push(new KeyValue('sec-fetch-mode', 'navigate'));
+headers.push(new KeyValue(':authority', 'www.gardenmanage.com'));
+headers.push(new KeyValue('sec-fetch-site', 'cross-site'));
+headers.push(new KeyValue('sec-fetch-user', '?1'));
+headers.push(new KeyValue('upgrade-insecure-requests', '1'));
+headers.push(new KeyValue('accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'));
+var id = '';
+var j1 = parsedJson.request.url.split('/');
+try {
+    id = j1[j1.length - 1].replace('.html', '');
+} catch {}
+var newRequest = 'https://www.gardenmanage.com/c/esninemanga/' + id;
 
 let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);
-var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output( new Videos(output, null), null, null));
+var chaptersObject = new Chapters(new ModuleRequest(newRequest, 'GET', headers, emptyKeyValue), emptyExtra, new JavascriptConfig(false, false, ''), new Output(moduleID, null, null, null));
 var finalJson = JSON.stringify(chaptersObject);
-savedData.innerHTML = finalJson;
-
-</script>
-   
+savedData.innerHTML = finalJson; 
+    
+    </script>
+ </body>
+ </html>

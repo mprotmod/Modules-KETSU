@@ -1,5 +1,6 @@
-<script type="text/javascript">
-        const DefaultLayouts = {
+
+    <script type="text/javascript">
+    const DefaultLayouts = {
     ultraWideFull: 'ultraWideFull',
     ultraWide: 'ultraWide',
     wideFull: 'wideFull',
@@ -176,7 +177,7 @@ function Data(image, title, description, field1, field2, field3, field4, isChapt
 }
 
 function quickData(link, image, title, field1) {
-    return new Data(image, title, 'unknown', field1, 'unknown', 'unknown', 'unknown', false, link);
+    return new Data(image, title, 'Manga', field1, 'Manga', 'unknown', 'unknown', false, link);
 }
 
 function shuffle(a) {
@@ -189,36 +190,52 @@ function shuffle(a) {
     }
     return a;
 }
+
+function transfromChapter(chap) {
+    let thisIsCrappyCodeJustActLikeYouDidntSeeNothin = '';
+    let newChap = chap.split('-chapter-')[0].replace('/chapters/', '/manga/');
+    newChap = newChap.split('-');
+    let fix = [];
+    for (string of newChap) {
+        console.log(string);
+        if (string.includes('/') && !string.includes('manga/')) {
+            fix.push('/' + string.split('/')[1]);
+        } else {
+            fix.push(string);
+        }
+    }
+    return 'https://mangapill.com' + fix.join('-').replace('-/', '/');
+}
 var savedData = document.getElementById('ketsu-final-data');
 var parsedJson = JSON.parse(savedData.innerHTML);
 let output = [];
 let emptyKeyValue = [new KeyValue('', '')];
-let dataArray = [];
-let dataArray2 = [];
-let dataArray3 = [];
-var topLayout = new Layout(new Insets(0, 0, 0, 0), 1, 2, 3, 1, 500, new Size(400, 400), new Ratio('width', 1, 1), new Size(0, 0), 0, 0);
-var scriptdata = JSON.parse(document.querySelector('script').innerText.replace('/*', '').replace('*/', '')).data;
-for (var x = 0; x < scriptdata.length; x++) {
-    let image = scriptdata[x].snapshot;
-    let anime_session = scriptdata[x].anime_session;
-    let link = 'https://animepahe.com/anime/' + anime_session + '?id=' + scriptdata[x].anime_id;
+let popularList = document.querySelector('.featured-grid').querySelectorAll('.relative');
+var dataArray = [];
+for (popular of popularList) {
+    let image = popular.querySelector('img').dataset.src;
+    let title = popular.querySelector(' a > div:nth-child(2)').textContent.trim();
+    let field1 = 'C.' + popular.querySelector('img').alt.split('Chapter')[1].trim();
     image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+    let link = transfromChapter(popular.querySelector('a').href);
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
-    let episode = 'Episode ' + scriptdata[x].episode;
-    let title = scriptdata[x].anime_title;
-    dataArray.push(new Data(image, title, 'desc', title, episode, 'field3', 'field4', false, link));
-    dataArray2.push(new Data(image, title, episode, 'Anime', episode, 'field3', 'field4', false, link));
-    dataArray3.push(new Data(image, title, episode, episode, episode, 'field3', 'field4', false, link));
+    dataArray.push(quickData(link, image, title, field1));
 }
-output.push(new Output(CellDesings.Special3, Orientation.horizontal, DefaultLayouts.none, Paging.centered, new Section('', false), topLayout, dataArray));
-output.push(new Output(CellDesings.Special1, Orientation.horizontal, DefaultLayouts.triplets, Paging.leading, new Section('This week', true), null, shuffle(dataArray2)));
-output.push(new Output(CellDesings.normal2,Orientation.horizontal,DefaultLayouts.longTripletsDouble,Paging.leading,new Section('Last Episodes',true),null,dataArray3)); 
-var testLayout = new Layout(new Insets(10, 10, 10, 10), 1, 3, 5, 1, 500, new Size(400, 400), new Ratio('width', 11, 10), new Size(-60, 0), 10, 10);
-output.push(new Output(CellDesings.Special2, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('Latest - Page 1', true), testLayout, shuffle(dataArray)));
-let MainPageObject = new MainPage(new ModuleRequest('https://animepahe.com/api?m=airing&l=12&page=2', 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(true, false, ''), output);
+output.push(new Output(CellDesings.wide11, Orientation.horizontal, DefaultLayouts.wideFull, Paging.leading, new Section('', true), null, dataArray));
+output.push(new Output(CellDesings.normal1, Orientation.horizontal, DefaultLayouts.longTripletsConstant, Paging.leading, new Section('Popular', true), null, shuffle(dataArray.slice())));
+dataArray = [];
+let lastChaptList = document.querySelector('.grid-cols-3').querySelectorAll('.bg-card');
+for (last of lastChaptList) {
+    let image = last.querySelector('img');
+    let title = image.getAttribute('alt').split('Chapter')[0];
+    let field1 = 'Chapter' + image.getAttribute('alt').split('Chapter')[1];
+    image = new ModuleRequest(image.getAttribute('data-src'), 'get', emptyKeyValue, null);
+    let link = transfromChapter(last.querySelector('a').href);
+    link = new ModuleRequest(link, 'get', emptyKeyValue, null);
+    dataArray.push(quickData(link, image, title, field1));
+}
+output.push(new Output(CellDesings.normal7, Orientation.vertical, DefaultLayouts.longTripletsFullConstant, Paging.leading, new Section('Last Chapters', true), null, dataArray));
+let MainPageObject = new MainPage(new ModuleRequest('', 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(true, false, ''), output);
 var finalJson = JSON.stringify(MainPageObject);
 savedData.innerHTML = finalJson;
-</script>
- 
-       
- 
+    </script>

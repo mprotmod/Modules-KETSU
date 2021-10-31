@@ -60,49 +60,29 @@ function Video(videoQuality, videoLink) {
     this.videoLink = videoLink;
 }
 
-function Images(images) {
-    this.images = images;
-}
+
 
 function Text(text) {
     this.text = text;
 }
-var output = [];
-var emptyKeyValue = [new KeyValue('', '')];
+
 var savedData = document.getElementById('ketsu-final-data');
 var parsedJson = JSON.parse(savedData.innerHTML);
 
-var data = document.querySelector('.anime_muti_link').querySelectorAll('a');
-for (var x = 0; x < data.length; x++) {
-    var link = data[x].getAttribute('data-video');
-    if (link != null) {
-        if (!link.includes('https:') && link.includes('vidstreaming')) {
-            output.push(new Output('https:' + link, '', moduleID, 'false', videoHeaders));
-        } else {
-            var http = '';
-            if (!link.includes('http')) {
-                http = 'https:';
-            }
-            if (link == '') {
-                break;
-            }
-            if (link.includes('streamtape.com')) {
-                link = link.replace('streamtape.com', 'streamta.pe')
-            }
-            output.push(new NeedsResolver('', new ModuleRequest(http + link, 'get', emptyKeyValue, null)));
-        }
-    }
-}
-if (output.length > 2) {
-    let prevLink = output[0];
-    output[0] = output[1];
-    output[1] = prevLink;
-}
+var emptyKeyValue = [new KeyValue('Referer', parsedJson.request.url)];
+
+let images = Array.from(document.querySelectorAll('.overflow-hidden')).map(function(data) {
+    let img = data.querySelector('img').getAttribute('data-src');
+    return new ModuleRequest(img,'get',emptyKeyValue,null);
+});
 
 let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);
-var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output( new Videos(output, null), null, null));
+var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(null, images, null));
 var finalJson = JSON.stringify(chaptersObject);
 savedData.innerHTML = finalJson;
 
 </script>
-   
+
+ </body>
+</html>
+    

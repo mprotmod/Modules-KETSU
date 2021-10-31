@@ -1,7 +1,49 @@
-<script type="text/javascript"> 
-const DefaultLayouts = {
+
+  <script type="text/javascript">
+ const DefaultLayouts = {
     ultraWideFull: 'ultraWideFull',
-    ultraWide: 'ultraWide', wideFull: 'wideFull', wide: 'wide', wideStrechedFull: 'wideStrechedFull', wideStrechedFullDouble: 'WideStrechedFullDouble', wideStreched: 'wideStreched', wideStrechedDouble: 'wideStrechedDouble', wideStrechedFullList: 'wideStrechedFullList', wideStrechedList: 'wideStrechedList', doublets: 'doublets', doubletsDouble: 'doubletsDouble', doubletsFull: 'doubletsFull', doubletsFullDouble: 'doubletsFullDouble', doubletsConstant: 'doubletsConstant', doubletsDoubleConstant: 'doubletsDoubleConstant', doubletsFullConstant: 'doubletsFullConstant', doubletsFullDoubleConstant: 'doubletsFullDoubleConstant', longDoublets: 'longDoublets', longDoubletsDouble: 'longDoubletsDouble', longDoubletsFull: 'longDoubletsFull', longDoubletsFullDouble: 'longDoubletsFullDouble', longDoubletsConstant: 'longDoubletsConstant', longDoubletsDoubleConstant: 'longDoubletsDoubleConstant', longDoubletsFullConstant: 'longDoubletsFullConstant', longDoubletsFullDoubleConstant: 'longDoubletsFullDoubleConstant', triplets: 'triplets', tripletsDouble: 'tripletsDouble', tripletsFull: 'tripletsFull', tripletsFullDouble: 'tripletsFullDouble', tripletsConstant: 'tripletsConstant', tripletsDoubleConstant: 'tripletsDoubleConstant', tripletsFullConstant: 'tripletsFullConstant', tripletsFullDoubleConstant: 'tripletsFullDoubleConstant', longTriplets: 'longTriplets', longTripletsDouble: 'longTripletsDouble', longTripletsFull: 'longTripletsFull', longTripletsFullDouble: 'longTripletsFullDouble', longTripletsConstant: 'longTripletsConstant', longTripletsDoubleConstant: 'longTripletsDoubleConstant', longTripletsFullConstant: 'longTripletsFullConstant', longTripletsFullDoubleConstant: 'longTripletsFullDoubleConstant', none: ''
+    ultraWide: 'ultraWide',
+    wideFull: 'wideFull',
+    wide: 'wide',
+    wideStrechedFull: 'wideStrechedFull',
+    wideStrechedFullDouble: 'WideStrechedFullDouble',
+    wideStreched: 'wideStreched',
+    wideStrechedDouble: 'wideStrechedDouble',
+    wideStrechedFullList: 'wideStrechedFullList',
+    wideStrechedList: 'wideStrechedList',
+    doublets: 'doublets',
+    doubletsDouble: 'doubletsDouble',
+    doubletsFull: 'doubletsFull',
+    doubletsFullDouble: 'doubletsFullDouble',
+    doubletsConstant: 'doubletsConstant',
+    doubletsDoubleConstant: 'doubletsDoubleConstant',
+    doubletsFullConstant: 'doubletsFullConstant',
+    doubletsFullDoubleConstant: 'doubletsFullDoubleConstant',
+    longDoublets: 'longDoublets',
+    longDoubletsDouble: 'longDoubletsDouble',
+    longDoubletsFull: 'longDoubletsFull',
+    longDoubletsFullDouble: 'longDoubletsFullDouble',
+    longDoubletsConstant: 'longDoubletsConstant',
+    longDoubletsDoubleConstant: 'longDoubletsDoubleConstant',
+    longDoubletsFullConstant: 'longDoubletsFullConstant',
+    longDoubletsFullDoubleConstant: 'longDoubletsFullDoubleConstant',
+    triplets: 'triplets',
+    tripletsDouble: 'tripletsDouble',
+    tripletsFull: 'tripletsFull',
+    tripletsFullDouble: 'tripletsFullDouble',
+    tripletsConstant: 'tripletsConstant',
+    tripletsDoubleConstant: 'tripletsDoubleConstant',
+    tripletsFullConstant: 'tripletsFullConstant',
+    tripletsFullDoubleConstant: 'tripletsFullDoubleConstant',
+    longTriplets: 'longTriplets',
+    longTripletsDouble: 'longTripletsDouble',
+    longTripletsFull: 'longTripletsFull',
+    longTripletsFullDouble: 'longTripletsFullDouble',
+    longTripletsConstant: 'longTripletsConstant',
+    longTripletsDoubleConstant: 'longTripletsDoubleConstant',
+    longTripletsFullConstant: 'longTripletsFullConstant',
+    longTripletsFullDoubleConstant: 'longTripletsFullDoubleConstant',
+    none: ''
 };
 const CellDesings = {
     Special1: 'Special1',
@@ -136,7 +178,7 @@ function Data(image, title, description, field1, field2, field3, field4, isChapt
 }
 
 function quickData(link, image, title, field1) {
-    return new Data(image, title, 'unknown', field1, 'unknown', 'unknown', 'unknown', false, link);
+    return new Data(image, title, '', field1, '', '', '', false, link);
 }
 
 function shuffle(a) {
@@ -153,25 +195,17 @@ var savedData = document.getElementById('ketsu-final-data');
 var parsedJson = JSON.parse(savedData.innerHTML);
 let output = [];
 let emptyKeyValue = [new KeyValue('', '')];
-var data = JSON.parse(document.querySelector('script').innerText.replace('/*', '').replace('*/', '')).data;
-let results = [];
-for (var x = 0; x < data.length; x++) {
-    let image = data[x].poster;
-    let anime_session = data[x].session;
-    let link = 'https://animepahe.com/anime/' + anime_session + '?id=' + data[x].id;
-    image = new ModuleRequest(image, 'get', emptyKeyValue, null);
-    link = new ModuleRequest(link, 'get', emptyKeyValue, null);
-    let title = data[x].title;
-    let type = data[x].type;
-    let year = data[x].year.toString();
-    let status = data[x].status;
-    let season = data[x].season;
-    let score = data[x].score.toString();
-    results.push(new Data(image, title, status, type, year, season, score + '/10', false, link));
-}
-let horizontalLayout = new Layout(new Insets(10, 10, 10, 10), 1, 2, 3, 1, 500, new Size(400, 400), new Ratio('width', 4, 11), new Size(0, 0), 10, 10);
-output.push(new Output(CellDesings.wide11, Orientation.vertical, DefaultLayouts.none, Paging.none, new Section('', false), horizontalLayout, results));
+let foundItems = Array.from(document.querySelectorAll('.justify-between')[2].querySelectorAll('div')).filter((value) => value.className == '').map(function(element) {
+    console.log(element);
+    let image = new ModuleRequest(element.querySelector('img').getAttribute('data-src'), 'get', emptyKeyValue, null);
+    let link = new ModuleRequest('https://mangapill.com' + element.querySelector('a').href, 'get', emptyKeyValue, null);
+    let title = element.querySelector('.mt-2').textContent.trim();
+    return quickData(link, image, title, 'Manga');
+});
+
+output.push(new Output(CellDesings.wide6, Orientation.vertical, DefaultLayouts.doubletsFull, Paging.none, new Section('', true), null, foundItems));
 let searchPageObject = new Search(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), '', new JavascriptConfig(true, false, ''), output);
 var finalJson = JSON.stringify(searchPageObject);
 savedData.innerHTML = finalJson;
+
 </script>

@@ -1,4 +1,8 @@
-  <script type="text/javascript">
+
+<script  type="text/javascript">
+              
+              
+              
 function Info(request, extra, javascriptConfig, output) {
     this.request = request;
     this.extra = extra;
@@ -73,44 +77,33 @@ function getHtmlStuff(array, match) {
 var savedData = document.getElementById('ketsu-final-data');
 var parsedJson = JSON.parse(savedData.innerHTML);
 let emptyKeyValue = [new KeyValue('', '')];
-var episodes = [];
+var episodes = parsedJson.output.chapters;
 var type = '';
 var status = '';
 var genres = [];
 var desc = '';
-var title = document.querySelector('.title-wrapper > h1').innerText;
-var image = document.querySelector('.anime-poster > a > img').getAttribute('data-src');
-image = new ModuleRequest(image, 'get', emptyKeyValue, null);
-var genresArray = [];
-var season = '';
-var eplength = '';
-desc = document.querySelector('.anime-synopsis').innerText;
-var data = document.querySelector('.anime-info').querySelectorAll('p');
-data.forEach(function(element) {
-    var text = element.innerText;
-    if (text.includes('Status:')) {
-        status = text.replace('Status: ', '');
-    }
-    console.log(text);
-    if (text.includes('Type:')) {
-        type = text.replace('Type: ', '');
-    }
-    if (text.includes('Season: ')) {
-        season = text.replace('Season: ', '');
-    }
-    if (text.includes('Episodes: ')) {
-        eplength = text.replace('Episodes: ', '');
-    }
-});
-genresArray = document.querySelector('.anime-genre').querySelectorAll('li');
-if (genresArray.length < 1) {
-    genres = [''];
+
+
+document.write(document.querySelector('script').innerHTML.replace('/*','').replace('*/',''));
+
+let episodesdiv = document.querySelectorAll('#episode_related > li');
+
+let domainURL = parsedJson.extra.extraInfo[0].value;
+
+for (var x = 0; x < episodesdiv.length; x++) {
+    let episode = episodesdiv[x];
+    let link = domainURL + episode.querySelector('a').getAttribute('href').replace(' /','/');
+    link = link.trim();
+    episodes.push(new Chapter('Episode ' + (episodesdiv.length - x),new ModuleRequest(link, 'get', emptyKeyValue, null),false));
+   
 }
-genresArray.forEach(function(element) {
-    genres.push(element.innerText);
-});
-var id = parsedJson.request.url.split('?id=')[1];
-let infoPageObject = new Info(new ModuleRequest('https://animepahe.com/api?m=release&id=' + id + '&l=30&sort=episode_desc&page=1', 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output(image, title, parsedJson.request, desc, genres, status, season, type, 'Eps: ' + eplength, episodes));
-var finalJson = JSON.stringify(infoPageObject);
+
+episodes.reverse();
+
+var finalJson = JSON.stringify(parsedJson);
 savedData.innerHTML = finalJson;
-</script>
+              
+              
+              
+              
+              </script>

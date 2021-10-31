@@ -1,5 +1,3 @@
-
-
 <script type="text/javascript">
     const DefaultLayouts = {
         ultraWideFull: 'ultraWideFull',
@@ -201,21 +199,22 @@
     var scriptdata = JSON.parse(document.querySelector('script').innerText.replace('/*', '').replace('*/', '')).data;
     for (var x = 0; x < scriptdata.length; x++) {
         let image = scriptdata[x].snapshot;
-        let link = 'https://pahe.win/a/' + scriptdata[x].anime_id + '?id=' + scriptdata[x].anime_id;
+        let anime_session = scriptdata[x].anime_session;
+    let link = 'https://animepahe.com/anime/' + anime_session + '?id=' + scriptdata[x].anime_id;
         
         image = new ModuleRequest(image, 'get', emptyKeyValue, null);
         link = new ModuleRequest(link, 'get', emptyKeyValue, null);
         let episode = 'Episode ' + scriptdata[x].episode;
         let title = scriptdata[x].anime_title;
         dataArray.push(new Data(image, title, episode, 'Anime', episode, 'field3', 'field4', false, link));
-        dataArray2.push(new Data(image, title, 'desc', title, episode, 'field3', 'field4', false, link));
+        dataArray2.push(new Data(image, title, episode, 'Anime', episode, 'field3', 'field4', false, link));
         output[0].data.push(new Data(image, title, 'desc', title, episode, 'field3', 'field4', false, link));
         output[1].data.push(new Data(image, title, 'desc', episode, episode, 'field3', 'field4', false, link));
     }
     output[0].data = shuffle(output[0].data);
     var testLayout = new Layout(new Insets(10, 10, 10, 10), 1, 3, 5, 1, 500, new Size(500, 500), new Ratio('width', 11, 10), new Size(-60, 0), 10, 10);
-    output.push(new Output(CellDesings.Special2, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('Latest - Page 2', true), testLayout, shuffle(dataArray2)));
-    output.push(new Output(CellDesings.wide2, Orientation.horizontal, DefaultLayouts.wideStrechedList, Paging.none, new Section('', true), null, dataArray));
+    output.push(new Output(CellDesings.wide2, Orientation.horizontal, DefaultLayouts.wideStrechedList, Paging.leading, new Section('Latest 2', true), null, shuffle(dataArray2)));
+    output.push(new Output(CellDesings.normal4, Orientation.horizontal, DefaultLayouts.longDoubletsFull, Paging.none, new Section('More', true), null, dataArray));
     let MainPageObject = new MainPage(new ModuleRequest('', 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(true, false, ''), output);
     var finalJson = JSON.stringify(MainPageObject);
     savedData.innerHTML = finalJson;

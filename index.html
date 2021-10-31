@@ -9,7 +9,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-    <title>KETSU</title>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>    <title>KETSU & ZETSU Modules</title>
+        <meta name="Description" CONTENT="ketsu modules, zetsu modules, ketsu & zetsu modules">
+
+<meta name="title" content="ketsu modules, zetsu modules, ketsu & zetsu modules">
+<meta name="description" content="ketsu modules, zetsu modules, ketsu & zetsu modules">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ketsu modules, zetsu modules, ketsu & zetsu modules">
+<meta property="og:description" content="ketsu modules, zetsu modules, ketsu & zetsu modules">
+<meta property="og:image" content="favicon.ico">
+
+<meta property="twitter:description" content="ketsu modules, zetsu modules, ketsu & zetsu modules">
     <style>
         /* I KNOW YOU DONT USE CAMEL CASE ON UR CSS IDC (This is temporal)*/
 
@@ -132,21 +146,107 @@
             line-height: 1rem;
         }
 
+        .zero {
+            margin: 0;
+            padding: 0;
+            --bs-gutter-x: 0;
+        }
+
+        .overlay{
+   
+            backdrop-filter: blur(6px);
+            display: none;
+            position: fixed; /* Sit on top of the page content */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+            padding: 1rem;
+        }
+
+        .pre-overlay {
+            background-color: white;
+            border-radius: 1rem;
+            max-width:30rem;
+            width: 100%;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay-bg {
+            width: 100%;
+            height: 100%;
+            padding-top: 50%; /* 8:5 Aspect Ratio */
+            position: relative;
+        }
+
+        .overlay-buttons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .img-holder {
+            position: relative;
+            padding: 1rem;
+            width: 100%; 
+            height: 100%;
+            }
+
+        .module-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+
+        }
+
+        .vertical-sep {
+            background-color: rgba(0,0,0,0.5);;
+            width: 1px;
+            height: 60%;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
 
     </style>
 </head>
 
-<body>
+<body style="position: relative;">
     <div class=" navBar maxHeight color relative marginBottom shadow container-fluid">
         <div class="row align-items-center fullHeight">
-            <h1 style="color: white; padding-left: 1rem; margin: auto;" class="zero">KETSU MODULES</h1>
+            <h1 style="color: white; padding-left: 1rem; margin: auto;" class="zero">KETSU & ZETSU MODULES</h1>
         </div>
     </div>
     <div style="margin-top: 1rem;" class="alert alert-dark customAlert" role="alert">
         Dont forget to star the github repo <a href="https://github.com/mprotmod/Modules-KETSU">here</a> or contribute if you are a developer.
         We recommend you to add the <strong>Modules library</strong> module, this module adapts this site to KETSU so you can add modules directly within KETSU.
         This Github repository is not related to KETSU Developer / Owner, it is just a repository where developers can contribute modules for the app KETSU.
+    </div>
+    <div style="margin-top: 1rem;" class="alert alert-dark customAlert" role="alert">
+        <div class="maxHeight zero overflow relative">
+            <img class="shadow maxWidth rounded absolute img-fluid"
+                src="https://i.imgur.com/t0O3hHK.jpg"
+                alt="...">
+            <div style="margin-left: 6.5rem; " class=" fullHeight">
+                <p><strong>ZETSU NOTIFICATION</strong></p>
+                <p class="">ZETSU <strong>DOESN´T</strong> support video modules.</p>
+            </div>
+
+        </div>
     </div>
     <div style="display: none;" id="ketsu-text">
     <a >After clicking a module it takes few seconds until the pop up appears.</a>
@@ -171,7 +271,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Modules%20Library/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Modules%20Library/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -194,7 +294,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Trace.moe/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Trace.moe/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -212,7 +312,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/live%20chart/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/live%20chart/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -230,7 +330,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Cusine%20recipies/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Cusine%20recipies/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -253,7 +353,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/GoGoAnime/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/GoGoAnime/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -271,7 +371,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Anime%20Kisa/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Anime%20Kisa/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -289,7 +389,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimeHub/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimeHub/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -307,7 +407,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/4Anime/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/4Anime/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -325,7 +425,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/JKAnime/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/JKAnime/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -343,7 +443,7 @@
     </div>
     <div class="fullHeight addButton container-fluid fullHeight">
         <div class="row align-items-center fullHeight">
-            <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/WCOS/module.json">
+            <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/WCOS/module.json">
                 <button type="button" class="btn btn-dark shadow">Add</button>
             </a>
         </div>
@@ -357,11 +457,29 @@
         alt="...">
     <div style="margin-left: 6.5rem; margin-right: 6.5rem;" class=" fullHeight">
         <p><strong>AnimePahe | ENG</strong></p>
-        <p class="desc">Version: 1.1 | Developer: Noah G</p>
+        <p class="desc">Version: 1.4 | Developer: Noah G</p>
     </div>
     <div class="fullHeight addButton container-fluid fullHeight">
         <div class="row align-items-center fullHeight">
-            <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/NoahG21/Modules-KETSU/main/Module%20Parser%20KETSU/AnimePahe/module.json">
+            <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimePahe/module.json">
+                <button type="button" class="btn btn-dark shadow">Add</button>
+            </a>
+        </div>
+    </div>
+    <div class="separator"></div>
+</div>
+<!-- module space-->
+        <div class="maxHeight zero overflow relative marginBottom">
+    <img class="shadow maxWidth rounded absolute img-fluid"
+        src="https://s2.bunnycdn.ru/assets/9anime/favicons/favicon.png?v1"
+        alt="...">
+    <div style="margin-left: 6.5rem; margin-right: 6.5rem;" class=" fullHeight">
+        <p><strong>9Anime | ENG</strong></p>
+        <p class="desc">Version: 1.0 | Developer: Jack_</p>
+    </div>
+    <div class="fullHeight addButton container-fluid fullHeight">
+        <div class="row align-items-center fullHeight">
+            <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/9Anime/module.json">
                 <button type="button" class="btn btn-dark shadow">Add</button>
             </a>
         </div>
@@ -379,7 +497,7 @@
     </div>
     <div class="fullHeight addButton container-fluid fullHeight">
         <div class="row align-items-center fullHeight">
-            <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/VostFree/moduleTemplate.json">
+            <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/VostFree/moduleTemplate.json">
                 <button type="button" class="btn btn-dark shadow">Add</button>
             </a>
         </div>
@@ -402,7 +520,43 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaNelo/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaNelo/moduleTemplate.json">
+                        <button type="button" class="btn btn-dark shadow">Add</button>
+                    </a>
+                </div>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <!-- module space-->
+                <div class="maxHeight zero overflow relative marginBottom">
+            <img class="shadow maxWidth rounded absolute img-fluid"
+                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmangapill.com%2Fstatic%2Ffavicon%2Fandroid-chrome-512x512.png&f=1&nofb=1"
+                alt="...">
+            <div style="margin-left: 6.5rem; margin-right: 6.5rem;" class=" fullHeight">
+                <p ><strong>MangaPill | ENG</strong></p>
+                <p class="desc">Version: 1.0 | Developer: user123</p>
+            </div>
+            <div class="fullHeight addButton container-fluid fullHeight">
+                <div class="row align-items-center fullHeight">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaPill/moduleTemplate.json">
+                        <button type="button" class="btn btn-dark shadow">Add</button>
+                    </a>
+                </div>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <!-- module space-->
+        <div class="maxHeight zero overflow relative marginBottom">
+            <img class="shadow maxWidth rounded absolute img-fluid"
+                src="https://es.ninemanga.com/favicon.png"
+                alt="...">
+            <div style="margin-left: 6.5rem; margin-right: 6.5rem;" class=" fullHeight">
+                <p ><strong>NineManga | ENG</strong></p>
+                <p class="desc">Version: 1.0 | Developer: user123</p>
+            </div>
+            <div class="fullHeight addButton container-fluid fullHeight">
+                <div class="row align-items-center fullHeight">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/NineMangaEng/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -423,7 +577,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/TAADD/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/TAADD/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -441,7 +595,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/NineManga/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/NineManga/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -459,7 +613,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangaworld/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangaworld/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -471,6 +625,25 @@
             <p><strong>Text Modules</strong></p>
             <div class="headerSeparator"></div>
         </div>
+        
+              <div class="maxHeight zero overflow relative marginBottom">
+            <img class="shadow maxWidth rounded absolute img-fluid"
+                src="data:image/png;base64,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"
+                alt="...">
+            <div style="margin-left: 6.5rem; margin-right: 6.5rem;" class=" fullHeight">
+                <p><strong>Read Novels Full | ENG</strong></p>
+                <p class="desc">Version: 1.0 | Developer: user123</p>
+            </div>
+            <div class="fullHeight addButton container-fluid fullHeight">
+                <div class="row align-items-center fullHeight">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/lightnovelsfull/moduleTemplate.json">
+                        <button type="button" class="btn btn-dark shadow">Add</button>
+                    </a>
+                </div>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <!-- module space-->
 
         <div class="maxHeight zero overflow relative marginBottom">
             <img class="shadow maxWidth rounded absolute img-fluid"
@@ -482,7 +655,7 @@
             </div>
             <div class="fullHeight addButton container-fluid fullHeight">
                 <div class="row align-items-center fullHeight">
-                    <a href="ketsuapp://?moduleData=https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/LightNovels/moduleTemplate.json">
+                    <a class="module-link" data-module="https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/LightNovels/moduleTemplate.json">
                         <button type="button" class="btn btn-dark shadow">Add</button>
                     </a>
                 </div>
@@ -491,7 +664,125 @@
         </div>
         <!-- module space-->
 
+
     </div>
+    <div id="overlay" class="overlay">
+        <div style="position: relative; width: 100%; height: 100%; top: 0; left: 0;">
+            <div class="pre-overlay">
+                <div class="overlay-bg" >
+                    <div  class="overlay-buttons">
+                        <div class="row fullHeight zero " >
+                            <div class="col zero img-holder ">
+                                <div style="width: 100%; height: 100%; padding: 1rem;">
+                                    <a href="" id="KETSU">
+                                    <img src="https://i.imgur.com/LhoFBni.png"  class="module-img" > </a>
+                                </div>
+                            </div>
+                            <div class="col zero img-holder ">
+                                <div style="width: 100%; height: 100%; padding: 1rem;">
+                                    <a href="" id="ZETSU">
+                                <img src="https://i.imgur.com/IJfQZnS.png"  class="module-img" > </div></a>
+                            </div>
+                        
+                          </div>
+                          <div class="vertical-sep"></div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+    let moduleSections = document.querySelector('#modulesTable').children;
+
+    var currentCategory = '';
+
+    let modules = [
+        
+    ];
+
+    let modulesDict = {
+        
+    };
+
+    for (var x = 0; x < moduleSections.length;x++) {
+    let module = moduleSections[x];
+
+    if (module.classList.contains('headerHeight')) {
+        modulesDict[currentCategory] = modules;
+        if (modules.length > 0) {
+        modules = [];
+        }
+        currentCategory = module.querySelector('p').innerHTML.replace('<strong>','').replace('</strong>','');
+        continue;
+    }
+    modules.push( module.querySelector('a').dataset.module);
+
+    }
+    modulesDict[currentCategory] = modules;
+
+    </script>
+
+
+    <script>
+
+        let buttons = document.querySelectorAll('.module-link');
+        let KETSU = document.querySelector("#KETSU");
+        let ZETSU = document.querySelector('#ZETSU');
+
+        for (button of buttons) {
+            setButtonOnClick(button);
+        }
+
+        var executing = "";
+        function setButtonOnClick(button) {
+            console.log(button)
+            button.addEventListener("click", function() {
+                console.log(button)
+                let link = button.dataset.module;
+                if (modulesDict["Video Modules"].includes(link)) {
+                    if (executing == link) {return}
+                    executing = link;
+                    console.log("clicked")
+                    var a = document.createElement('a');
+                    a.setAttribute('href', "ketsuapp://?moduleData=" + link);
+                    var aj = $(a);
+                    aj.appendTo('body');
+                    aj[0].click();
+                    aj.remove();
+                    setTimeout(function() {
+                        if (link == executing) {
+                            executing = "";
+                        }
+                    }, 1000);
+
+                    return
+                }
+                showAppSelector(link);
+            });
+        }
+
+        function showAppSelector(link) {
+            console.log(link);  
+            KETSU.href = "ketsuapp://?moduleData=" + link;
+            ZETSU.href = "zetsuapp://?moduleData=" + link;
+            $('#overlay').fadeIn()
+
+        }
+
+        $("#overlay").click(function(e) {
+            
+            console.log("clicked")
+            $("#overlay").fadeOut();
+        });
+
+        $(".module-img").click(function() {
+            console.log("clicked");
+        })
+
+    </script>
 </body>
 
 </html>

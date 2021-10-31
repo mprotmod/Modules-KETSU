@@ -1,0 +1,95 @@
+<script type="text/javascript">
+    function Info(request, extra, javascriptConfig, output) {
+        this.request = request;
+        this.extra = extra;
+        this.javascriptConfig = javascriptConfig;
+        this.output = output;
+    }
+    
+    function ModuleRequest(url, method, headers, httpBody) {
+        this.url = url;
+        this.method = method;
+        this.headers = headers;
+        this.httpBody = httpBody;
+    }
+    
+    function Extra(commands, extraInfo) {
+        this.commands = commands;
+        this.extraInfo = extraInfo;
+    }
+    
+    function Commands(commandName, params) {
+        this.commandName = commandName;
+        this.params = params;
+    }
+    
+    function JavascriptConfig(removeJavascript, loadInWebView, javaScript) {
+        this.removeJavascript = removeJavascript;
+        this.loadInWebView = loadInWebView;
+        this.javaScript = javaScript;
+    }
+    
+    function KeyValue(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+    
+    function Chapter(chapName, link, openInWebView) {
+        this.chapName = chapName;
+        this.link = link;
+        this.openInWebView = openInWebView;
+    }
+    
+    function Output(image, title, link, description, genres, field1, field2, field3, field4, chapters) {
+        this.image = image;
+        this.link = link;
+        this.title = title;
+        this.description = description;
+        this.genres = genres;
+        this.field1 = field1;
+        this.field2 = field2;
+        this.field3 = field3;
+        this.field4 = field4;
+        this.chapters = chapters;
+    }
+    
+    function getStuff(array, match) {
+        for(var x = 0; x < array.length; x++) {
+            let data = array[x].innerText;
+            if(data.includes(match)) {
+                return data.replace(match, '').trim();
+            }
+        }
+    }
+    
+    function getHtmlStuff(array, match) {
+        for(var x = 0; x < array.length; x++) {
+            let data = array[x].innerText;
+            if(data.includes(match)) {
+                return array[x];
+            }
+        }
+    }
+    var savedData = document.getElementById('ketsu-final-data');
+    var parsedJson = JSON.parse(savedData.innerHTML);
+    let emptyKeyValue = [new KeyValue('', '')];
+    var type = 'Manga';
+    var status = document.querySelector('div.grid.grid-cols-1.md\\\\:grid-cols-3.gap-3.mb-3 > div:nth-child(2) > div').textContent.trim();
+    var genres = [];
+    var desc = '';
+    var title = '';
+    var image = '';
+    image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+    image = document.querySelector('div.flex-shrink-0.w-48.h-60.relative.rounded.bg-color-bg-image.mr-3.mb-3.md\\:mb-0 img').dataset.src;
+    image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+    desc = document.querySelector('div.flex.flex-col.sm\\\\:flex-row.my-3 > div.flex.flex-col p').textContent.trim();
+    title = document.querySelector('div.flex-shrink-0.w-48.h-60.relative.rounded.bg-color-bg-image.mr-3.mb-3.md\\\\:mb-0 img').alt;
+    genres = Array.from(document.querySelector('div.flex.flex-col.sm\\\\:flex-row.my-3 > div.flex.flex-col > div:nth-child(4)').innerText.replace('Genres ', '').split(' '));
+    
+    let chapters = Array.from(document.querySelector('#chapters > div').querySelectorAll('a')).map(function(data) {
+        return new Chapter(data.textContent.trim(), new ModuleRequest('https://mangapill.com' + data.href, 'get', emptyKeyValue, null), false);
+    }).reverse();
+    let infoPageObject = new Info(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output(image, title, parsedJson.request, desc, genres, type, status, '', 'Chapters: ' + chapters.length, chapters));
+    var finalJson = JSON.stringify(infoPageObject);
+    savedData.innerHTML = finalJson;
+       </script>
