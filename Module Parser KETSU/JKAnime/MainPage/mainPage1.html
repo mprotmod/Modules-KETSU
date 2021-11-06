@@ -1,8 +1,6 @@
 
- 
-    <script type="text/javascript">
-    
-    const DefaultLayouts = {
+  <script type="text/javascript">
+  const DefaultLayouts = {
     ultraWideFull: 'ultraWideFull',
     ultraWide: 'ultraWide',
     wideFull: 'wideFull',
@@ -196,7 +194,7 @@ function shuffle(a) {
 }
 
 function quickData(link, image, title, field1) {
-    return new Data(image, title, 'unknown', field1, 'unknown', 'unknown', 'unknown', moduleID, false, link);
+    return new Data(image, title, 'Anime', field1, 'unknown', 'unknown', 'unknown', moduleID, false, link);
 }
 var topLayout = new Layout(new Insets(0, 0, 0, 0), 1, 2, 3, 1, 500, new Size(400, 400), new Ratio('width', 1, 1), new Size(0, 0), 0, 0);
 var episodesArray2 = [];
@@ -211,51 +209,17 @@ for (var x = 0; x < episodes.length; x++) {
     link.pop();
     link = link.join('/') + '/';
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
-    var data = new Data(image, title, title, title, ep, 'Ongoing', 'EmptyValue', moduleID, false, link);
+    var data = new Data(image, title, 'Anime', 'Ongoing', ep, 'Ongoing', 'EmptyValue', moduleID, false, link);
     episodesArray.push(data);
     data = new Data(image, title, ep, ep, ep, 'Ongoing', 'EmptyValue', moduleID, false, link);
     episodesArray2.push(data);
 }
-output.push(new Output(CellDesings.Special3, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('', true), topLayout, shuffle(episodesArray.slice())));
-output.push(new Output(CellDesings.normal2, Orientation.horizontal, DefaultLayouts.longTripletsFullDouble, Paging.leading, new Section('Last Episodes', true), null, episodesArray2));
+output.push(new Output(CellDesings.wide11, Orientation.horizontal, DefaultLayouts.wideFull, Paging.leading, new Section('', true), null, shuffle(episodesArray.slice())));
+output.push(new Output(CellDesings.Special1, Orientation.horizontal, DefaultLayouts.triplets, Paging.leading, new Section('Destacados', true), null, shuffle(episodesArray.slice())));
+
+output.push(new Output(CellDesings.normal7, Orientation.horizontal, DefaultLayouts.longTripletsDouble, Paging.leading, new Section('Last Episodes', true), null, episodesArray2));
 
 
-var testLayout = new Layout(new Insets(10, 10, 10, 10), 1, 3, 5, 1, 500, new Size(400, 400), new Ratio('width', 11, 10), new Size(-60, 0), 10, 10);
-let destacados = document.querySelectorAll('.hero__items');
-let destacadosArray = [];
-for (var x = 0; x < destacados.length; x++) {
-    var destacado = destacados[x];
-    var image = destacado.getAttribute('data-setbg');
-    image = new ModuleRequest(image, 'get', emptyKeyValue, null);
-    let title = destacado.querySelector('h2').textContent;
-    var link = destacado.querySelector('a').href.split('/');
-    link.pop();
-    link.pop();
-    link = link.join('/') + '/';
-    link = new ModuleRequest(link, 'get', emptyKeyValue, null);
-    let data = new Data(image, title, title, title, 'Ongoing', 'Uknown', '', moduleID, false, link);
-    destacadosArray.push(data);
-}
-output.push(new Output(CellDesings.Special2, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('Most Seen', true), testLayout, destacadosArray));
-let top2 = document.querySelector('.destacados').querySelectorAll('.col-lg-4, .col-6');
-let topArray = [];
-for (var x = 0; x < top2.length; x++) {
-    try {
-        var topS = top2[x];
-        var image = topS.querySelector('.set-bg').getAttribute('data-setbg');
-        image = new ModuleRequest(image, 'get', emptyKeyValue, null);
-        let title = topS.querySelector('.tituloblanco').textContent;
-        var link = topS.querySelector('a').href;
-        var place = '' + (x + 1);
-        link = new ModuleRequest(link, 'get', emptyKeyValue, null);
-        let data = new Data(image, title, 'Uknown', 'Place', 'Anime', 'Ongoing', 'This is a description', moduleID, false, link);
-        topArray.push(data);
-    } catch (e) {
-        console.log(e);
-    }
-}
-
-output.push(new Output(CellDesings.wide11, Orientation.horizontal, DefaultLayouts.wideFull, Paging.leading, new Section('Top', true), null, topArray));
 let lastAdded = document.querySelector('.trending__anime').querySelectorAll('.col-md-6');
 let lastAddedArray = [];
 for (var x = 0; x < lastAdded.length; x++) {
@@ -272,7 +236,51 @@ for (var x = 0; x < lastAdded.length; x++) {
         console.log(e);
     }
 }
-output.push(new Output(CellDesings.wide2, Orientation.horizontal, DefaultLayouts.wideStrechedList, Paging.leading, new Section('Last Added', true), null, lastAddedArray));
+output.push(new Output(CellDesings.wide9, Orientation.horizontal, DefaultLayouts.wideStrechedList, Paging.leading, new Section('Last Added', true), null, lastAddedArray));
+
+var testLayout = new Layout(new Insets(10, 10, 10, 10), 1, 3, 5, 1, 500, new Size(400, 400), new Ratio('width', 11, 10), new Size(-60, 0), 10, 10);
+let destacados = document.querySelectorAll('.hero__items');
+let destacadosArray = [];
+for (var x = 0; x < destacados.length; x++) {
+    var destacado = destacados[x];
+    var image = destacado.getAttribute('data-setbg');
+    image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+    let title = destacado.querySelector('h2').textContent;
+    var link = destacado.querySelector('a').href.split('/');
+    link.pop();
+    link.pop();
+    link = link.join('/') + '/';
+    link = new ModuleRequest(link, 'get', emptyKeyValue, null);
+    let data = new Data(image, title, title, 'Anime', 'Ongoing', 'Uknown', '', moduleID, false, link);
+    destacadosArray.push(data);
+}
+output.push(new Output(CellDesings.wide10, Orientation.horizontal, DefaultLayouts.ultraWideFull, Paging.leading, new Section('Top', true), null, destacadosArray));
+
+
+try {
+var top2 = document.querySelectorAll('.destacados')[1].querySelectorAll('.col-lg-4, .col-6');
+let topArray = [];
+for (var x = 0; x < top2.length; x++) {
+    try {
+        var topS = top2[x];
+        var image = topS.querySelector('.set-bg').getAttribute('data-setbg');
+        image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+        let title = topS.querySelector('.tituloblanco').textContent;
+        var link = topS.querySelector('a').href;
+        var place = '' + (x + 1);
+        link = new ModuleRequest(link, 'get', emptyKeyValue, null);
+        let data = new Data(image, title, 'Uknown', 'Anime', 'Anime', 'Ongoing', 'This is a description', moduleID, false, link);
+        topArray.push(data);
+    } catch (e) {
+        console.log(e);
+    }
+}
+output.push(new Output(CellDesings.normal7, Orientation.horizontal, DefaultLayouts.longTripletsDouble, Paging.leading, new Section('Most Seen', true), null, topArray));
+} catch {
+
+}
+
+
 let list = document.querySelector('.side-menu').querySelectorAll('li');
 var dataArray = [];
 for (var x = 0; x < list.length; x++) {
@@ -280,14 +288,13 @@ for (var x = 0; x < list.length; x++) {
     let title = listItm.textContent;
     var link = listItm.querySelector('a').href;
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
-    let data = quickData(link, link, title, '');
+    let data = quickData(link, link, title, 'Anime');
     dataArray.push(data);
 }
-var testLayout = new Layout(new Insets(0, 0, 10, 10), 1, 1, 1, 1, 50, new Size(400, 50), null, new Size(0, 0), 0, 0);
-output.push(new Output(CellDesings.small2, Orientation.vertical, DefaultLayouts.none, Paging.none, new Section('Animes Agregados', true), testLayout, dataArray));
+var testLayout = new Layout(new Insets(0, 0, 10, 10), 1, 2, 3, 6, 300, new Size(400, 300), null, new Size(0, 0), 0, 0);
+output.push(new Output(CellDesings.small2, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('Animes Agregados', true), testLayout, dataArray));
 let MainPageObject = new MainPage(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(true, false, ''), output);
 var finalJson = JSON.stringify(MainPageObject);
-savedData.innerHTML = finalJson;
-    </script>
-   
-  </body></html>
+savedData.innerHTML = finalJson; </script>
+ </body>
+</html>
