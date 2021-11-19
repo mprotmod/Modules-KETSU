@@ -1,15 +1,15 @@
 {
     "moduleInfo": {
-      "moduleName": "MangaNelo",
-      "moduleInitials": "",
-      "moduleDesc": "This is a module to get data from MangaNelo website enjoy.",
+      "moduleName": "MangaNato",
+      "moduleInitials": "MN",
+      "moduleDesc": "This is a module to get data from MangaNato website enjoy.",
       "developer": "user123",
       "moduleID": "2870348473737712",
       "moduleImage": "https://pbs.twimg.com/profile_images/1252110335659708416/tMEcGeam_400x400.jpg",
-      "moduleVersion": 1.5,
+      "moduleVersion": 1.6,
       "moduleLenguage": "ENG",
       "moduleType": "Image",
-      "baseURL": "https://manganelo.com/",
+      "baseURL": "https://manganato.com/",
       "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/index.html",
       "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaNelo/moduleTemplate.json",
       "preferedServer": "UM",
@@ -41,7 +41,7 @@
     "mainPage": [
       {
         "request": {
-          "url": "https://manganelo.com/",
+          "url": "https://manganato.com/",
           "method": "get",
           "headers": [
             {
@@ -152,7 +152,7 @@
       },
       {
         "request": {
-          "url": "https://manganelo.com/",
+          "url": "https://manganato.com/",
           "method": "get",
           "headers": [
             {
@@ -729,3 +729,5 @@
       }
     ]
   }
+
+
