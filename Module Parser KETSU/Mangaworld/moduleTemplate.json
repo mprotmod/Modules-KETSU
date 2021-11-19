@@ -5,11 +5,11 @@
     "moduleDesc": "Module to read from Mangaworld",
     "developer": "Giorgio Bertolotti",
     "moduleID": "199809071",
-    "moduleImage": "https://www.mangaworld.io/public/assets/images/MangaWorldSquareLogo.png",
-    "moduleVersion": 1.2,
+    "moduleImage": "https://www.mangaworld.in/public/assets/images/MangaWorldSquareLogo.png",
+    "moduleVersion": 1.3,
     "moduleLenguage": "IT",
     "moduleType": "Image",
-    "baseURL": "https://www.mangaworld.io/",
+    "baseURL": "https://www.mangaworld.in/",
     "moduleDeveloperSite": "https://bertolotti.dev/",
     "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangaworld/moduleTemplate.json",
     "preferedServer": "UM",
@@ -39,7 +39,7 @@
   "mainPage": [
     {
       "request": {
-        "url": "https://www.mangaworld.io/",
+        "url": "https://www.mangaworld.in/",
         "method": "get",
         "headers": [
           {
@@ -114,7 +114,7 @@
           "data": [
             {
               "image": {
-                "url": "https://www.mangaworld.io/",
+                "url": "https://www.mangaworld.in/",
                 "method": "get",
                 "headers": [
                   {
@@ -152,7 +152,7 @@
   "search": [
     {
       "request": {
-        "url": "https://www.mangaworld.io/archive?keyword=<searched>&page=<page>&sort=a-z",
+        "url": "https://www.mangaworld.in/archive?keyword=<searched>&page=<page>&sort=a-z",
         "method": "get",
         "headers": [
           {
@@ -228,7 +228,7 @@
           "data": [
             {
               "image": {
-                "url": "https://www.mangaworld.io/",
+                "url": "https://www.mangaworld.in/",
                 "method": "get",
                 "headers": [
                   {
@@ -302,7 +302,7 @@
       },
       "output": {
         "image": {
-          "url": "https://www.mangaworld.io/",
+          "url": "https://www.mangaworld.in/",
           "method": "get",
           "headers": [
             {
@@ -313,7 +313,7 @@
           "httpBody": null
         },
         "link": {
-          "url": "https://www.mangaworld.io/",
+          "url": "https://www.mangaworld.in/",
           "method": "get",
           "headers": [
             {
@@ -395,7 +395,7 @@
             {
               "resolverIdentifier": "",
               "link": {
-                "url": "https://www.mangaworld.io/",
+                "url": "https://www.mangaworld.in/",
                 "method": "get",
                 "headers": [
                   {
