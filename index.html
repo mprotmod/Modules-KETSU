@@ -146,7 +146,7 @@
             line-height: 1rem;
         }
 
-        .zero {
+        .zero {
             margin: 0;
             padding: 0;
             --bs-gutter-x: 0;
@@ -221,7 +221,9 @@
             transform: translate(-50%, -50%);
         }
 
-
+        .zetsu-message {
+            position: absolute; bottom: 1rem; left: 50%;transform: translate(-50%, 0);padding: 1rem; background-color: white; border-radius: 1rem;
+        }
     </style>
 </head>
 
@@ -667,18 +669,21 @@
 
     </div>
     <div id="overlay" class="overlay">
+        <div class="zetsu-message shadow ">
+            ZETSU is not compatible with Video Modules.
+        </div>
         <div style="position: relative; width: 100%; height: 100%; top: 0; left: 0;">
             <div class="pre-overlay">
                 <div class="overlay-bg" >
                     <div  class="overlay-buttons">
-                        <div class="row fullHeight zero " >
-                            <div class="col zero img-holder ">
+                        <div class="row fullHeight zero " >
+                            <div class="col zero img-holder ">
                                 <div style="width: 100%; height: 100%; padding: 1rem;">
                                     <a href="" id="KETSU">
                                     <img src="https://i.imgur.com/LhoFBni.png"  class="module-img" > </a>
                                 </div>
                             </div>
-                            <div class="col zero img-holder ">
+                            <div class="col zero img-holder ">
                                 <div style="width: 100%; height: 100%; padding: 1rem;">
                                     <a href="" id="ZETSU">
                                 <img src="https://i.imgur.com/IJfQZnS.png"  class="module-img" > </div></a>
@@ -737,11 +742,13 @@
         }
 
         var executing = "";
-        function setButtonOnClick(button) {
+        function setButtonOnClick(button) {
             console.log(button)
             button.addEventListener("click", function() {
                 console.log(button)
                 let link = button.dataset.module;
+                var isVideoModule = false
+                if (modulesDict["Video Modules"].includes(link)) {isVideoModule = true;}
                 /*if (modulesDict["Video Modules"].includes(link)) {
                     if (executing == link) {return}
                     executing = link;
@@ -760,11 +767,11 @@
 
                     return
                 }*/
-                showAppSelector(link);
+                showAppSelector(link,isVideoModule);
             });
         }
 
-        function showAppSelector(link) {
+        function showAppSelector(link,isVideoModule) {
             console.log(link);  
             KETSU.href = "ketsuapp://?moduleData=" + link;
             ZETSU.href = "zetsuapp://?moduleData=" + link;
@@ -772,7 +779,7 @@
 
         }
 
-        $("#overlay").click(function(e) {
+        $("#overlay").click(function(e) {
             
             console.log("clicked")
             $("#overlay").fadeOut();
