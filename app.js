@@ -4,10 +4,12 @@ var rawModulesData = `{}`;
 
 const request = new XMLHttpRequest();
 request.open('GET', 'https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/modules.json', false);  
-
+request.send(null);
 if (request.status === 200) {
     rawModulesData = request.responseText;
 }
+
+console.log(rawModulesData)
 
 let parsedRawModules = JSON.parse(rawModulesData);
 
