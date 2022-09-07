@@ -75,6 +75,12 @@
         "categories": [
             "Manga"
         ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaNelo/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
         "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangaworld/moduleTemplate.json"
     },
     {
@@ -286,7 +292,6 @@
         ],
         "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Senmanga/senmanga.json"
     },
-  
     {
         "categories": [
             "Manga"
