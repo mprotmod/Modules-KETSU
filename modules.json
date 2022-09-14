@@ -328,5 +328,11 @@
             "+18"
         ],
         "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/video/hanime.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimePahe/module.json"
     }
 ]
