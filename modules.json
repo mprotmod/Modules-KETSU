@@ -27,6 +27,13 @@
         ],
         "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaPill/moduleTemplate.json"
     },
+        {
+        "categories": [
+            "Most Used",
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangareader.json"
+    },
     {
         "categories": [
             "Anime"
