@@ -12,7 +12,7 @@
         "changelog": "2.64 - ASIANPLAY is back",
         "baseURL": "https://www.dramacool.sk/",
         "moduleDeveloperSite": "https://bilnaa.github.io/main",
-        "UpdateSite": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Drama_Cool/moduleTemplate.json",
+        "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU//Drama_Cool/moduleTemplate.json",
         "preferedServer": "ASIANHDPLAY",
         "preferedDownloadServer": "ASIANHDPLAY",
         "blackListed": [""],

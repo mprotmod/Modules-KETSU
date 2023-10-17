@@ -12,7 +12,7 @@
     "moduleType": "Image",
     "baseURL": "https://www.asurascans.com/",
     "moduleDeveloperSite": "https://www.asurascans.com/",
-    "UpdateSite": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Asura/asura.json",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU//Asura/asura.json",
     "preferedServer": "",
     "preferedDownloadServer": "",
     "blackListed": [

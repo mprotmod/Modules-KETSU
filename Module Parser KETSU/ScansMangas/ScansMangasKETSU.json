@@ -13,7 +13,7 @@
     "nsfw": false,
     "baseURL": "https://scansmangas.me/",
     "moduleDeveloperSite": "https://bilnaa.github.io/main",
-    "UpdateSite": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/ScansMangas/ScansMangasKETSU.json",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU//ScansMangas/ScansMangasKETSU.json",
     "preferedServer": "",
     "preferedDownloadServer": "",
     "blackListed": []

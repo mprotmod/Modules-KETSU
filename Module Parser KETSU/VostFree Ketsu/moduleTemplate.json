@@ -13,7 +13,7 @@
         "baseURL": "https://vostfree.ws/",
         "searchPlaceHolder": "Entrez plus de 3 caractères.",
         "moduleDeveloperSite": "https://bilnaa.github.io/main",
-        "UpdateSite": "https://raw.githubusercontent.com/Bilna95/Ketsu-Modules/main/VostFree%20Ketsu/moduleTemplate.json",
+        "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/VostFree%20Ketsu/moduleTemplate.json",
         "preferedServer": "UQLOAD",
         "preferedDownloadServer": "UQLOAD",
         "blackListed": [""],

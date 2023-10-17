@@ -13,7 +13,7 @@
     "nsfw": false,
     "baseURL": "https://fr.ninemanga.com/",
     "moduleDeveloperSite": "https://bilnaa.github.io/main/",
-    "UpdateSite": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/NineManga/NineMangaFR.json",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU//NineManga/NineMangaFR.json",
     "preferedServer": "",
     "preferedDownloadServer": "",
     "blackListed": []

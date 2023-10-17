@@ -13,7 +13,7 @@
         "moduleType": "Video",
         "baseURL": "https://aniwatch.to/",
         "moduleDeveloperSite": "https://bilnaa.github.io/main/",
-        "UpdateSite": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Zoro.to/moduleTemplate.json",
+        "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Zoro.to/moduleTemplate.json",
         "preferedServer": "MEGACLOUD",
         "preferedDownloadServer": "MEGACLOUD",
         "blackListed": [""],

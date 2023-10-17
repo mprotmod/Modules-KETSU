@@ -12,7 +12,7 @@
     "moduleType": "Video",
     "baseURL": "https://otakufr.co/",
     "moduleDeveloperSite": "https://bilnaa.github.io/main/",
-    "UpdateSite": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Otakufr/moduleTemplate.json",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU//Otakufr/moduleTemplate.json",
     "preferedServer": "VIDEO",
     "preferedDownloadServer": "DOOD",
     "blackListed": [""],

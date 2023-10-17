@@ -12,7 +12,7 @@
     "moduleType": "Image",
     "baseURL": "https://raw.senmanga.com/",
     "moduleDeveloperSite": "https://bilnaa.github.io/main/",
-    "UpdateSite": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Senmanga/senmanga.json",
+    "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Senmanga/senmanga.json",
     "preferedServer": "",
     "preferedDownloadServer": "",
     "blackListed": [
