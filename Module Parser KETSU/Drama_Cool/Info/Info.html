@@ -1,0 +1,125 @@
+<script type="text/javascript">
+           function Info(request, extra, javascriptConfig, output) {
+          this.request = request;
+          this.extra = extra;
+          this.javascriptConfig = javascriptConfig;
+          this.output = output;
+      }
+
+      function ModuleRequest(url, method, headers, httpBody) {
+          this.url = url;
+          this.method = method;
+          this.headers = headers;
+          this.httpBody = httpBody;
+      }
+
+      function Extra(commands, extraInfo) {
+          this.commands = commands;
+          this.extraInfo = extraInfo;
+      }
+
+      function Commands(commandName, params) {
+          this.commandName = commandName;
+          this.params = params;
+      }
+
+      function JavascriptConfig(removeJavascript, loadInWebView, javaScript) {
+          this.removeJavascript = removeJavascript;
+          this.loadInWebView = loadInWebView;
+          this.javaScript = javaScript;
+      }
+
+      function KeyValue(key, value) {
+          this.key = key;
+          this.value = value;
+      }
+
+      function Chapter(chapName, link, openInWebView) {
+          this.chapName = chapName;
+          this.link = link;
+          this.openInWebView = openInWebView;
+      }
+
+      function Output(image, title, link, description, genres, field1, field2, field3, field4, chapters) {
+          this.image = image;
+          this.link = link;
+          this.title = title;
+          this.description = description;
+          this.genres = genres;
+          this.field1 = field1;
+          this.field2 = field2;
+          this.field3 = field3;
+          this.field4 = field4;
+          this.chapters = chapters;
+      }
+
+      function getStuff(array, match) {
+          for (var x = 0; x < array.length; x++) {
+              let data = array[x].textContent;
+              if (data.includes(match)) {
+                  return data.replace(match, '').trim();
+              }
+          }
+      }
+
+      function getHtmlStuff(array, match) {
+          for (var x = 0; x < array.length; x++) {
+              let data = array[x].textContent;
+              if (data.includes(match)) {
+                  return array[x];
+              }
+          }
+      }
+      var savedData = document.getElementById('ketsu-final-data');
+      var parsedJson = JSON.parse(savedData.innerHTML);
+      let emptyKeyValue = [new KeyValue('', '')];
+      var baseURL = 'https://dramacool.ch/';
+      var episodes = [];
+      var type = 'Drama';
+      var status = document.querySelector('.info').textContent.match(/Status: .+/g)[0].replace('Status: ', '').trim();
+      var lang = document.querySelector('.info').textContent.match(/Country: .+/g)[0].replace('Country: ', '').trim();
+      var genres = Array.from(document.querySelector('.info').textContent.match(/Genre: .+/g)[0].replace('Genre: ', '')
+          .split(';'));
+      var desc = '';
+      var title = document.querySelector('.info h1').textContent;
+      var image = document.querySelector('.img img').src;
+      image = new ModuleRequest(image, 'get', emptyKeyValue, null);
+      var episode = document.querySelector('.list-episode-item-2.all-episode').querySelectorAll('li');
+      for (var i = episode.length - 1; i >= 0; i--) {
+          var fixedLink = baseURL + episode[i].querySelector('a').href;
+          let chapter = new Chapter('Episode ' + (episode.length - i), new ModuleRequest(fixedLink, 'get',
+              emptyKeyValue, null), false);
+          episodes.push(chapter);
+      }
+      try {
+          desc = document.querySelector('.info').textContent.match(/ Depion: \n \n .+/g)[0].replace(' Depion: \n \n ',
+              '') + '3';
+      } catch {}
+      try {
+          desc = document.querySelector('.info p:nth-of-type(n+4)').textContent, document.querySelector(
+              '.info p:nth-of-type(n+5)').textContent;
+      } catch {}
+      try {
+          desc = document.querySelector('.info').textContent.match(/Depion: \n.+/g)[0].replace('Depion: \n ', '')
+      .trim();
+      } catch {}
+      
+      try {
+          desc1 = document.querySelectorAll('.info p');
+          for (var i = 0; i < desc1.length; i++) {
+              if (desc1[i].textContent.includes('Depion:')) {
+                  desc = desc1[i + 1].textContent.trim();
+                  if (desc == '') {
+                      desc = desc1[i + 2].textContent.trim();
+                  }
+              }
+          }
+      } catch (e) {}
+
+      let infoPageObject = new Info(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('',
+          emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output(image, title,
+          parsedJson.request, desc, genres, lang + ' | ' + status, '', type, 'Eps: ' + episodes.length, episodes
+          ));
+      var finalJson = JSON.stringify(infoPageObject);
+      savedData.innerHTML = finalJson;
+    </script>

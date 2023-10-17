@@ -1,0 +1,1149 @@
+{
+    "moduleInfo": {
+        "moduleName": "VoirAnime",
+        "moduleInitials": "VA",
+        "moduleDesc": "Module Ketsu pour VoirAnime, la partie vérification doit être faite sur VOE, Stape, VV ou YU.",
+        "developer": "ナビル",
+        "moduleID": "090102",
+        "moduleImage": "https://1.bp.blogspot.com/-tnOKXWZFR2E/YCZWXHBmzjI/AAAAAAAAACQ/5u3_g7cC6D40AQxnX39AK9TkXo0VVejogCLcBGAsYHQ/s320/Untitled.png",
+        "moduleVersion": 2.82,
+        "moduleLenguage": "FR",
+        "moduleType": "Video",
+        "changelog": "2.82 - Les films sont de retour",
+        "baseURL": "https://voiranime.com/",
+        "moduleDeveloperSite": "https://bilnaa.github.io/main/",
+        "UpdateSite": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/VoirAnime/moduleTemplate.json",
+        "preferedServer": "",
+        "preferedDownloadServer": "",
+        "blackListed": [""],
+        "moduleCreatorIdfpkUUjEIqzMuFROiuGsB": {
+            "path": "SmeTR",
+            "id": "moduleInfosection",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Module Info",
+                "listName": "Parameters"
+            },
+            "cellsHidden": false
+        },
+        "moduleCreatorIdspYUMaiTPeqWCKNSHWAL": {
+            "path": "pGifX",
+            "id": "moduleInfocell",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Parameters"
+            },
+            "cellsHidden": false
+        }
+    },
+    "global": {
+        "variables": [{
+            "key": "",
+            "value": ""
+        }],
+        "cookies": [{
+            "key": "",
+            "value": ""
+        }],
+        "headers": [{
+            "key": "",
+            "value": ""
+        }]
+    },
+    "mainPage": [{
+        "request": {
+            "url": "https://voiranime.com/?s&post_type=wp-manga&op&author&artist&release&adult&type=MOVIE&language=vostfr&m_orderby=latestD",
+            "method": "get",
+            "headers": [{
+                "key": "",
+                "value": "",
+                "moduleCreatorHeaderisActive": true
+            }]
+        },
+        "extra": {
+            "commands": [{
+                "commandName": "",
+                "params": [{
+                    "key": "",
+                    "value": ""
+                }]
+            }],
+            "extraInfo": [{
+                "key": "",
+                "value": ""
+            }]
+        },
+        "javascriptConfig": {
+            "removeJavascript": true,
+            "loadInWebView": false,
+            "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  const DefaultLayouts = {\n        ultraWideFull: 'ultraWideFull',\n        ultraWide: 'ultraWide',\n        wideFull: 'wideFull',\n        wide: 'wide',\n        wideStrechedFull: 'wideStrechedFull',\n        wideStrechedFullDouble: 'WideStrechedFullDouble',\n        wideStreched: 'wideStreched',\n        wideStrechedDouble: 'wideStrechedDouble',\n        wideStrechedFullList: 'wideStrechedFullList',\n        wideStrechedList: 'wideStrechedList',\n        doublets: 'doublets',\n        doubletsDouble: 'doubletsDouble',\n        doubletsFull: 'doubletsFull',\n        doubletsFullDouble: 'doubletsFullDouble',\n        doubletsConstant: 'doubletsConstant',\n        doubletsDoubleConstant: 'doubletsDoubleConstant',\n        doubletsFullConstant: 'doubletsFullConstant',\n        doubletsFullDoubleConstant: 'doubletsFullDoubleConstant',\n        longDoublets: 'longDoublets',\n        longDoubletsDouble: 'longDoubletsDouble',\n        longDoubletsFull: 'longDoubletsFull',\n        longDoubletsFullDouble: 'longDoubletsFullDouble',\n        longDoubletsConstant: 'longDoubletsConstant',\n        longDoubletsDoubleConstant: 'longDoubletsDoubleConstant',\n        longDoubletsFullConstant: 'longDoubletsFullConstant',\n        longDoubletsFullDoubleConstant: 'longDoubletsFullDoubleConstant',\n        triplets: 'triplets',\n        tripletsDouble: 'tripletsDouble',\n        tripletsFull: 'tripletsFull',\n        tripletsFullDouble: 'tripletsFullDouble',\n        tripletsConstant: 'tripletsConstant',\n        tripletsDoubleConstant: 'tripletsDoubleConstant',\n        tripletsFullConstant: 'tripletsFullConstant',\n        tripletsFullDoubleConstant: 'tripletsFullDoubleConstant',\n        longTriplets: 'longTriplets',\n        longTripletsDouble: 'longTripletsDouble',\n        longTripletsFull: 'longTripletsFull',\n        longTripletsFullDouble: 'longTripletsFullDouble',\n        longTripletsConstant: 'longTripletsConstant',\n        longTripletsDoubleConstant: 'longTripletsDoubleConstant',\n        longTripletsFullConstant: 'longTripletsFullConstant',\n        longTripletsFullDoubleConstant: 'longTripletsFullDoubleConstant',\n        none: ''\n};\nconst CellDesings = {\n        Special1: 'Special1',\n        Special2: 'Special2',\n        Special3: 'Special3',\n        CELLHelperText: 'CELLHelperText',\n        small1: 'small1',\n        small2: 'small2',\n        normal1: 'normal1',\n        normal2: 'normal2',\n        normal3: 'normal3',\n        normal4: 'normal4',\n        normal5: 'normal5',\n        normal6: 'normal6',\n        normal7: 'normal7',\n        wide1: 'wide1',\n        wide2: 'wide2',\n        wide3: 'wide3',\n        wide4: 'wide4',\n        wide5: 'wide5',\n        wide6: 'wide6',\n        wide7: 'wide7',\n        wide8: 'wide8',\n        wide9: 'wide9',\n        wide10: 'wide10',\n        wide11: 'wide11'\n};\nconst Paging = {\n        leading: 'leading',\n        centered: 'centered',\n        none: ''\n};\nconst Orientation = {\n        horizontal: 'horizontal',\n        vertical: 'vertical'\n};\n\nfunction MainPage ( request, extra, javascriptConfig, output ) {\n        this.request = request;\n        this.extra = extra;\n        this.javascriptConfig = javascriptConfig;\n        this.output = output;\n}\n\nfunction ModuleRequest ( url, method, headers, httpBody ) {\n        this.url = url;\n        this.method = method;\n        this.headers = headers;\n        this.httpBody = httpBody;\n}\n\nfunction Extra ( commands, extraInfo ) {\n        this.commands = commands;\n        this.extraInfo = extraInfo;\n}\n\nfunction Commands ( commandName, params ) {\n        this.commandName = commandName;\n        this.params = params;\n}\n\nfunction JavascriptConfig ( removeJavascript, loadInWebView, javaScript ) {\n        this.removeJavascript = removeJavascript;\n        this.loadInWebView = loadInWebView;\n        this.javaScript = javaScript;\n}\n\nfunction KeyValue ( key, value ) {\n        this.key = key;\n        this.value = value;\n}\n\nfunction Output ( cellDesing, orientation, defaultLayout, paging, section, layout, data ) {\n        this.cellDesing = cellDesing;\n        this.orientation = orientation;\n        this.defaultLayout = defaultLayout;\n        this.paging = paging;\n        this.section = section;\n        this.layout = layout;\n        this.data = data;\n}\n\nfunction Section ( sectionName, separator ) {\n        this.sectionName = sectionName;\n        this.separator = separator;\n}\n\nfunction Data ( image, title, description, field1, field2, field3, field4, isChapter, link, openInWebView ) {\n        this.image = image;\n        this.title = title;\n        this.description = description;\n        this.field1 = field1;\n        this.field2 = field2;\n        this.field3 = field3;\n        this.field4 = field4;\n        this.isChapter = isChapter;\n        this.link = link;\n        this.openInWebView = openInWebView;\n}\nvar savedData = document.getElementById( 'ketsu-final-data' );\nvar parsedJson = JSON.parse( savedData.innerHTML );\nlet output = [ ];\nlet emptyKeyValue = [ new KeyValue( '', '' ) ];\nvar lastAnime = [ ];\nanime = document.querySelectorAll( '.row.c-tabs-item__content' );\nfor ( list of anime ) {\n        let title = list.querySelector( '.h4 a' ).textContent;\n        var link = list.querySelector( '.h4 a' ).href;\n        link = new ModuleRequest( link, 'get', emptyKeyValue, null );\n        var image = list.querySelector( 'img' ).src;\n        image = new ModuleRequest( image, 'get', emptyKeyValue, null );\n        var ep = '';\n        lastAnime.push( new Data( image, title, '', ep, '', '', '', false, link ) );\n}\noutput.push( new Output( CellDesings.Special1, Orientation.horizontal, DefaultLayouts.triplets, Paging.leading, new Section( 'Derniers Films VOSTFR : ', true ), null, lastAnime ) );\nlet extraInfo = [ new KeyValue( 'count', '1' ), new KeyValue( '0', 'https://voiranime.com/?filter=subbed', new KeyValue( '1', 'https://voiranime.com/?filter=dubbed' ) ) ];\nlet MainPageObject = new MainPage( new ModuleRequest( 'https://voiranime.com/?filter=subbed', 'get', emptyKeyValue, null ), new Extra( [ new Commands( '', emptyKeyValue ) ], extraInfo ), new JavascriptConfig( true, false, '' ), output );\nvar finalJson = JSON.stringify( MainPageObject );\nsavedData.innerHTML = finalJson;\n  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+        },
+        "output": [{
+            "cellDesing": "normal1",
+            "orientation": "vertical",
+            "defaultLayout": "wide",
+            "paging": "",
+            "section": {
+                "sectionName": "",
+                "separator": false
+            },
+            "layout": {
+                "insets": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "visibleCellsWidthS": 2,
+                "visibleCellsWidthM": 2,
+                "visibleCellsWidthL": 2,
+                "visibleCellsHeight": 2,
+                "heightForVisibleCells": 400,
+                "cellSize": {
+                    "width": 300,
+                    "height": 300
+                },
+                "ratio": {
+                    "inRelation": "width",
+                    "number1": 1,
+                    "number2": 2
+                },
+                "constant": {
+                    "width": 1,
+                    "height": 2
+                },
+                "horizontalSpacing": 0,
+                "verticalSpacing": 0
+            },
+            "data": [{
+                "image": {
+                    "url": "",
+                    "method": "get",
+                    "headers": [{
+                        "key": "",
+                        "value": ""
+                    }],
+                    "httpBody": null
+                },
+                "title": "",
+                "description": "",
+                "field1": "",
+                "field2": "",
+                "field3": "",
+                "field4": "",
+                "openInWebView": false,
+                "isChapter": false,
+                "link": {
+                    "url": "",
+                    "method": "",
+                    "headers": [{
+                        "key": "",
+                        "value": ""
+                    }],
+                    "httpBody": null
+                }
+            }]
+        }],
+        "moduleCreatorIdOLplcFSGBuHRtZXUUREp": {
+            "path": "ZdtkO",
+            "id": "mainPage,0cell",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Request"
+            },
+            "cellsHidden": false,
+            "javascriptEditorScroll": 164,
+            "openedMenu": "Request"
+        }
+    }, {
+        "request": {
+            "url": "https://voiranime.com/?filter=subbed",
+            "method": "get",
+            "headers": [{
+                "key": "",
+                "value": "",
+                "moduleCreatorHeaderisActive": true
+            }]
+        },
+        "extra": {
+            "commands": [{
+                "commandName": "",
+                "params": [{
+                    "key": "",
+                    "value": ""
+                }]
+            }],
+            "extraInfo": [{
+                "key": "",
+                "value": ""
+            }]
+        },
+        "javascriptConfig": {
+            "removeJavascript": false,
+            "loadInWebView": false,
+            "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  const DefaultLayouts = {\n        ultraWideFull: 'ultraWideFull',\n        ultraWide: 'ultraWide',\n        wideFull: 'wideFull',\n        wide: 'wide',\n        wideStrechedFull: 'wideStrechedFull',\n        wideStrechedFullDouble: 'WideStrechedFullDouble',\n        wideStreched: 'wideStreched',\n        wideStrechedDouble: 'wideStrechedDouble',\n        wideStrechedFullList: 'wideStrechedFullList',\n        wideStrechedList: 'wideStrechedList',\n        doublets: 'doublets',\n        doubletsDouble: 'doubletsDouble',\n        doubletsFull: 'doubletsFull',\n        doubletsFullDouble: 'doubletsFullDouble',\n        doubletsConstant: 'doubletsConstant',\n        doubletsDoubleConstant: 'doubletsDoubleConstant',\n        doubletsFullConstant: 'doubletsFullConstant',\n        doubletsFullDoubleConstant: 'doubletsFullDoubleConstant',\n        longDoublets: 'longDoublets',\n        longDoubletsDouble: 'longDoubletsDouble',\n        longDoubletsFull: 'longDoubletsFull',\n        longDoubletsFullDouble: 'longDoubletsFullDouble',\n        longDoubletsConstant: 'longDoubletsConstant',\n        longDoubletsDoubleConstant: 'longDoubletsDoubleConstant',\n        longDoubletsFullConstant: 'longDoubletsFullConstant',\n        longDoubletsFullDoubleConstant: 'longDoubletsFullDoubleConstant',\n        triplets: 'triplets',\n        tripletsDouble: 'tripletsDouble',\n        tripletsFull: 'tripletsFull',\n        tripletsFullDouble: 'tripletsFullDouble',\n        tripletsConstant: 'tripletsConstant',\n        tripletsDoubleConstant: 'tripletsDoubleConstant',\n        tripletsFullConstant: 'tripletsFullConstant',\n        tripletsFullDoubleConstant: 'tripletsFullDoubleConstant',\n        longTriplets: 'longTriplets',\n        longTripletsDouble: 'longTripletsDouble',\n        longTripletsFull: 'longTripletsFull',\n        longTripletsFullDouble: 'longTripletsFullDouble',\n        longTripletsConstant: 'longTripletsConstant',\n        longTripletsDoubleConstant: 'longTripletsDoubleConstant',\n        longTripletsFullConstant: 'longTripletsFullConstant',\n        longTripletsFullDoubleConstant: 'longTripletsFullDoubleConstant',\n        none: ''\n};\nconst CellDesings = {\n        Special1: 'Special1',\n        Special2: 'Special2',\n        Special3: 'Special3',\n        CELLHelperText: 'CELLHelperText',\n        small1: 'small1',\n        small2: 'small2',\n        normal1: 'normal1',\n        normal2: 'normal2',\n        normal3: 'normal3',\n        normal4: 'normal4',\n        normal5: 'normal5',\n        normal6: 'normal6',\n        normal7: 'normal7',\n        wide1: 'wide1',\n        wide2: 'wide2',\n        wide3: 'wide3',\n        wide4: 'wide4',\n        wide5: 'wide5',\n        wide6: 'wide6',\n        wide7: 'wide7',\n        wide8: 'wide8',\n        wide9: 'wide9',\n        wide10: 'wide10',\n        wide11: 'wide11'\n};\nconst Paging = {\n        leading: 'leading',\n        centered: 'centered',\n        none: ''\n};\nconst Orientation = {\n        horizontal: 'horizontal',\n        vertical: 'vertical'\n};\n\nfunction MainPage ( request, extra, javascriptConfig, output ) {\n        this.request = request;\n        this.extra = extra;\n        this.javascriptConfig = javascriptConfig;\n        this.output = output;\n}\n\nfunction ModuleRequest ( url, method, headers, httpBody ) {\n        this.url = url;\n        this.method = method;\n        this.headers = headers;\n        this.httpBody = httpBody;\n}\n\nfunction Extra ( commands, extraInfo ) {\n        this.commands = commands;\n        this.extraInfo = extraInfo;\n}\n\nfunction Commands ( commandName, params ) {\n        this.commandName = commandName;\n        this.params = params;\n}\n\nfunction JavascriptConfig ( removeJavascript, loadInWebView, javaScript ) {\n        this.removeJavascript = removeJavascript;\n        this.loadInWebView = loadInWebView;\n        this.javaScript = javaScript;\n}\n\nfunction KeyValue ( key, value ) {\n        this.key = key;\n        this.value = value;\n}\n\nfunction Output ( cellDesing, orientation, defaultLayout, paging, section, layout, data ) {\n        this.cellDesing = cellDesing;\n        this.orientation = orientation;\n        this.defaultLayout = defaultLayout;\n        this.paging = paging;\n        this.section = section;\n        this.layout = layout;\n        this.data = data;\n}\n\nfunction Section ( sectionName, separator ) {\n        this.sectionName = sectionName;\n        this.separator = separator;\n}\n\nfunction Data ( image, title, description, field1, field2, field3, field4, isChapter, link, openInWebView ) {\n        this.image = image;\n        this.title = title;\n        this.description = description;\n        this.field1 = field1;\n        this.field2 = field2;\n        this.field3 = field3;\n        this.field4 = field4;\n        this.isChapter = isChapter;\n        this.link = link;\n        this.openInWebView = openInWebView;\n}\n\nfunction getValueFromKey ( keys, key ) {\n        for ( var x = 0; x < keys.length; x++ ) {\n                let tKey = keys[ x ];\n                if ( tKey.key == key ) {\n                        return tKey.value;\n                }\n        }\n        return '';\n}\nvar savedData = document.getElementById( 'ketsu-final-data' );\nvar parsedJson = JSON.parse( savedData.innerHTML );\nlet output = parsedJson.output;\nlet emptyKeyValue = [ new KeyValue( '', '' ) ];\nvar extraInfo = parsedJson.extra.extraInfo;\nvar count = parseInt( getValueFromKey( extraInfo, 'count' ) );\nvar lastAnime = [ ];\nanime = document.querySelectorAll( '.col-12.col-md-6.badge-pos-1' );\nfor ( list of anime ) {\n        let title = list.querySelector( '.h5 a' ).textContent;\n        var link = list.querySelector( 'a' ).href;\n        link = new ModuleRequest( link, 'get', emptyKeyValue, null );\n        var image = '';\n        try {\n                image = list.querySelector( '.item-thumb img' ).srcset.split( ' ' )[ 4 ];\n        } catch {}\n        if ( image == null ) {\n                image = list.querySelector( '.item-thumb img' ).src;\n        }\n        image = new ModuleRequest( image, 'get', emptyKeyValue, null );\n        try {\n                var ep = 'Épisode ' + list.querySelector( '.btn-link' ).textContent;\n                if ( ep.includes( 'FILM' ) ) {\n                        ep = 'Film'\n                }\n        } catch ( e ) {\n                ep = ''\n        };\n        lastAnime.push( new Data( image, title, '', ep, '', '', '', false, link ) );\n}\noutput.push( new Output( CellDesings.normal1, Orientation.vertical, DefaultLayouts.longTripletsFullConstant, Paging.leading, new Section( 'Derniers épisodes VOSTFR', true ), null, lastAnime ) );\nlet MainPageObject = new MainPage( new ModuleRequest( 'https://voiranime.com/?filter=dubbed', 'get', emptyKeyValue, null ), new Extra( [ new Commands( '', emptyKeyValue ) ], extraInfo ), new JavascriptConfig( true, false, '' ), output );\nvar finalJson = JSON.stringify( MainPageObject );\nsavedData.innerHTML = finalJson;\n  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+        },
+        "output": [{
+            "cellDesing": "normal1",
+            "orientation": "vertical",
+            "defaultLayout": "wide",
+            "paging": "",
+            "section": {
+                "sectionName": "",
+                "separator": false
+            },
+            "layout": {
+                "insets": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "visibleCellsWidthS": 2,
+                "visibleCellsWidthM": 2,
+                "visibleCellsWidthL": 2,
+                "visibleCellsHeight": 2,
+                "heightForVisibleCells": 400,
+                "cellSize": {
+                    "width": 300,
+                    "height": 300
+                },
+                "ratio": {
+                    "inRelation": "width",
+                    "number1": 1,
+                    "number2": 2
+                },
+                "constant": {
+                    "width": 1,
+                    "height": 2
+                },
+                "horizontalSpacing": 0,
+                "verticalSpacing": 0
+            },
+            "data": [{
+                "image": {
+                    "url": "",
+                    "method": "get",
+                    "headers": [{
+                        "key": "",
+                        "value": ""
+                    }],
+                    "httpBody": null
+                },
+                "title": "",
+                "description": "",
+                "field1": "",
+                "field2": "",
+                "field3": "",
+                "field4": "",
+                "openInWebView": false,
+                "isChapter": false,
+                "link": {
+                    "url": "",
+                    "method": "",
+                    "headers": [{
+                        "key": "",
+                        "value": ""
+                    }],
+                    "httpBody": null
+                }
+            }]
+        }],
+        "moduleCreatorIdTCXqbCZYuFpCuBHCPTDq": {
+            "path": "VDCYp",
+            "id": "mainPage,1cell",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Request"
+            },
+            "cellsHidden": false,
+            "javascriptEditorScroll": 0
+        }
+    }, {
+        "request": {
+            "url": "https://voiranime.com/?filter=dubbed",
+            "method": "get",
+            "headers": [{
+                "key": "",
+                "value": "",
+                "moduleCreatorHeaderisActive": true
+            }]
+        },
+        "extra": {
+            "commands": [{
+                "commandName": "",
+                "params": [{
+                    "key": "",
+                    "value": ""
+                }]
+            }],
+            "extraInfo": [{
+                "key": "",
+                "value": ""
+            }]
+        },
+        "javascriptConfig": {
+            "removeJavascript": false,
+            "loadInWebView": false,
+            "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  const DefaultLayouts = {\n        ultraWideFull: 'ultraWideFull',\n        ultraWide: 'ultraWide',\n        wideFull: 'wideFull',\n        wide: 'wide',\n        wideStrechedFull: 'wideStrechedFull',\n        wideStrechedFullDouble: 'WideStrechedFullDouble',\n        wideStreched: 'wideStreched',\n        wideStrechedDouble: 'wideStrechedDouble',\n        wideStrechedFullList: 'wideStrechedFullList',\n        wideStrechedList: 'wideStrechedList',\n        doublets: 'doublets',\n        doubletsDouble: 'doubletsDouble',\n        doubletsFull: 'doubletsFull',\n        doubletsFullDouble: 'doubletsFullDouble',\n        doubletsConstant: 'doubletsConstant',\n        doubletsDoubleConstant: 'doubletsDoubleConstant',\n        doubletsFullConstant: 'doubletsFullConstant',\n        doubletsFullDoubleConstant: 'doubletsFullDoubleConstant',\n        longDoublets: 'longDoublets',\n        longDoubletsDouble: 'longDoubletsDouble',\n        longDoubletsFull: 'longDoubletsFull',\n        longDoubletsFullDouble: 'longDoubletsFullDouble',\n        longDoubletsConstant: 'longDoubletsConstant',\n        longDoubletsDoubleConstant: 'longDoubletsDoubleConstant',\n        longDoubletsFullConstant: 'longDoubletsFullConstant',\n        longDoubletsFullDoubleConstant: 'longDoubletsFullDoubleConstant',\n        triplets: 'triplets',\n        tripletsDouble: 'tripletsDouble',\n        tripletsFull: 'tripletsFull',\n        tripletsFullDouble: 'tripletsFullDouble',\n        tripletsConstant: 'tripletsConstant',\n        tripletsDoubleConstant: 'tripletsDoubleConstant',\n        tripletsFullConstant: 'tripletsFullConstant',\n        tripletsFullDoubleConstant: 'tripletsFullDoubleConstant',\n        longTriplets: 'longTriplets',\n        longTripletsDouble: 'longTripletsDouble',\n        longTripletsFull: 'longTripletsFull',\n        longTripletsFullDouble: 'longTripletsFullDouble',\n        longTripletsConstant: 'longTripletsConstant',\n        longTripletsDoubleConstant: 'longTripletsDoubleConstant',\n        longTripletsFullConstant: 'longTripletsFullConstant',\n        longTripletsFullDoubleConstant: 'longTripletsFullDoubleConstant',\n        none: ''\n};\nconst CellDesings = {\n        Special1: 'Special1',\n        Special2: 'Special2',\n        Special3: 'Special3',\n        CELLHelperText: 'CELLHelperText',\n        small1: 'small1',\n        small2: 'small2',\n        normal1: 'normal1',\n        normal2: 'normal2',\n        normal3: 'normal3',\n        normal4: 'normal4',\n        normal5: 'normal5',\n        normal6: 'normal6',\n        normal7: 'normal7',\n        wide1: 'wide1',\n        wide2: 'wide2',\n        wide3: 'wide3',\n        wide4: 'wide4',\n        wide5: 'wide5',\n        wide6: 'wide6',\n        wide7: 'wide7',\n        wide8: 'wide8',\n        wide9: 'wide9',\n        wide10: 'wide10',\n        wide11: 'wide11'\n};\nconst Paging = {\n        leading: 'leading',\n        centered: 'centered',\n        none: ''\n};\nconst Orientation = {\n        horizontal: 'horizontal',\n        vertical: 'vertical'\n};\n\nfunction MainPage ( request, extra, javascriptConfig, output ) {\n        this.request = request;\n        this.extra = extra;\n        this.javascriptConfig = javascriptConfig;\n        this.output = output;\n}\n\nfunction ModuleRequest ( url, method, headers, httpBody ) {\n        this.url = url;\n        this.method = method;\n        this.headers = headers;\n        this.httpBody = httpBody;\n}\n\nfunction Extra ( commands, extraInfo ) {\n        this.commands = commands;\n        this.extraInfo = extraInfo;\n}\n\nfunction Commands ( commandName, params ) {\n        this.commandName = commandName;\n        this.params = params;\n}\n\nfunction JavascriptConfig ( removeJavascript, loadInWebView, javaScript ) {\n        this.removeJavascript = removeJavascript;\n        this.loadInWebView = loadInWebView;\n        this.javaScript = javaScript;\n}\n\nfunction KeyValue ( key, value ) {\n        this.key = key;\n        this.value = value;\n}\n\nfunction Output ( cellDesing, orientation, defaultLayout, paging, section, layout, data ) {\n        this.cellDesing = cellDesing;\n        this.orientation = orientation;\n        this.defaultLayout = defaultLayout;\n        this.paging = paging;\n        this.section = section;\n        this.layout = layout;\n        this.data = data;\n}\n\nfunction Section ( sectionName, separator ) {\n        this.sectionName = sectionName;\n        this.separator = separator;\n}\n\nfunction Data ( image, title, description, field1, field2, field3, field4, isChapter, link, openInWebView ) {\n        this.image = image;\n        this.title = title;\n        this.description = description;\n        this.field1 = field1;\n        this.field2 = field2;\n        this.field3 = field3;\n        this.field4 = field4;\n        this.isChapter = isChapter;\n        this.link = link;\n        this.openInWebView = openInWebView;\n}\n\nfunction getValueFromKey ( keys, key ) {\n        for ( var x = 0; x < keys.length; x++ ) {\n                let tKey = keys[ x ];\n                if ( tKey.key == key ) {\n                        return tKey.value;\n                }\n        }\n        return '';\n}\nvar savedData = document.getElementById( 'ketsu-final-data' );\nvar parsedJson = JSON.parse( savedData.innerHTML );\nlet output = parsedJson.output;\nlet emptyKeyValue = [ new KeyValue( '', '' ) ];\nvar extraInfo = parsedJson.extra.extraInfo;\nvar count = parseInt( getValueFromKey( extraInfo, 'count' ) );\nvar lastAnime = [ ];\nanime = document.querySelectorAll( '.col-12.col-md-6.badge-pos-1' );\nfor ( list of anime ) {\n        let title = list.querySelector( '.h5 a' ).textContent;\n        var link = list.querySelector( 'a' ).href;\n        link = new ModuleRequest( link, 'get', emptyKeyValue, null );\n        var image = '';\n        try {\n                image = list.querySelector( '.item-thumb img' ).srcset.split( ' ' )[ 4 ];\n        } catch {}\n        if ( image == null ) {\n                image = list.querySelector( '.item-thumb img' ).src;\n        }\n        image = new ModuleRequest( image, 'get', emptyKeyValue, null );\n        try {\n                var ep = 'Épisode ' + list.querySelector( '.btn-link' ).textContent;\n                if ( ep.includes( 'FILM' ) ) {\n                        ep = 'Film'\n                }\n        } catch ( e ) {\n                ep = ''\n        };\n        lastAnime.push( new Data( image, title, '', ep, '', '', '', false, link ) );\n}\noutput.push( new Output( CellDesings.normal1, Orientation.vertical, DefaultLayouts.longTripletsFullConstant, Paging.leading, new Section( 'Derniers épisodes VF', true ), null, lastAnime ) );\ncount = count + 1;\nextraInfo[ 0 ].value = '' + count;\nvar nextRequest = getValueFromKey( extraInfo, '' + count );\nlet MainPageObject = new MainPage( new ModuleRequest( '', 'get', emptyKeyValue, null ), new Extra( [ new Commands( '', emptyKeyValue ) ], extraInfo ), new JavascriptConfig( true, false, '' ), output );\nvar finalJson = JSON.stringify( MainPageObject );\nsavedData.innerHTML = finalJson;\n  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+        },
+        "output": [{
+            "cellDesing": "normal1",
+            "orientation": "vertical",
+            "defaultLayout": "wide",
+            "paging": "",
+            "section": {
+                "sectionName": "",
+                "separator": false
+            },
+            "layout": {
+                "insets": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "visibleCellsWidthS": 2,
+                "visibleCellsWidthM": 2,
+                "visibleCellsWidthL": 2,
+                "visibleCellsHeight": 2,
+                "heightForVisibleCells": 400,
+                "cellSize": {
+                    "width": 300,
+                    "height": 300
+                },
+                "ratio": {
+                    "inRelation": "width",
+                    "number1": 1,
+                    "number2": 2
+                },
+                "constant": {
+                    "width": 1,
+                    "height": 2
+                },
+                "horizontalSpacing": 0,
+                "verticalSpacing": 0
+            },
+            "data": [{
+                "image": {
+                    "url": "",
+                    "method": "get",
+                    "headers": [{
+                        "key": "",
+                        "value": ""
+                    }],
+                    "httpBody": null
+                },
+                "title": "",
+                "description": "",
+                "field1": "",
+                "field2": "",
+                "field3": "",
+                "field4": "",
+                "openInWebView": false,
+                "isChapter": false,
+                "link": {
+                    "url": "",
+                    "method": "",
+                    "headers": [{
+                        "key": "",
+                        "value": ""
+                    }],
+                    "httpBody": null
+                }
+            }]
+        }],
+        "moduleCreatorIdoQrEFMWkWAfmqMFEdBgB": {
+            "path": "EAXAv",
+            "id": "mainPage,2cell",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Request"
+            },
+            "cellsHidden": false,
+            "javascriptEditorScroll": 0
+        }
+    }],
+    "search": [{
+        "request": {
+            "url": "https://voiranime.com/page/<page>/?s=<searched>&post_type=wp-manga&op=&author=&artist=&release=&adult=&type=&language=",
+            "method": "get",
+            "headers": [{
+                "key": "",
+                "value": "",
+                "moduleCreatorHeaderisActive": true
+            }]
+        },
+        "separator": "+",
+        "extra": {
+            "commands": [{
+                "commandName": "",
+                "params": [{
+                    "key": "",
+                    "value": ""
+                }]
+            }],
+            "extraInfo": [{
+                "key": "",
+                "value": ""
+            }]
+        },
+        "javascriptConfig": {
+            "removeJavascript": true,
+            "loadInWebView": false,
+            "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  const DefaultLayouts = {\n        ultraWideFull: 'ultraWideFull',\n        ultraWide: 'ultraWide',\n        wideFull: 'wideFull',\n        wide: 'wide',\n        wideStrechedFull: 'wideStrechedFull',\n        wideStrechedFullDouble: 'WideStrechedFullDouble',\n        wideStreched: 'wideStreched',\n        wideStrechedDouble: 'wideStrechedDouble',\n        wideStrechedFullList: 'wideStrechedFullList',\n        wideStrechedList: 'wideStrechedList',\n        doublets: 'doublets',\n        doubletsDouble: 'doubletsDouble',\n        doubletsFull: 'doubletsFull',\n        doubletsFullDouble: 'doubletsFullDouble',\n        doubletsConstant: 'doubletsConstant',\n        doubletsDoubleConstant: 'doubletsDoubleConstant',\n        doubletsFullConstant: 'doubletsFullConstant',\n        doubletsFullDoubleConstant: 'doubletsFullDoubleConstant',\n        longDoublets: 'longDoublets',\n        longDoubletsDouble: 'longDoubletsDouble',\n        longDoubletsFull: 'longDoubletsFull',\n        longDoubletsFullDouble: 'longDoubletsFullDouble',\n        longDoubletsConstant: 'longDoubletsConstant',\n        longDoubletsDoubleConstant: 'longDoubletsDoubleConstant',\n        longDoubletsFullConstant: 'longDoubletsFullConstant',\n        longDoubletsFullDoubleConstant: 'longDoubletsFullDoubleConstant',\n        triplets: 'triplets',\n        tripletsDouble: 'tripletsDouble',\n        tripletsFull: 'tripletsFull',\n        tripletsFullDouble: 'tripletsFullDouble',\n        tripletsConstant: 'tripletsConstant',\n        tripletsDoubleConstant: 'tripletsDoubleConstant',\n        tripletsFullConstant: 'tripletsFullConstant',\n        tripletsFullDoubleConstant: 'tripletsFullDoubleConstant',\n        longTriplets: 'longTriplets',\n        longTripletsDouble: 'longTripletsDouble',\n        longTripletsFull: 'longTripletsFull',\n        longTripletsFullDouble: 'longTripletsFullDouble',\n        longTripletsConstant: 'longTripletsConstant',\n        longTripletsDoubleConstant: 'longTripletsDoubleConstant',\n        longTripletsFullConstant: 'longTripletsFullConstant',\n        longTripletsFullDoubleConstant: 'longTripletsFullDoubleConstant',\n        none: ''\n};\nconst CellDesings = {\n        Special1: 'Special1',\n        Special2: 'Special2',\n        Special3: 'Special3',\n        CELLHelperText: 'CELLHelperText',\n        small1: 'small1',\n        small2: 'small2',\n        normal1: 'normal1',\n        normal2: 'normal2',\n        normal3: 'normal3',\n        normal4: 'normal4',\n        normal5: 'normal5',\n        normal6: 'normal6',\n        normal7: 'normal7',\n        wide1: 'wide1',\n        wide2: 'wide2',\n        wide3: 'wide3',\n        wide4: 'wide4',\n        wide5: 'wide5',\n        wide6: 'wide6',\n        wide7: 'wide7',\n        wide8: 'wide8',\n        wide9: 'wide9',\n        wide10: 'wide10',\n        wide11: 'wide11'\n};\nconst Paging = {\n        leading: 'leading',\n        centered: 'centered',\n        none: ''\n};\nconst Orientation = {\n        horizontal: 'horizontal',\n        vertical: 'vertical'\n};\n\nfunction Search ( request, extra, separator, javascriptConfig, output ) {\n        this.request = request;\n        this.extra = extra;\n        this.separator = separator;\n        this.javascriptConfig = javascriptConfig;\n        this.output = output;\n}\n\nfunction ModuleRequest ( url, method, headers, httpBody ) {\n        this.url = url;\n        this.method = method;\n        this.headers = headers;\n        this.httpBody = httpBody;\n}\n\nfunction Extra ( commands, extraInfo ) {\n        this.commands = commands;\n        this.extraInfo = extraInfo;\n}\n\nfunction Commands ( commandName, params ) {\n        this.commandName = commandName;\n        this.params = params;\n}\n\nfunction JavascriptConfig ( removeJavascript, loadInWebView, javaScript ) {\n        this.removeJavascript = removeJavascript;\n        this.loadInWebView = loadInWebView;\n        this.javaScript = javaScript;\n}\n\nfunction KeyValue ( key, value ) {\n        this.key = key;\n        this.value = value;\n}\n\nfunction Output ( cellDesing, orientation, defaultLayout, paging, section, layout, data ) {\n        this.cellDesing = cellDesing;\n        this.orientation = orientation;\n        this.defaultLayout = defaultLayout;\n        this.paging = paging;\n        this.section = section;\n        this.layout = layout;\n        this.data = data;\n}\n\nfunction Section ( sectionName, separator ) {\n        this.sectionName = sectionName;\n        this.separator = separator;\n}\n\nfunction Layout ( insets, visibleCellsWidthS, visibleCellsWidthM, visibleCellsWidthL, visibleCellsHeight, heightForVisibleCells, cellSize, ratio, constant, horizontalSpacing, verticalSpacing ) {\n        this.insets = insets;\n        this.visibleCellsWidthS = visibleCellsWidthS;\n        this.visibleCellsWidthM = visibleCellsWidthM;\n        this.visibleCellsWidthL = visibleCellsWidthL;\n        this.visibleCellsHeight = visibleCellsHeight;\n        this.heightForVisibleCells = heightForVisibleCells;\n        this.cellSize = cellSize;\n        this.ratio = ratio;\n        this.constant = constant;\n        this.horizontalSpacing = horizontalSpacing;\n        this.verticalSpacing = verticalSpacing;\n}\n\nfunction Insets ( top, bottom, left, right ) {\n        this.top = top;\n        this.bottom = bottom;\n        this.left = left;\n        this.right = right;\n}\n\nfunction Size ( width, height ) {\n        this.width = width;\n        this.height = height;\n}\n\nfunction Ratio ( inRelation, number1, number2 ) {\n        this.inRelation = inRelation;\n        this.number1 = number1;\n        this.number2 = number2;\n}\n\nfunction Data ( image, title, description, field1, field2, field3, field4, isChapter, link, openInWebView ) {\n        this.image = image;\n        this.title = title;\n        this.description = description;\n        this.field1 = field1;\n        this.field2 = field2;\n        this.field3 = field3;\n        this.field4 = field4;\n        this.isChapter = isChapter;\n        this.link = link;\n        this.openInWebView = openInWebView;\n}\n\nfunction quickData ( link, image, title, field1 ) {\n        return new Data( image, title, 'unknown', field1, 'unknown', 'unknown', 'unknown', false, link );\n}\n\nfunction shuffle ( a ) {\n        var j, x, i;\n        for ( i = a.length - 1; i > 0; i-- ) {\n                j = Math.floor( Math.random( ) * ( i + 1 ) );\n                x = a[ i ];\n                a[ i ] = a[ j ];\n                a[ j ] = x;\n        }\n        return a;\n}\nvar savedData = document.getElementById( 'ketsu-final-data' );\nvar parsedJson = JSON.parse( savedData.innerHTML );\nlet output = [ ];\nlet emptyKeyValue = [ new KeyValue( '', '' ) ];\nvar lastAdded = document.querySelector( '.c-tabs-item' ).querySelectorAll( '.row.c-tabs-item__content' );\nlet lastAddedArray = [ ];\nfor ( var x = 0; x < lastAdded.length; x++ ) {\n        let list = lastAdded[ x ];\n        let title = list.querySelector( '.h4 a' ).textContent;\n        var link = list.querySelector( '.h4 a' ).href;\n        var image = list.querySelector( 'img' ).src;\n        var desc = list.querySelector( '.post-content' ).textContent.replaceAll( '\\n', ' ' );\n        link = new ModuleRequest( link, 'get', emptyKeyValue, null );\n        image = new ModuleRequest( image, 'get', emptyKeyValue, null );\n        if ( title.includes( '(VF)' ) ) {\n                var field2 = 'VF';\n        } else {\n                var field2 = 'VOSTFR';\n        };\n        var finalData = new Data( image, title, desc, '', field2, 'unknown', 'unknown', false, link );;\n        lastAddedArray.push( finalData );\n}\nvar testLayout = new Layout( new Insets( 10, 10, 10, 10 ), 1, 2, 3, 1, 500, new Size( 400, 400 ), new Ratio( 'width', 4, 11 ), new Size( 0, 0 ), 10, 10 );\noutput.push( new Output( CellDesings.wide11, Orientation.vertical, DefaultLayouts.none, Paging.none, new Section( '', false ), testLayout, lastAddedArray ) );;\nlet searchPageObject = new Search( new ModuleRequest( '', '', emptyKeyValue, null ), new Extra( [ new Commands( '', emptyKeyValue ) ], emptyKeyValue ), '', new JavascriptConfig( true, false, '' ), output );\nvar finalJson = JSON.stringify( searchPageObject );\nsavedData.innerHTML = finalJson;\n  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+        },
+        "output": [{
+            "cellDesing": "normal1",
+            "orientation": "vertical",
+            "defaultLayout": "wide",
+            "paging": "",
+            "section": {
+                "sectionName": "",
+                "separator": false
+            },
+            "layout": {
+                "insets": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "visibleCellsWidthS": 2,
+                "visibleCellsWidthM": 2,
+                "visibleCellsWidthL": 2,
+                "visibleCellsHeight": 2,
+                "heightForVisibleCells": 400,
+                "cellSize": {
+                    "width": 300,
+                    "height": 300
+                },
+                "ratio": {
+                    "inRelation": "width",
+                    "number1": 1,
+                    "number2": 2
+                },
+                "constant": {
+                    "width": 1,
+                    "height": 2
+                },
+                "horizontalSpacing": 0,
+                "verticalSpacing": 0
+            },
+            "data": [{
+                "image": {
+                    "url": "",
+                    "method": "get",
+                    "headers": [{
+                        "key": "",
+                        "value": ""
+                    }],
+                    "httpBody": null
+                },
+                "title": "",
+                "description": "",
+                "field1": "",
+                "field2": "",
+                "field3": "",
+                "field4": "",
+                "openInWebView": false,
+                "isChapter": false,
+                "link": {
+                    "url": "empty",
+                    "method": "get",
+                    "headers": [{
+                        "key": "key",
+                        "value": "value"
+                    }],
+                    "httpBody": null
+                }
+            }]
+        }],
+        "moduleCreatorIddpICGKbbGOLrREhRCblt": {
+            "path": "NMTxW",
+            "id": "search,0cell",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Request"
+            },
+            "cellsHidden": false,
+            "javascriptEditorScroll": 0
+        }
+    }],
+    "info": [{
+        "request": {
+            "url": "https://v2.voiranime.com/anime/kimi-wo-aishita-hitori-no-boku-e/",
+            "method": "get",
+            "headers": [{
+                "key": "",
+                "value": "",
+                "moduleCreatorHeaderisActive": true
+            }]
+        },
+        "extra": {
+            "commands": [{
+                "commandName": "",
+                "params": [{
+                    "key": "",
+                    "value": ""
+                }]
+            }],
+            "extraInfo": [{
+                "key": "",
+                "value": ""
+            }]
+        },
+        "javascriptConfig": {
+            "removeJavascript": true,
+            "loadInWebView": false,
+            "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */ function Info ( request, extra, javascriptConfig, output ) {\n\tthis.request = request;\n\tthis.extra = extra;\n\tthis.javascriptConfig = javascriptConfig;\n\tthis.output = output;\n}\n\nfunction ModuleRequest ( url, method, headers, httpBody ) {\n\tthis.url = url;\n\tthis.method = method;\n\tthis.headers = headers;\n\tthis.httpBody = httpBody;\n}\n\nfunction Extra ( commands, extraInfo ) {\n\tthis.commands = commands;\n\tthis.extraInfo = extraInfo;\n}\n\nfunction Commands ( commandName, params ) {\n\tthis.commandName = commandName;\n\tthis.params = params;\n}\n\nfunction JavascriptConfig ( removeJavascript, loadInWebView, javaScript ) {\n\tthis.removeJavascript = removeJavascript;\n\tthis.loadInWebView = loadInWebView;\n\tthis.javaScript = javaScript;\n}\n\nfunction KeyValue ( key, value ) {\n\tthis.key = key;\n\tthis.value = value;\n}\n\nfunction Chapter ( chapName, link, openInWebView ) {\n\tthis.chapName = chapName;\n\tthis.link = link;\n\tthis.openInWebView = openInWebView;\n}\n\nfunction Output ( image, title, link, description, genres, field1, field2, field3, field4, chapters ) {\n\tthis.image = image;\n\tthis.link = link;\n\tthis.title = title;\n\tthis.description = description;\n\tthis.genres = genres;\n\tthis.field1 = field1;\n\tthis.field2 = field2;\n\tthis.field3 = field3;\n\tthis.field4 = field4;\n\tthis.chapters = chapters;\n}\n\nfunction getStuff ( array, match ) {\n\tfor ( var x = 0; x < array.length; x++ ) {\n\t\t\tlet data = array[ x ].innerText;\n\t\t\tif ( data.includes( match ) ) {\n\t\t\t\t\treturn data.replace( match, '' ).trim( );\n\t\t\t}\n\t}\n}\n\nfunction getHtmlStuff ( array, match ) {\n\tfor ( var x = 0; x < array.length; x++ ) {\n\t\t\tlet data = array[ x ].innerText;\n\t\t\tif ( data.includes( match ) ) {\n\t\t\t\t\treturn array[ x ];\n\t\t\t}\n\t}\n}\nvar savedData = document.getElementById( 'ketsu-final-data' );\nvar parsedJson = JSON.parse( savedData.innerHTML );\nlet emptyKeyValue = [ new KeyValue( '', '' ) ];\nvar episodes = [ ];\n\nlet metadata = document.querySelectorAll('div.post-content div.post-content_item');\nlet type = '';\nlet status = '';\n\nfor(let info of metadata){\n\tif(info.querySelector('.summary-heading h5').textContent.includes('Status')){\n\t\tstatus = info.querySelector('.summary-content').textContent.trim();\n\t} else if (info.querySelector('.summary-heading h5').textContent.includes('Type')){\n\t\ttype = info.querySelector('.summary-content').textContent.trim();\n\t}\n}\n\nlet genres = [ ];\ngenres = Array.from( document.querySelectorAll( '.genres-content a' ) ).map( g => g.textContent );\nlet desc = document.querySelector( '.depion-summary' ).textContent.trim( );\nlet title = document.querySelector( '.post-title h1' ).textContent.trim( );\nif ( title.includes( 'VF' ) ) {\n\ttype = 'VF';\n} else {\n\ttype = 'VOSTFR'\n}\nlet image = document.querySelector( '.summary_image img' ).src;\nimage = new ModuleRequest( image, 'get', emptyKeyValue, null );\nvar chapters = document.querySelector( '.listing-chapters_wrap .main.version-chap' ).querySelectorAll( 'li' );\nfor ( let i = chapters.length - 1; i >= 0; i-- ) {\n\tvar element = chapters[ i ];\n\tvar fixedLink = element.querySelector( 'a' ).href;\n\tlet episodeName = ''\n\tif(!element.querySelector('a').textContent.includes('FILM')){\n\t\t\tepisodeName = `Episode ${element.querySelector('a').textContent.match(`(-)+(.[0-9]+.)+(${type})`)[2]} ${type}`;\n\t} else {\n\t\t\tepisodeName = element.querySelector('a').textContent;\n\t}\n\tlet chapter = new Chapter( episodeName, new ModuleRequest( fixedLink, 'get', emptyKeyValue, null ), false );\n\tepisodes.push( chapter );\n}\nlet infoPageObject = new Info( new ModuleRequest( '', '', emptyKeyValue, null ), new Extra( [ new Commands( '', emptyKeyValue ) ], emptyKeyValue ), new JavascriptConfig( false, false, '' ), new Output( image, title, parsedJson.request, desc, genres, status, 'Anime', type, 'Eps: ' + episodes.length, episodes ) );\nvar finalJson = JSON.stringify( infoPageObject );\nsavedData.innerHTML = finalJson;\n /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+        },
+        "output": {
+            "image": {
+                "url": "",
+                "method": "get",
+                "headers": [{
+                    "key": "",
+                    "value": ""
+                }],
+                "httpBody": null
+            },
+            "link": {
+                "url": "",
+                "method": "get",
+                "headers": [{
+                    "key": "",
+                    "value": ""
+                }],
+                "httpBody": null
+            },
+            "title": "",
+            "description": "",
+            "genres": [""],
+            "field1": "",
+            "field2": "",
+            "field3": "",
+            "field4": "",
+            "chapters": [{
+                "chapName": "",
+                "openInWebView": false,
+                "link": {
+                    "url": "empty",
+                    "method": "get",
+                    "headers": [{
+                        "key": "key",
+                        "value": "value"
+                    }],
+                    "httpBody": null
+                }
+            }]
+        },
+        "moduleCreatorIdpnDEppffsoGbIiOTyqjg": {
+            "path": "Kanvi",
+            "id": "info,0cell",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Request"
+            },
+            "cellsHidden": false,
+            "javascriptEditorScroll": 6742.22216796875,
+            "openedMenu": "Request"
+        }
+    }],
+    "chapters": [{
+        "request": {
+            "url": "https://v2.voiranime.com/anime/kimi-wo-aishita-hitori-no-boku-e/",
+            "method": "get",
+            "headers": [{
+                "key": "key",
+                "value": "value",
+                "moduleCreatorHeaderisActive": true
+            }, {
+                "key": "",
+                "value": "",
+                "moduleCreatorHeaderisActive": true
+            }]
+        },
+        "extra": {
+            "commands": [{
+                "commandName": "",
+                "params": [{
+                    "key": "",
+                    "value": ""
+                }]
+            }],
+            "extraInfo": [{
+                "key": "",
+                "value": ""
+            }]
+        },
+        "javascriptConfig": {
+            "removeJavascript": true,
+            "loadInWebView": false,
+            "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  function Chapters ( request, extra, javascriptConfig, output ) {\n        this.request = request;\n        this.extra = extra;\n        this.javascriptConfig = javascriptConfig;\n        this.output = output;\n}\n\nfunction ModuleRequest ( url, method, headers, httpBody ) {\n        this.url = url;\n        this.method = method;\n        this.headers = headers;\n        this.httpBody = httpBody;\n}\n\nfunction Extra ( commands, extraInfo ) {\n        this.commands = commands;\n        this.extraInfo = extraInfo;\n}\n\nfunction Commands ( commandName, params ) {\n        this.commandName = commandName;\n        this.params = params;\n}\n\nfunction JavascriptConfig ( removeJavascript, loadInWebView, javaScript ) {\n        this.removeJavascript = removeJavascript;\n        this.loadInWebView = loadInWebView;\n        this.javaScript = javaScript;\n}\n\nfunction KeyValue ( key, value ) {\n        this.key = key;\n        this.value = value;\n}\n\nfunction Output ( videos, images, text ) {\n        this.videos = videos;\n        this.images = images;\n        this.text = text;\n}\n\nfunction Videos ( needsResolver, rawVideo ) {\n        this.needsResolver = needsResolver;\n        this.rawVideo = rawVideo;\n}\n\nfunction NeedsResolver ( resolverIdentifier, link ) {\n        this.resolverIdentifier = resolverIdentifier;\n        this.link = link;\n}\n\nfunction RawVideo ( video ) {\n        this.video = video;\n}\n\nfunction Video ( videoQuality, videoLink ) {\n        this.videoQuality = videoQuality;\n        this.videoLink = videoLink;\n}\n\nfunction Text ( text ) {\n        this.text = text;\n}\nvar output = [ ];\nvar savedData = document.getElementById( 'ketsu-final-data' );\nvar parsedJson = JSON.parse( savedData.innerHTML );\nvar emptyKeyValue = [ new KeyValue( '', '' ) ];\nlet newRequest = new ModuleRequest( parsedJson.request.url, 'get', emptyKeyValue, null );\nvar commands = [ new Commands( 'helperFunction', [ new KeyValue( 'isCustomRequest', 'true' ), new KeyValue( 'name', 'example' ) ] ) ];\nfor ( const data of parsedJson.global.variables ) {\n        const link = data.value;\n        if ( link.includes( 'streamtape.com' ) ) {\n                var fixedLink = link.replace( 'https://streamtape.com/', 'https://streamta.pe/' );\n                output.push( new NeedsResolver( '', new ModuleRequest( fixedLink, 'get', emptyKeyValue, null ) ) );\n        }\n        if ( link.includes( 'videovard.sx' ) || link.includes( 'video.sibnet.ru/' ) || link.includes( 'yourupload.com' ) || link.includes( 'voe' ) ) {\n                output.push( new NeedsResolver( '', new ModuleRequest( link, 'get', emptyKeyValue, null ) ) );\n        } else if ( link.includes( 'sbfull' ) || link.includes( 'watchsb' )  ) {\n                output.push( new NeedsResolver( 'WATCHSB', new ModuleRequest( link, 'get', emptyKeyValue, null ) ) );\n        } else {\n                output.push( new NeedsResolver( 'UNSUPPORTED', new ModuleRequest( link, 'get', emptyKeyValue, null ) ) );\n        }\n}\nif(output.length == 2){\n  output.shift();\n}\nlet emptyExtra = new Extra( commands, emptyKeyValue );\nvar chaptersObject = new Chapters( newRequest, emptyExtra, new JavascriptConfig( false, false, '' ), new Output( new Videos( output, null ), null, null ), new Extra( '', emptyKeyValue ) );\nvar finalJson = JSON.stringify( chaptersObject );\nsavedData.innerHTML = finalJson;\n  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+        },
+        "output": {
+            "videos": {
+                "needsResolver": [{
+                    "resolverIdentifier": "",
+                    "link": {
+                        "url": "",
+                        "method": "get",
+                        "headers": [{
+                            "key": "key",
+                            "value": "value"
+                        }],
+                        "httpBody": null
+                    }
+                }],
+                "rawVideo": [{
+                    "video": [{
+                        "videoQuality": "",
+                        "videoLink": {
+                            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                            "method": "get",
+                            "headers": [{
+                                "key": "key",
+                                "value": "value"
+                            }],
+                            "httpBody": null
+                        }
+                    }]
+                }]
+            },
+            "images": [{
+                "url": "empty",
+                "method": "get",
+                "headers": [{
+                    "key": "key",
+                    "value": "value"
+                }],
+                "httpBody": null
+            }],
+            "text": {
+                "text": ""
+            }
+        },
+        "moduleCreatorIdBWJCSKOfoKrejmbGQGch": {
+            "path": "ISJbw",
+            "id": "chapters,0cell",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Request"
+            },
+            "cellsHidden": false,
+            "openedMenu": "Request",
+            "javascriptEditorScroll": 86
+        }
+    }],
+    "moduleResolvers": [{
+        "resolverInfo": {
+            "resolverName": "STREAMTA",
+            "nameMatches": ["STREAMTA"],
+            "developer": "ナビル",
+            "moduleID": "8465132120",
+            "resolverVersion": 1.6,
+            "baseURL": "",
+            "moduleCreatorIdDdQVDyzKmSpxcMcRbVYE": {
+                "path": "GAqBw",
+                "id": "moduleResolvers,1,resolverInfosection",
+                "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+                "options": {
+                    "name": "Resolver Parameters",
+                    "listName": "parameters"
+                },
+                "cellsHidden": false
+            },
+            "moduleCreatorIdljrxMpojqbKjPxMctHjj": {
+                "path": "bNwJI",
+                "id": "moduleResolvers,1,resolverInfocell",
+                "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+                "options": {
+                    "name": "parameters"
+                },
+                "cellsHidden": false
+            }
+        },
+        "resolver": [{
+            "request": {
+                "url": "empty",
+                "method": "get",
+                "headers": [{
+                    "key": "key",
+                    "value": "value"
+                }],
+                "httpBody": null
+            },
+            "extra": {
+                "commands": [{
+                    "commandName": "",
+                    "params": [{
+                        "key": "",
+                        "value": ""
+                    }]
+                }],
+                "extraInfo": [{
+                    "key": "",
+                    "value": ""
+                }]
+            },
+            "javascriptConfig": {
+                "removeJavascript": true,
+                "loadInWebView": false,
+                "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  function Resolver(request, extra, javascriptConfig, output) {this.request = request;this.extra = extra;this.javascriptConfig = javascriptConfig;this.output = output;}function ModuleRequest(url, method, headers, httpBody) {this.url = url;this.method = method;this.headers = headers;this.httpBody = httpBody;}function Extra(commands, extraInfo) {this.commands = commands;this.extraInfo = extraInfo;}function Commands(commandName, params) {this.commandName = commandName;this.params = params;}function JavascriptConfig(removeJavascript, loadInWebView, javaScript) {this.removeJavascript = removeJavascript;this.loadInWebView = loadInWebView;this.javaScript = javaScript;}function KeyValue(key, value) {this.key = key;this.value = value;}function Output(video) {this.video = video;}function Video(videoQuality, videoLink) {this.videoQuality = videoQuality;this.videoLink = videoLink;}function getNext(match, array) {for(var x = 0; x < array.length; x++) {let mMatch = array[x];if(mMatch.includes(match)) {return array[x + 1];}}}var savedData = document.getElementById('ketsu-final-data');var parsedJson = JSON.parse(savedData.innerHTML);var emptyKeyValue = [new KeyValue('Referer', parsedJson.request.url)];var videos = [];let playerRegex = /innerHTML\\s=\\s*\"([^\"]+)\"\\s?\\+\\s?''\\+\\s?\\('([^']+)/;let body = document.body.innerText;let playerMatch = playerRegex.exec(body);if (playerMatch) { let matchedLink = playerMatch[2]; let index = matchedLink.indexOf('?');if (index == -1){try{firstpart = playerMatch[1].split('=')[1].replace('\"','');secondpart = playerMatch[2].substr(5);secondtry = playerMatch[2].substr(4);let videoLink = 'https://streamta.pe/get_video?id=' + firstpart + secondpart + '&stream=1';let fixedLink = 'https://streamta.pe/get_video?id=' + firstpart + secondtry + '&stream=1';console.log(videoLink,fixedLink);videos.push(new Video('THAI GUY WAS HERE', new ModuleRequest(fixedLink, 'get', emptyKeyValue, null)));videos.push(new Video('Normal',new ModuleRequest(videoLink,'get',emptyKeyValue,null)));}catch(e){}try{if (matchedLink.match(/^=/)){let videoLink = 'https://streamta.pe/get_video?id=' + matchedLink.substr(5) + '&stream=1';if (videoLink.includes('id==')) {videoLink = videoLink.replace('id==', 'id='); }console.log(videoLink);videos.push(new Video('Normal',new ModuleRequest(videoLink,'get',emptyKeyValue,null)));}}catch(e){}try{ if(matchedLink.match(/id=/)) { split = matchedLink.split('id='); let videoLink = 'https://streamta.pe/get_video?id=' + split[1] + '&stream=1'; console.log(videoLink); videos.push(new Video('Normal', new ModuleRequest(videoLink, 'get', emptyKeyValue, null))); } }catch(e){}try{if (matchedLink.match(/^([a-zA-Z]+d=)/)){split = matchedLink.split('d=');let videoLink = 'https://streamta.pe/get_video?id=' + split[1] + '&stream=1';console.log(videoLink);videos.push(new Video('Normal',new ModuleRequest(videoLink,'get',emptyKeyValue,null)));}}catch(e){}}else{let videoLink = `https://streamta.pe/get_video${matchedLink.substr(index)}&stream=1`;console.log(videoLink);videos.push(new Video('Normal',new ModuleRequest(videoLink,'get',emptyKeyValue,null)));}}let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);var chaptersObject = new Resolver(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(videos));var finalJson = JSON.stringify(chaptersObject);savedData.innerHTML = finalJson;  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+            },
+            "output": {
+                "moduleID": "234234823",
+                "video": [{
+                    "videoQuality": "720",
+                    "videoLink": {
+                        "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                        "method": "get",
+                        "headers": [{
+                            "key": "key",
+                            "value": "value"
+                        }],
+                        "httpBody": null
+                    }
+                }]
+            },
+            "moduleCreatorIdPhdjxlUMmSfMVumJRZxj": {
+                "path": "xlMVJ",
+                "id": "moduleResolvers,1,resolver,0cell",
+                "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+                "options": {
+                    "name": "Request"
+                },
+                "cellsHidden": false
+            }
+        }],
+        "moduleCreatorIdMomwtKdyMZnhCkeYbINM": {
+            "path": "jsrMJ",
+            "id": "moduleResolvers,1section",
+            "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+            "options": {
+                "name": "Resolver"
+            },
+            "cellsHidden": false
+        },
+        "moduleCreatorIdKxYzOSubqjWDmOlpEbZs": {
+            "path": "resolver",
+            "id": "moduleResolvers,1,resolversection",
+            "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+            "options": {
+                "name": "Resolver Request",
+                "listName": "Request"
+            },
+            "cellsHidden": false
+        }
+    }, {
+        "resolverInfo": {
+            "resolverName": "VOE",
+            "nameMatches": ["VOE"],
+            "developer": "ナビル",
+            "moduleID": "6546514333321567",
+            "resolverVersion": 1.21,
+            "baseURL": "https://voe.sx",
+            "moduleCreatorIdvnqYdEXcxexUNwcyOSXH": {
+                "path": "KDKBo",
+                "id": "moduleResolvers,2,resolverInfosection",
+                "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+                "options": {
+                    "name": "Resolver Parameters",
+                    "listName": "parameters"
+                },
+                "cellsHidden": false
+            },
+            "moduleCreatorIdJmJFDYwVwabWPJoWueYY": {
+                "path": "hOJYR",
+                "id": "moduleResolvers,2,resolverInfocell",
+                "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+                "options": {
+                    "name": "parameters"
+                },
+                "cellsHidden": false
+            }
+        },
+        "resolver": [{
+            "request": {
+                "url": "empty",
+                "method": "get",
+                "headers": [{
+                    "key": "key",
+                    "value": "value"
+                }],
+                "httpBody": null
+            },
+            "extra": {
+                "commands": [{
+                    "commandName": "",
+                    "params": [{
+                        "key": "",
+                        "value": ""
+                    }]
+                }],
+                "extraInfo": [{
+                    "key": "",
+                    "value": ""
+                }]
+            },
+            "javascriptConfig": {
+                "removeJavascript": true,
+                "loadInWebView": false,
+                "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  function Resolver(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Output(video) { this.video = video; } function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink; } function getNext(match, array) { for (var x = 0; x < array.length; x++) { let mMatch = array[x]; if (mMatch.includes(match)) { return array[x + 1]; } } } var savedData = document.getElementById('ketsu-final-data'); var parsedJson = JSON.parse(savedData.innerHTML); var emptyKeyValue = [new KeyValue('Referer', parsedJson.request.url)]; var videos = []; let scripts = document.querySelectorAll('p'); for (script of scripts) { if (script.innerHTML.includes('sources')) { content = script.innerHTML; nextRequest = content.match(/(http.*?\\.m3u8+)/gm)[0]; console.log(nextRequest); } } let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue); var chaptersObject = new Resolver(new ModuleRequest(nextRequest, 'get', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(videos)); var finalJson = JSON.stringify(chaptersObject); savedData.innerHTML = finalJson;  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+            },
+            "output": {
+                "moduleID": "",
+                "video": [{
+                    "videoQuality": "720",
+                    "videoLink": {
+                        "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                        "method": "get",
+                        "headers": [{
+                            "key": "key",
+                            "value": "value"
+                        }],
+                        "httpBody": null
+                    }
+                }]
+            },
+            "moduleCreatorIdUhFRphPAIRrFAMpxxOuH": {
+                "path": "Czsvi",
+                "id": "moduleResolvers,2,resolver,0cell",
+                "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+                "options": {
+                    "name": "Request"
+                },
+                "cellsHidden": false
+            }
+        }, {
+            "request": {
+                "url": "empty",
+                "method": "get",
+                "headers": [{
+                    "key": "key",
+                    "value": "value"
+                }],
+                "httpBody": null
+            },
+            "extra": {
+                "commands": [{
+                    "commandName": "",
+                    "params": [{
+                        "key": "",
+                        "value": ""
+                    }]
+                }],
+                "extraInfo": [{
+                    "key": "",
+                    "value": ""
+                }]
+            },
+            "javascriptConfig": {
+                "removeJavascript": false,
+                "loadInWebView": false,
+                "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  function Resolver(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output;}function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody;}function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo;}function Commands(commandName, params) { this.commandName = commandName; this.params = params;}function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript;}function KeyValue(key, value) { this.key = key; this.value = value;}function Output(video) { this.video = video;}function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink;}function getNext(match, array) { for (var x = 0; x < array.length; x++) { let mMatch = array[x]; if (mMatch.includes(match)) { return array[x + 1]; } }}var savedData = document.getElementById('ketsu-final-data');var parsedJson = JSON.parse(savedData.innerHTML);var emptyKeyValue = [new KeyValue('Referer', parsedJson.request.url)];var videos = [];var paramjs = document.querySelector('script').innerText.replace('*/', '').replace('/*', '');var line = paramjs.split('#');for (lines of line) { if (lines.includes('EXT-X-STREAM-INF' || 'EXT-X-I-FRAME-STREAM-INF')) { var link = 'https:' + lines.split('URI=')[0].split('https:')[1].trim(); var resolution = lines.match(/RESOLUTION=(\\d+x\\d+)/gm)[0].split('=')[1]; videos.push(new Video(resolution, new ModuleRequest(link, 'get', emptyKeyValue, null))) }}let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);videos.reverse();var chaptersObject = new Resolver(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(videos));var finalJson = JSON.stringify(chaptersObject);savedData.innerText = finalJson;  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+            },
+            "output": {
+                "moduleID": "",
+                "video": [{
+                    "videoQuality": "720",
+                    "videoLink": {
+                        "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                        "method": "get",
+                        "headers": [{
+                            "key": "key",
+                            "value": "value"
+                        }],
+                        "httpBody": null
+                    }
+                }]
+            },
+            "moduleCreatorIdNqxcWDBPjREzMGHnErCD": {
+                "path": "rKquC",
+                "id": "moduleResolvers,2,resolver,1cell",
+                "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+                "options": {
+                    "name": "Request"
+                },
+                "cellsHidden": false
+            }
+        }],
+        "moduleCreatorIdaQmuPeMKdaEzrIiOEizg": {
+            "path": "MdyYF",
+            "id": "moduleResolvers,2section",
+            "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+            "options": {
+                "name": "Resolver"
+            },
+            "cellsHidden": false
+        },
+        "moduleCreatorIdcQnapwZhszknjOlpzQUk": {
+            "path": "resolver",
+            "id": "moduleResolvers,2,resolversection",
+            "sectionsHidden": ["moduleCreatorIdAbUXcfrzEZmkZAnVsLNg"],
+            "options": {
+                "name": "Resolver Request",
+                "listName": "Request"
+            },
+            "cellsHidden": false
+        }
+    }],
+    "responseCodeFunctions": [{
+        "code": 0,
+        "msgTitle": "",
+        "msgBody": "",
+        "type": "normal",
+        "functions": [{
+            "request": {
+                "url": "empty",
+                "method": "get",
+                "headers": [{
+                    "key": "key",
+                    "value": "value",
+                    "moduleCreatorHeaderisActive": true
+                }, {
+                    "key": "",
+                    "value": "",
+                    "moduleCreatorHeaderisActive": true
+                }]
+            },
+            "extra": {
+                "commands": [{
+                    "commandName": "",
+                    "params": [{
+                        "key": "",
+                        "value": ""
+                    }]
+                }],
+                "extraInfo": [{
+                    "key": "",
+                    "value": ""
+                }]
+            },
+            "javascriptConfig": {
+                "removeJavascript": true,
+                "loadInWebView": false,
+                "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  \n  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+            },
+            "moduleCreatorIdQCdJjNwItWywWIqEgHor": {
+                "path": "alfJU",
+                "id": "responseCodeFunctions,0,functions,0cell",
+                "sectionsHidden": ["moduleCreatorIduivPUCBKnzeizkSWgeQn"],
+                "options": {
+                    "name": "Request"
+                },
+                "cellsHidden": false,
+                "javascriptEditorScroll": 0
+            }
+        }],
+        "moduleCreatorIdbHYRApMtEJnjzdSykaAD": {
+            "path": "Xnqdl",
+            "id": "responseCodeFunctions,0section",
+            "sectionsHidden": ["moduleCreatorIduivPUCBKnzeizkSWgeQn"],
+            "options": {
+                "name": "Function"
+            },
+            "cellsHidden": false
+        },
+        "moduleCreatorIdyMAnFgPjNUtsQQewgVUo": {
+            "path": "UmYFw",
+            "id": "responseCodeFunctions,0,section",
+            "sectionsHidden": ["moduleCreatorIduivPUCBKnzeizkSWgeQn"],
+            "options": {
+                "name": "Function Parameters",
+                "listName": "Parameters"
+            },
+            "cellsHidden": false
+        },
+        "moduleCreatorIdmyejrfrRpfXzheGCCfLk": {
+            "path": "NXrci",
+            "id": "responseCodeFunctions,0,cell",
+            "sectionsHidden": ["moduleCreatorIduivPUCBKnzeizkSWgeQn"],
+            "options": {
+                "name": "Parameters"
+            },
+            "cellsHidden": false
+        },
+        "moduleCreatorIdEBzVxpNBDnnxAwNKRSBX": {
+            "path": "functions",
+            "id": "responseCodeFunctions,0,functionssection",
+            "sectionsHidden": ["moduleCreatorIduivPUCBKnzeizkSWgeQn"],
+            "options": {
+                "name": "Function Requests",
+                "listName": "Request"
+            },
+            "cellsHidden": false
+        }
+    }],
+    "helperFunctions": [{
+        "functionName": "example",
+        "msgTitle": "RECAPTCHA",
+        "msgBody": "Complète d'abord le recaptcha présent sur la page et tu pourras ensuite clique sur le bouton 'Done'. Prends en compte le fait que seuls les serveurs STAPE,VOE et YU sont supportés pour le moment",
+        "type": "captcha",
+        "functions": [{
+            "request": {
+                "url": "empty",
+                "method": "get",
+                "headers": [{
+                    "key": "key",
+                    "value": "value",
+                    "moduleCreatorHeaderisActive": true
+                }, {
+                    "key": "",
+                    "value": "",
+                    "moduleCreatorHeaderisActive": true
+                }]
+            },
+            "extra": {
+                "commands": [{
+                    "commandName": "",
+                    "params": [{
+                        "key": "",
+                        "value": ""
+                    }]
+                }],
+                "extraInfo": [{
+                    "key": "",
+                    "value": ""
+                }]
+            },
+            "javascriptConfig": {
+                "removeJavascript": false,
+                "loadInWebView": true,
+                "javaScript": "\n        try {\n\n            /* JAVASCRIPT STARTS */  function Info ( request, extra, javascriptConfig ) {\n        this.request = request;\n        this.extra = extra;\n        this.javascriptConfig = javascriptConfig;\n}\n\nfunction ModuleRequest ( url, method, headers, httpBody ) {\n        this.url = url;\n        this.method = method;\n        this.headers = headers;\n        this.httpBody = httpBody;\n}\n\nfunction Extra ( commands, extraInfo ) {\n        this.commands = commands;\n        this.extraInfo = extraInfo;\n}\n\nfunction Commands ( commandName, params ) {\n        this.commandName = commandName;\n        this.params = params;\n}\n\nfunction JavascriptConfig ( removeJavascript, loadInWebView, javaScript ) {\n        this.removeJavascript = removeJavascript;\n        this.loadInWebView = loadInWebView;\n        this.javaScript = javaScript;\n}\n\nfunction KeyValue ( key, value ) {\n        this.key = key;\n        this.value = value;\n}\nconst savedData = document.getElementById( 'ketsu-final-data' );\nconst parsedJson = JSON.parse( savedData.innerHTML );\nlet emptyKeyValue = [ new KeyValue( '', '' ) ];\nconst data = document.querySelector( '.chapter-video-frame p iframe' ).src;\nconst commands = [ new Commands( 'variable', [ new KeyValue( 'data', data ), new KeyValue( 'current', parsedJson.request.url ) ] ) ];\nconst infoPageObject = new Info( new ModuleRequest( '', '', emptyKeyValue, null ), new Extra( commands, emptyKeyValue ), new JavascriptConfig( false, false, '' ) );\nconst finalJson = JSON.stringify( infoPageObject );\nsavedData.innerHTML = finalJson;\n  /* JAVASCRIPT ENDS */\n\n        } catch (e) {\n            console.error(e.message);\n\n            if (typeof KETSU_ASYNC !== 'undefined') {\n                window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage('');\n            }\n\n        }\n        \n        "
+            },
+            "moduleCreatorIdtdLRfUKiHxxfzYaFnAgq": {
+                "path": "BeoOS",
+                "id": "helperFunctions,0,functions,0cell",
+                "sectionsHidden": [],
+                "options": {
+                    "name": "Request"
+                },
+                "cellsHidden": false,
+                "openedMenu": "Javascript",
+                "javascriptEditorScroll": 342.22222900390625
+            }
+        }],
+        "moduleCreatorIdDFSCSvEVFZzigwGtWhLD": {
+            "path": "hGIYM",
+            "id": "helperFunctions,0section",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Request"
+            },
+            "cellsHidden": false
+        },
+        "moduleCreatorIdwMlYuaMcdAfxKuoaEEgh": {
+            "path": "Mnvhz",
+            "id": "helperFunctions,0,section",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Function Parameters",
+                "listName": "Parameters"
+            },
+            "cellsHidden": false
+        },
+        "moduleCreatorIdhWbxgpiqRvuTDhsddBug": {
+            "path": "DjyNG",
+            "id": "helperFunctions,0,cell",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Parameters"
+            },
+            "cellsHidden": false
+        },
+        "moduleCreatorIdBNSKzjvlsNzGTpnUXwNi": {
+            "path": "functions",
+            "id": "helperFunctions,0,functionssection",
+            "sectionsHidden": [],
+            "options": {
+                "name": "Function Requests",
+                "listName": "Request"
+            },
+            "cellsHidden": false
+        }
+    }],
+    "moduleCreatorGlobalOptions": {
+        "selected": "moduleCreatorIdpnDEppffsoGbIiOTyqjg",
+        "notes": {},
+        "hideViews": [],
+        "id": "JLJIujxwZiupHvD",
+        "projectName": "VoirAnime",
+        "notesData": {
+            "openedNotes": ["oFwjzvDpdfxlaKQrGUwc"],
+            "activeNote": "oFwjzvDpdfxlaKQrGUwc",
+            "notes": {}
+        }
+    },
+    "moduleCreatorIdDouOnJJOgZHvszogVwVW": {
+        "path": "mainPage",
+        "id": "mainPagesection",
+        "sectionsHidden": [],
+        "options": {
+            "name": "Main Page",
+            "listName": "Request"
+        },
+        "cellsHidden": false
+    },
+    "moduleCreatorIdDJzEkDatgxzybQRBkOJY": {
+        "path": "search",
+        "id": "searchsection",
+        "sectionsHidden": [],
+        "options": {
+            "name": "Search Page",
+            "listName": "Request"
+        },
+        "cellsHidden": false
+    },
+    "moduleCreatorIdXeRhHaYvzLxtqeEqAAHQ": {
+        "path": "info",
+        "id": "infosection",
+        "sectionsHidden": [],
+        "options": {
+            "name": "Info Page",
+            "listName": "Request"
+        },
+        "cellsHidden": false
+    },
+    "moduleCreatorIdLJqkPPevuGWpWDHEnptq": {
+        "path": "chapters",
+        "id": "chapterssection",
+        "sectionsHidden": [],
+        "options": {
+            "name": "Chapters",
+            "listName": "Request"
+        },
+        "cellsHidden": false
+    },
+    "moduleCreatorIdAbUXcfrzEZmkZAnVsLNg": {
+        "path": "moduleResolvers",
+        "id": "moduleResolverssection",
+        "sectionsHidden": [],
+        "options": {
+            "name": "Resolvers",
+            "listName": "Resolver"
+        },
+        "cellsHidden": true
+    },
+    "moduleCreatorIduivPUCBKnzeizkSWgeQn": {
+        "path": "responseCodeFunctions",
+        "id": "responseCodeFunctionssection",
+        "sectionsHidden": [],
+        "options": {
+            "name": "Response Code Funtions",
+            "listName": "Function"
+        },
+        "cellsHidden": true
+    },
+    "moduleCreatorIdHHUBHGkfeEFYArxvnZFk": {
+        "path": "helperFunctions",
+        "id": "helperFunctionssection",
+        "sectionsHidden": [],
+        "options": {
+            "name": "Helper Functions",
+            "listName": "Request"
+        },
+        "cellsHidden": false
+    }
+}
