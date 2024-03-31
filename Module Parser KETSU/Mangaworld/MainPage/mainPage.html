@@ -57,7 +57,7 @@
     none: '',
   };
 
-  const CellDesings = {
+  const CellDesigns = {
     Special1: 'Special1',
     Special2: 'Special2',
     Special3: 'Special3',
@@ -131,7 +131,7 @@
   }
 
   function Output(
-    cellDesing,
+    cellDesign,
     orientation,
     defaultLayout,
     paging,
@@ -139,7 +139,7 @@
     layout,
     data
   ) {
-    this.cellDesing = cellDesing;
+    this.cellDesing = cellDesign;
     this.orientation = orientation;
     this.defaultLayout = defaultLayout;
     this.paging = paging;
@@ -281,7 +281,7 @@
   );
   output.push(
     new Output(
-      CellDesings.Special3,
+      CellDesigns.Special3,
       Orientation.horizontal,
       DefaultLayouts.none,
       Paging.centered,
@@ -315,7 +315,7 @@
 
   output.push(
     new Output(
-      CellDesings.normal3,
+      CellDesigns.normal3,
       Orientation.horizontal,
       DefaultLayouts.longTripletsDouble,
       Paging.leading,
@@ -359,7 +359,7 @@
 
   output.push(
     new Output(
-      CellDesings.normal3,
+      CellDesigns.normal3,
       Orientation.horizontal,
       DefaultLayouts.longDoublets,
       Paging.leading,
@@ -393,7 +393,7 @@
 
   output.push(
     new Output(
-      CellDesings.normal2,
+      CellDesigns.normal2,
       Orientation.vertical,
       DefaultLayouts.wideStrechedDouble,
       Paging.leading,

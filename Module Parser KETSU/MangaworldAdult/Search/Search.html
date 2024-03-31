@@ -57,7 +57,7 @@
     none: '',
   };
 
-  const CellDesings = {
+  const CellDesigns = {
     small1: 'small1',
 
     normal1: 'normal1',
@@ -129,7 +129,7 @@
   }
 
   function Output(
-    cellDesing,
+    cellDesign,
     orientation,
     defaultLayout,
     paging,
@@ -137,7 +137,7 @@
     layout,
     data
   ) {
-    this.cellDesing = cellDesing;
+    this.cellDesing = cellDesign;
     this.orientation = orientation;
     this.defaultLayout = defaultLayout;
     this.paging = paging;
@@ -256,7 +256,7 @@
 
   output.push(
     new Output(
-      CellDesings.wide6,
+      CellDesigns.wide6,
       Orientation.vertical,
       DefaultLayouts.doubletsFull,
       Paging.none,

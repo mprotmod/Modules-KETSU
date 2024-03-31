@@ -76,7 +76,7 @@
   let status = '';
   let type = '';
   let year = '';
-  let author = '';
+  let chaptersCount = '';
   let genres = [];
   let desc = '';
   var image = '';
@@ -89,19 +89,19 @@
 
   status = document.querySelector(
     '.info > div.meta-data.row.px-1 > div:nth-child(6) > a'
-  ).innerText;
+  )?.innerText || '';
 
   type = document.querySelector(
     '.info > div.meta-data.row > div:nth-child(5) > a'
-  ).innerText;
+  )?.innerText || '';
 
   year = document.querySelector(
     '.info > div.meta-data.row.px-1 > div:nth-child(8) > a'
-  ).innerText;
+  )?.innerText || '';
 
-  author = document.querySelector(
-    '.info > div.meta-data.row.px-1 > div:nth-child(3) > a'
-  ).innerText;
+  chaptersCount = document.querySelector(
+    '.info > div.meta-data.row.px-1 > div:nth-child(10) > span:nth-child(2)'
+  )?.innerText;
 
   const genresBadges = document
     .querySelector('.info > div.meta-data.row.px-1 > div:nth-child(2)')
@@ -117,15 +117,18 @@
   for (let x = 0; x < chaptersArray.length; x++) {
     const chapter = chaptersArray[x];
     const link = chapter.querySelector('a').href;
+    const title = chapter.querySelector('a > span').textContent;
     chapters.push(
       new Chapter(
-        'Capitolo ' + (chaptersArray.length - x),
+        title || 'Capitolo ' + (chaptersArray.length - x),
         new ModuleRequest(link, 'get', emptyKeyValue, emptyKeyValue),
         false
       )
     );
   }
   chapters.reverse();
+
+  chaptersCount = chaptersCount || chapters.length.toString();
 
   const infoPageObject = new Info(
     new ModuleRequest('', '', emptyKeyValue, emptyKeyValue),
@@ -141,7 +144,7 @@
       status,
       type,
       year,
-      author,
+      'Capitoli: ' + chaptersCount,
       chapters
     )
   );
