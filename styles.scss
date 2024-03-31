@@ -1,0 +1,1186 @@
+// This is actually innovative 
+
+// The use of breakpoints with mixins to automatically trigger media queries that change font size padding layout, basically anything automatically.
+
+
+$c-primary : white;
+$c-secondary-grad : linear-gradient(90deg,#F4F4F4 0%,#EFEFEF 100%);
+$c-secondary : #F4F4F4;
+$c-secondary-dark : #dcdcdc;
+
+
+$c-accent : rgb(126 34 206);
+$c-accent-alpha : rgba(126,34,206,0.1); 
+$c-accent-alpha-grad : radial-gradient(circle, rgba(126,34,206,0.05) 0%, rgba(126,34,206,0.1) 100%);
+
+
+$t-primary: rgb(38, 37, 37);
+$t-secondary: rgb(79, 79, 79);
+$t-contrary: rgb(255, 255, 255);
+
+
+
+$m-font : 'Montserrat', sans-serif;
+$radius : 0.5rem;
+$border : 1px solid rgba(0,0,0,.1);
+$border-color : rgba(0,0,0,.1);
+$padding-layout : 1rem;
+$padding-elem : 0.8rem;
+
+$padding  :1rem;
+$button-padding : 0.4rem 0.8rem 0.4rem 0.8rem ;
+
+
+
+$global-padding-layout : (
+    sm :$padding-layout - 0.2rem,
+    md : $padding-layout - 0.1rem,
+    lg :$padding-layout,
+    xl : $padding-layout ,
+);
+
+
+$global-padding-elem : (
+    sm :$padding-elem ,
+    md : $padding-elem,
+    lg :$padding-elem,
+    xl : $padding-elem,
+);
+
+$global-font-size-calibrator : (
+    sm :  0.8,
+    md : 0.85,
+    lg : 0.9,
+    xl : 1,
+);
+
+
+$text-size : (
+    title : 1.2rem,
+    subtitle : 1.1rem,
+    normal : 1rem,
+    small : 0.9rem,
+    extra-small: 0.8rem
+);
+
+$text-weight : (
+    thin : 200,
+    medium : 400,
+    normal : 500,
+    bold : 600,
+    extra : 700
+);
+
+
+$breakpoints : (
+sm : 0rem,
+md : 40rem,
+lg : 70rem,
+xl : 95rem,
+xxl : 99999999px
+);
+
+$test-colors : (
+sm : red,
+md : blue,
+lg : yellow,
+xl : black,
+xxl : gray
+);
+
+
+$next-breakpoint : (
+sm : md,
+md : lg,
+lg : xl,
+xl : xxl,
+xxl : xxl
+);
+
+
+
+
+/*MARK: UTILITY MIXINS*/
+
+@mixin prepare-border() {
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+
+@mixin border($line : 1) {
+    line-height: $line;
+    border: $border;
+    box-sizing: border-box;
+    border-bottom: 0px
+}
+
+     /*MARK: UTILITY CLASSES*/
+
+
+
+
+.border {
+    @include border()
+}
+
+.round {
+    border-radius: $radius;
+}
+
+.padding {
+    padding: $padding;
+}
+.btn-padding {
+    padding: $button-padding;
+}
+
+.container {
+    max-width: 1500px;
+    margin: auto;
+}
+
+
+
+
+
+.relative {
+    position: relative
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.one-line {
+
+            white-space: nowrap;
+
+}
+
+@media (hover: hover) {
+
+.pointer:hover {
+    cursor: default;
+    transition: all ease 100ms;
+
+}
+
+}
+
+.center-flex {
+    display: flex;
+    align-items: center;
+  }
+
+.shadow-nav {
+    opacity: 0;
+}
+
+div.unselected {
+    background-color: transparent;
+    color : $t-primary
+}
+  
+
+.m-search {
+    border: $border;
+    outline: 0;
+    background-color: $c-primary;
+}
+
+.hr {
+    width: 100%;
+    height: 1px;
+    @include prepare-border();
+    border-bottom: $border;
+}
+
+.border-bottom {
+    @include prepare-border();
+    border-bottom: $border;
+}
+
+
+.flex-column-equal {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+}
+
+div {
+    background-color: transparent;
+    background-image: transparent;
+}
+
+.skeleton {
+    animation: skeleton-loading 800ms linear infinite alternate;
+  }
+
+  .skeleton-width {
+    width: 2rem;
+  }
+
+
+  
+
+  @keyframes skeleton-loading {
+    0% {
+      background-color: hsl(200, 20%, 80%);
+    }
+    100% {
+      background-color: hsl(200, 20%, 95%);
+    }
+  }
+
+  @media only screen and (max-device-width: 480px) {
+	body {
+		-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+	}
+}
+
+@mixin media-between($min,$max) {
+    @if $min != xxl {
+        @media screen and (min-width: map-get($breakpoints,$min))  and (max-width:map-get($breakpoints,$max) ){
+            @content;
+        }
+    }
+} 
+
+
+@mixin media-up($breakpoint) {
+    @if $breakpoint != xxl {
+        @media screen and (min-width: map-get($breakpoints,$breakpoint)) {
+            @content;
+        }
+    }
+} 
+
+@mixin create-dissapear() {
+    @each $key, $value in $breakpoints{
+        .dissapear-#{$key} {
+            @include media-between($key,map-get($next-breakpoint,$key)) {
+                display: none;
+            }
+        }
+    }
+}
+
+@include create-dissapear();
+
+
+// MARK: ANIMATIONS 
+
+
+.rotate {
+    -webkit-animation-name: cssAnimation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+
+  }
+  
+  @-webkit-keyframes cssAnimation {
+    from {
+      -webkit-transform: rotate(360deg);
+    }
+    to {
+      -webkit-transform: rotate(0deg);
+    }
+  }
+
+
+
+  .msg {
+
+    color: $c-accent;
+    background-color: $c-secondary;
+    position: relative;
+
+    a {
+        background-color: transparent;
+        color: $c-accent;
+    }
+
+    @each $key, $value in $breakpoints{
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding : map-get($global-padding-layout, $key);
+            line-height: 0;
+        }
+        padding:  map-get($global-padding-elem, $key);
+
+    }
+
+    line-height: 1.1rem;
+
+    @include media-up(md) {
+        line-height: 1.3rem;
+    }
+    
+
+    
+    }
+
+    span {
+        background-color: transparent;
+    }
+    .create-modules::before {
+
+      @include media-up(sm)  {
+        content: "Docs";
+
+       }
+
+       @include media-up(md)  {
+        content: "Create Modules";
+
+       }
+    }
+
+/*bg-value*/
+
+$m-colors : (
+
+    transparent : transparent,
+    primary : $c-primary,
+    secondary : $c-secondary,
+    secondary-dark: $c-secondary-dark,
+    t-primary : $t-primary,
+    t-secondary : $t-secondary,
+
+);
+
+
+
+
+
+
+$border-type : (
+    none :  0px solid,
+    thin : 1px solid,
+    thicc  : 2px solid,
+);
+
+$border-color : (
+    transparent : rgba(0,0,0,.1),
+    primary : $c-primary,
+    secondary : $c-secondary,
+    accent : $c-accent,
+    accent-alpha : $c-accent-alpha,
+);
+
+
+$c-accent : rgb(126 34 206);
+$c-accent-alpha : rgba(126,34,206,0.1); 
+
+$accent-colors : (
+"" :  (
+    accent : rgb(126 34 206),
+    accent-alpha : rgba(126,34,206,0.1),
+),
+"video" : (
+    accent : rgb(126 34 206),
+    accent-alpha : rgba(126,34,206,0.1),
+),"image" : (
+    accent : #0071BB,
+    accent-alpha : #0071BB1a,
+),"text" : (
+    accent : #6E5800,
+    accent-alpha : #6E58001a,
+
+)
+);
+
+@mixin create-base-classes() {
+    @each $key, $value in $m-colors{
+        .bg-#{"" + $key} {
+            background-color: $value;
+            background-image:  $value;
+        }
+
+        @media (hover: hover) {
+            .bg-#{"" + $key}-hover:hover {
+            background-color: $value;
+            background-image:  $value;
+        }}
+    }
+
+    @each $key, $value in $m-colors{
+        .tc-#{"" + $key} {
+            color: $value;
+        }
+
+        @media (hover: hover) {
+            .tc-#{"" + $key}-hover:hover {
+            color: $value;
+        }}
+    }
+
+    @each $attribute, $colors in $accent-colors{
+        @each $colorKey, $color in $colors{
+            .bg-#{$attribute}#{"" + $colorKey} {
+                background-color: $color;
+                background-image:  $color;
+            }
+    
+            @media (hover: hover) {
+                .bg-#{$attribute}#{"" + $colorKey}-hover:hover {
+                background-color: $color;
+                background-image:  $color;
+            }}
+        } 
+    }
+
+    @each $attribute, $colors in $accent-colors{
+        @each $colorKey, $color in $colors{
+            .tc-#{$attribute}#{"" + $colorKey} {
+                color: $color;
+            }
+    
+            @media (hover: hover) {
+                .tc-#{$attribute}#{"" + $colorKey}-hover:hover {
+                color: $color;
+            }}
+        } 
+    }
+
+
+    @each $key, $value in $text-weight{
+        .fw-#{$key} {
+            font-weight: $value;
+        }
+
+        @media (hover: hover) {
+            .fw-#{$key}-hover:hover {
+            font-weight: $value;
+        }}
+    }
+
+    @each $key, $value in $breakpoints{
+        @each $size, $value in $text-size{
+          
+            .fs-#{$size} {
+                font-size: $value;
+            }
+
+            @media (hover: hover) {
+                .fs-#{$size}-hover:hover {
+                font-size: $value;
+            }}
+
+            @include media-up($key) {
+                .fs-#{$size}-dynamic {
+                    font-size: calc($value * map-get($global-font-size-calibrator, $key));
+                }
+
+                @media (hover: hover) {
+                    .fs-#{$size}-dynamic-hover:hover {
+                    font-size: calc($value * map-get($global-font-size-calibrator, $key));
+                }}
+            }
+        }
+    }
+    @each $type, $type-value in $border-type{
+        @each $color, $color-value in $border-color{
+            .border-#{$type}-#{ "" + $color} {
+                @include prepare-border();
+                border-color: $color-value;
+                border: $type-value $color-value;
+            }
+
+            @media (hover: hover) {
+                .border-#{$type}-#{ "" + $color}-hover:hover {
+                @include prepare-border();
+                border-color: $color-value;
+                border: $type-value $color-value;
+            }}
+        }
+    }
+
+    @each $type, $type-value in $border-type{
+        @each $attribute, $colors in $accent-colors{
+            @each $colorKey, $color in $colors{
+                .border-#{$type}-#{ "" + $attribute}#{ "" + $colorKey} {
+                    @include prepare-border();
+                    border-color: $color;
+                    border: $type-value $color;
+                }
+    
+                @media (hover: hover) {
+                    .border-#{$type}-#{ "" + $attribute}#{ "" + $colorKey}-hover:hover {
+                    @include prepare-border();
+                    border-color: $color;
+                    border: $type-value $color;
+                }}
+
+            }  
+        }
+    }
+
+    $padding-types: #{fourth-equal}, #{half-equal}, #{equal}, #{wider};
+
+    @each $key, $value in $breakpoints{
+        @each $types in $padding-types {
+            @include media-up($key) {
+                .elem-padding-#{ "" + $types} {
+                    $current : map-get($global-padding-elem, $key);
+                    @if $types == #{fourth-equal} {
+                        padding : calc($current / 4);
+                    }
+
+                    @if $types == #{half-equal} {
+                        padding : calc($current / 2);
+                    }
+                    @if $types == #{equal} {
+                        padding : $current;
+
+                    }
+
+                    @if $types == #{wider} {
+                        padding : calc($current / 2) $current calc($current / 2) $current;
+                    }
+                }
+                .elem-padding-#{ "" + $types}-wide-only {
+                    $current : map-get($global-padding-elem, $key);
+                    @if $types == #{fourth-equal} {
+                        padding : 0 calc($current / 4) 0 calc($current / 4);
+                    }
+
+                    @if $types == #{half-equal} {
+                        padding : 0 calc($current / 2) 0 calc($current / 2);
+                    }
+                    @if $types == #{equal} {
+                        padding : 0 $current 0 $current;
+
+                    }
+
+                }
+            }
+        }
+      
+    }
+
+
+    @each $key, $value in $breakpoints{
+        @include media-up($key) {
+            .vs {
+                height:  map-get($global-padding-layout, $key);
+                opacity: 0;
+            }
+
+            .vs2 {
+                height:  calc(map-get($global-padding-layout, $key) / 2);
+                opacity: 0;
+            }
+    
+            .hs {
+                width:  map-get($global-padding-layout, $key);
+                opacity: 0;
+            }
+
+            .hs2{
+                width:  calc(map-get($global-padding-layout, $key) / 2);
+                opacity: 0;
+            }
+        }
+    }
+
+
+}
+
+@include create-base-classes();
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:  $m-font;
+    background-color: $c-primary;
+
+    
+}
+    
+html {
+    background-color: $c-primary;
+}
+
+@media (orientation: landscape) {
+
+
+    @include media-between(sm, xl) {
+        .container {
+
+            margin :      env(safe-area-inset-top)
+            env(safe-area-inset-right)
+           0
+            env(safe-area-inset-left);
+        }
+    }
+
+ }
+
+
+/*MARK: NAVBAR*/
+
+$nav-padding : (
+    sm : map-get($global-padding-layout, sm)  ,
+    md : map-get($global-padding-layout, md),
+    lg : map-get($global-padding-layout, lg),
+    xl : map-get($global-padding-layout, xl),
+);
+
+
+#nav-bar {
+    background-color: $c-primary;
+    background-image: $c-primary;
+    @include prepare-border();
+    border-bottom: $border;
+    z-index: 4;
+
+
+    -webkit-backdrop-filter: blur(2em);
+    backdrop-filter: blur(2em);
+
+
+    .container {
+        position: relative;
+
+    }
+
+    h1 {
+
+        @include media-between(sm,md) {
+            text-align: left;
+            font-size: 1.75rem;
+        }
+
+        @include  media-up(md) {
+            text-align: left;
+            font-size: 2rem;
+        }
+    }
+
+
+    @each $key, $value in $breakpoints{
+        @include media-up($key) {
+            padding: map-get($nav-padding, $key );
+
+            .create-mod {
+                display: inline-block;
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                -ms-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                right: 0;
+            }
+
+        }
+    }
+
+}
+
+
+$left-panel-size : (
+    sm :0rem  ,
+    md : 12rem,
+    lg :14rem,
+    xl : 14rem,
+);
+
+$left-panel-padding : (
+    sm :0px  ,
+    md : map-get($global-padding-layout, md) map-get($global-padding-layout, md)   0px,
+    lg : map-get($global-padding-layout, lg) map-get($global-padding-layout, lg)  map-get($global-padding-layout, md) map-get($global-padding-layout, lg),
+    xl : map-get($global-padding-layout, xl) map-get($global-padding-layout, xl) map-get($global-padding-layout, xl) 
+);
+
+
+
+$app-panel-padding : (
+    sm : 0px  map-get($global-padding-layout, sm),
+    md : 0px  map-get($global-padding-layout, md) ,
+    lg : 0px  map-get($global-padding-layout, lg) ,
+    xl :  0px  map-get($global-padding-layout, xl) ,
+);
+
+
+#app-panel {
+    @each $key, $value in $breakpoints{
+        @include media-up($key) {
+            padding: map-get($app-panel-padding, $key );
+        }
+    }
+}
+
+
+#fixed-left-panel {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+
+}
+
+
+.holder {
+    max-width: 1500px;
+    margin: auto;
+    height: 100%;
+    position: relative;
+}
+
+#left-panel {
+
+position: absolute;
+top: 0;
+bottom: 0;
+padding: 0;
+@include prepare-border();
+border-right: $border;
+background-color: $c-primary;
+overflow-y: auto;
+overflow-x: hidden;
+
+
+
+
+@each $key, $value in $breakpoints{
+    @include media-up($key) {
+        left: env(safe-area-inset-left);
+
+    
+    
+
+        width: map-get($left-panel-size, $key );
+        padding: map-get($left-panel-padding, $key );
+
+        @include media-up(xl) {
+            padding-left: 0;
+        }
+
+        .left-grid {
+            position: relative;
+            display: grid;
+            max-width: 100%;
+            gap:  map-get($global-padding-layout, $key );
+            grid-template-columns: [start] 1fr [end];
+            padding-bottom: map-get($global-padding-layout, $key );
+            margin-bottom:  map-get($global-padding-layout, $key );
+
+        }
+
+        .grid-item {
+            max-width: 100%;
+            min-width: 0;
+        }
+
+        
+
+    }
+}
+
+
+
+@include media-between(sm, md) {
+    opacity: 0;
+}
+
+
+}
+
+$right-panel-margin : (
+    sm :  map-get($left-panel-size , sm ) ,
+    md :  calc(map-get($left-panel-size , md ) ),
+    lg :  calc(map-get($left-panel-size , lg ) ),
+    xl :  calc(map-get($left-panel-size , xl ) + calc(map-get($global-padding-layout, xl) ) + env(safe-area-inset-left))
+);
+
+$right-panel-grid-columns : (
+    sm :  1fr ,
+    md :  1fr,
+    lg :  1fr 1fr,
+    xl :  1fr 1fr
+);
+
+
+
+#right-panel {
+
+
+
+    @each $key, $value in $breakpoints{
+        @include media-up($key) {
+
+            .right-holder {
+                margin-left: map-get($right-panel-margin, $key );
+                padding-top: map-get($global-padding-layout, $key );
+                padding-bottom: map-get($global-padding-layout, $key );
+                position: relative;
+                z-index: 2;
+
+            }
+
+
+     
+
+           .modules-grid {
+            display: grid;
+            gap:  map-get($global-padding-layout, $key );
+            grid-template-columns: map-get($right-panel-grid-columns, $key );
+
+           }
+
+           .grid-section {
+
+
+           }
+
+        }
+    }
+}
+
+
+/*MARK: MODULE ITEMS*/
+
+$module-item-sizes : (
+    sm : 4.5rem,
+    md : 5rem,
+    lg : 5.5rem,
+    xl : 6rem
+);
+
+.module-item {
+    
+    
+    @each $key, $value in $breakpoints{
+        @include media-up($key) {
+            .module-top {
+                 
+                $size : map-get($module-item-sizes, $key);
+
+                position: relative;
+                height: $size;
+                height: auto;
+                display: grid;
+                $image-width : 6rem;
+              /*  grid-template-columns: [m-first] $size [m-second] auto [m-third]  min-content [end];*/
+
+                grid-template-columns: [m-first] $size  [m-second] auto [end] ;
+                grid-template-rows: 1fr;
+                column-gap:  map-get($global-padding-layout, $key );
+                row-gap: 0;
+                
+                .grid-item {
+                    height: auto;
+                }
+
+
+                .left {
+                    position: relative;
+                    img {
+                        position: absolute;
+                        display: inline-block;
+
+                        left: 0;
+                        top: 0;
+                        width: $size;
+                        height: $size;
+                    }
+
+                    .skeleton-img {
+                        display: inline-block;
+                        width: $size;
+                        height: $size;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+
+                .mid {
+                    position: relative;
+                    display: flex;
+                    align-content: space-between;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    overflow: hidden;
+                    
+                    span {
+                        background-color: transparent;
+                    }
+
+                    .tags {
+                    padding-top: 0.2rem;
+                    padding-bottom: 0.2rem;
+                      overflow-x: auto;
+                    }
+
+                    .tag {
+                        margin-right: calc(map-get($global-padding-elem, $key ) / 2);
+                        background-color: $c-secondary-dark;
+                        font-weight: 500;
+                        @include prepare-border();
+                        border:$border;
+                    }
+
+                    .unselected {
+                        font-weight: 400;
+                        color: $t-secondary;
+                        border: none;
+                    }
+
+                }
+
+                .right {
+                    justify-self: end;
+                    p {
+                        display: block;
+                    }
+                }
+
+                .module-type {
+                    position: absolute;
+                    top: (map-get($global-padding-elem, $key ) * -1);
+                    right: map-get($global-padding-elem, $key ) * -1;
+                    color: $t-contrary;
+                    border-radius: 0 $radius 0 $radius;
+                }
+            }
+
+            .module-top ::-webkit-scrollbar {
+                display: none;
+            }
+
+            .module-bottom {
+
+                a{
+                    display: inline-block;
+                    width: 100%;
+                    background-color: transparent;
+                    text-decoration: none;
+                    
+                }
+
+                .add-buttons-video {
+                    text-align: center;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr ;
+                    grid-template-rows: 1fr;
+                    column-gap:  map-get($global-padding-layout, $key );
+
+                    .zetsu {
+                        display: none;
+                    }
+                }
+
+                .add-buttons-image {
+                    text-align: center;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 1fr;
+                    column-gap:  map-get($global-padding-layout, $key );
+                }
+
+                .add-buttons-text {
+                    text-align: center;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 1fr;
+                    column-gap:  map-get($global-padding-layout, $key );
+                }
+
+
+            }
+            
+            .module-image {
+                height: auto;
+            }
+
+            
+        }}
+
+ 
+
+}
+
+
+
+#phone-filter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.728);
+    padding-bottom: env(safe-area-inset-bottom);
+    max-height: 80%;
+    overflow-y: auto;
+    z-index: 5;
+    min-height: 0;
+    @include media-up(md) { 
+        display: none;
+    }
+    overflow-x: hidden;
+    
+
+    -webkit-backdrop-filter: blur(2em);
+    backdrop-filter: blur(2em);
+
+
+    @each $key, $value in $breakpoints{
+        @include media-up($key) {
+
+            .container {
+                display: grid;
+                gap:  map-get($global-padding-layout, $key );
+                grid-template-columns: 1fr;
+                padding: map-get($global-padding-layout, $key );
+                @include prepare-border();
+                border-radius: $radius $radius 0 0;
+               
+            }
+
+            .filters-button {
+                position: absolute;
+                top: map-get($global-padding-layout, $key );
+                right: map-get($global-padding-layout, $key );;
+                background-color: $c-secondary;
+                border-radius: 50%;
+                padding: 0.2rem;
+                @include prepare-border();
+                border: $border;
+                span {
+                    background-color: transparent;
+                    color: $c-accent;
+                }
+            }
+
+            .active-filters {
+                overflow-x: auto;
+
+                .unselected {
+                    display: none;
+                }
+                
+                div {
+                    display: inline-block;
+                    margin-right: calc(map-get($global-padding-elem, $key ) / 2);
+                }
+            }
+
+            .filters{
+
+                display: grid;
+                gap:  map-get($global-padding-layout, $key );
+                grid-template-columns: 1fr;
+            
+                
+            .row {
+                width: 100%;
+
+                overflow-x: auto;
+
+                .unselected {
+                    @include prepare-border();
+                    border : 1px solid rgba(0,0,0,.1);
+                    
+                }    
+
+                div {
+                    display: inline-block;
+                    margin-right: calc(map-get($global-padding-elem, $key ) / 2);
+
+                }
+
+                span {
+                    vertical-align: middle;
+                }
+       
+               
+            }
+         }
+
+    }} 
+}
+
+
+
+#bottom {
+    position: sticky;
+    bottom: 0;
+        padding-bottom: env(safe-area-inset-bottom);
+    @include media-up(md) {
+        display: none;
+    }
+}
+
+#terms-conditions {
+opacity: 0;
+position: relative;
+z-index: 10;
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgba(0,0,0,.1);
+
+@each $key, $value in $breakpoints{
+    @include media-up($key) {
+        $pad : map-get($global-padding-layout, $key );
+        padding: calc(env(safe-area-inset-top) + $pad) calc(env(safe-area-inset-right) + $pad) calc(env(safe-area-inset-bottom) + $pad) calc(env(safe-area-inset-left) + $pad) ;
+        
+        div.border-bottom {
+            padding-bottom: calc(map-get($global-padding-layout, $key ) / 2);
+        }
+
+        .terms-view {
+            padding: map-get($global-padding-layout, $key ) ;
+            background-color: $c-primary;
+            display: inline-block;
+            @include prepare-border();
+            border: $border;
+            max-width: 50rem;
+            min-width: 0;
+            max-height: 100%;
+            overflow: auto;
+            overflow-y: auto;
+            
+            .terms-grid {
+                display: grid;
+                gap:  map-get($global-padding-layout, $key );
+                grid-template-columns: 1fr;
+            }
+
+            p  {
+               
+                line-height: 1.1rem;
+
+                @include media-up(md) {
+                    line-height: 1.3rem;
+                }
+            }
+            
+        }
+
+
+    }
+}
+
+ 
+
+}

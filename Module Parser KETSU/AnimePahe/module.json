@@ -6,7 +6,7 @@
     "developer": "Noah G",
     "moduleID": "46239462794617941",
     "moduleImage": "https://i.imgur.com/c4yUxIH.jpg",
-    "moduleVersion": 1.61,
+    "moduleVersion": 1.62,
     "moduleLenguage": "ENG",
     "moduleType": "Video",
     "baseURL": "https://animepahe.com/",
@@ -132,7 +132,7 @@
               "field2": "",
               "field3": "",
               "field4": "",
-              "openInWebView" : false,
+              "openInWebView": false,
               "isChapter": false,
               "link": {
                 "url": "",
@@ -149,7 +149,8 @@
           ]
         }
       ]
-    },{
+    },
+    {
       "request": {
         "url": "",
         "method": "get",
@@ -242,7 +243,7 @@
               "field2": "",
               "field3": "",
               "field4": "",
-              "openInWebView" : false,
+              "openInWebView": false,
               "isChapter": false,
               "link": {
                 "url": "",
@@ -356,7 +357,7 @@
               "field2": "",
               "field3": "",
               "field4": "",
-              "openInWebView" : false,
+              "openInWebView": false,
               "isChapter": false,
               "link": {
                 "url": "empty",
@@ -462,7 +463,8 @@
           }
         ]
       }
-    },{
+    },
+    {
       "request": {
         "url": "",
         "method": "get",
@@ -643,7 +645,8 @@
           "text": ""
         }
       }
-    },{
+    },
+    {
       "request": {
         "url": "",
         "method": "get",
@@ -742,7 +745,19 @@
       "resolverInfo": {
         "resolverName": "KWIK",
         "nameMatches": [
-          "KWIK","KWIK-JPN","KWIK-ENG","KWIK-360P-JPN","KWIK-480P-JPN","KWIK-720P-JPN","KWIK-800P-JPN","KWIK-1080P-JPN","KWIK-360P-ENG","KWIK-480P-ENG","KWIK-720P-ENG","KWIK-800P-ENG","KWIK-1080P-ENG"
+          "KWIK",
+          "KWIK-JPN",
+          "KWIK-ENG",
+          "KWIK-360P-JPN",
+          "KWIK-480P-JPN",
+          "KWIK-720P-JPN",
+          "KWIK-800P-JPN",
+          "KWIK-1080P-JPN",
+          "KWIK-360P-ENG",
+          "KWIK-480P-ENG",
+          "KWIK-720P-ENG",
+          "KWIK-800P-ENG",
+          "KWIK-1080P-ENG"
         ],
         "developer": "Noah G",
         "moduleID": "526746914151",
@@ -784,7 +799,7 @@
           "javascriptConfig": {
             "removeJavascript": false,
             "loadInWebView": false,
-            "javaScript": " function Resolver(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output;}function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody;}function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo;}function Commands(commandName, params) { this.commandName = commandName; this.params = params;}function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript;}function KeyValue(key, value) { this.key = key; this.value = value;}function Output(video) { this.video = video;}function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink;}function getNext(match, array) { for (var x = 0; x < array.length; x++) { let mMatch = array[x]; if (mMatch.includes(match)) { return array[x + 1]; } }}var savedData = document.getElementById('ketsu-final-data');var parsedJson = JSON.parse(savedData.innerHTML);var emptyKeyValue = [new KeyValue('', '')];var videos = [];let KeyValue1 = [new KeyValue('Referer', 'https://kwik.cx/'), new KeyValue('Accept', '*/*')];var ps = document.querySelectorAll('script');function getData(name, array) { for (var x = 0; x < array.length; x++) { var text = array[x]; if (text == name) { return array[x + 1]; } }}function getBeforeData(name, array) { for (var x = 0; x < array.length; x++) { var text = array[x]; if (text == name) { return array[x - 1]; } }}for (var x = 0; x < ps.length; x++) { var text = ps[x].innerHTML; if (text.includes('maxBufferLength') && !text.includes('bruhmoment')) { var data = text.split('|'); var id = ''; var longId = getBeforeData('storage', data); var uwu = ''; var maxLength = 'a'; for (var z = 0; z < data.length; z++) { var actualKey = data[z]; try { if (actualKey.includes('000')) { id = actualKey; } if (actualKey.length > maxLength.length && !actualKey.includes('(')) { maxLength = actualKey; } if (actualKey == 'uwu') { uwu = 'uwu.m3u8'; } if (actualKey == 'mon') { uwu = 'mon.key'; } } catch {} } longId = maxLength; var stream = 'stream'; var au = getData('nextcdn', data); var eu = getData(au, data); var nextcdn = 'nextcdn'; var files = getData(eu, data); var finalLink = 'https://' + files + '-' + eu + '.' + au + '.' + nextcdn + '.org/' + stream + '/' + id + '/' + longId + '/' + uwu; videos.push(new Video('Default', new ModuleRequest(finalLink, 'get', KeyValue1, null))); }}videos = videos.slice(0, 1);let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);var chaptersObject = new Resolver(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(videos));var finalJson = JSON.stringify(chaptersObject);savedData.innerHTML = finalJson;"
+            "javaScript": "function Resolver(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output;}function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody;}function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo;}function Commands(commandName, params) { this.commandName = commandName; this.params = params;}function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript;}function KeyValue(key, value) { this.key = key; this.value = value;}function Output(video) { this.video = video;}function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink;}function getNext(match, array) { for (var x = 0; x < array.length; x++) { let mMatch = array[x]; if (mMatch.includes(match)) { return array[x + 1]; } }}var savedData = document.getElementById('ketsu-final-data');var parsedJson = JSON.parse(savedData.innerHTML);var emptyKeyValue = [new KeyValue('', '')];var videos = [];let KeyValue1 = [new KeyValue('Referer', 'https://kwik.cx/'), new KeyValue('Accept', '*/*')];var ps = document.querySelectorAll('script');function getData(name, array) { for (var x = 0; x < array.length; x++) { var text = array[x]; if (text == name) { return array[x + 1]; } }}function getBeforeData(name, array) { for (var x = 0; x < array.length; x++) { var text = array[x]; if (text == name) { return array[x - 1]; } }}for (var x = 0; x < ps.length; x++) { var text = ps[x].innerHTML; if (text.includes('maxBufferLength') && !text.includes('bruhmoment')) {var newElem = document.createElement('script');newElem.innerHTML = text.replaceAll('|const|','|var|');document.body.prepend(newElem); var finalLink = source; videos.push(new Video('Default', new ModuleRequest(finalLink, 'get', KeyValue1, null))); }}videos = videos.slice(0, 1);let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);var chaptersObject = new Resolver(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(videos));var finalJson = JSON.stringify(chaptersObject);savedData.innerHTML = finalJson;"
           },
           "output": {
             "moduleID": "",

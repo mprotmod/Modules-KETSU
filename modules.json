@@ -1,0 +1,345 @@
+[
+    {
+        "categories": [
+            "Most Used",
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/GoGoAnime/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Most Used",
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/aniwatch.json"
+    },
+    {
+        "categories": [
+            "Most Used",
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/JKAnime/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Most Used",
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaPill/moduleTemplate.json"
+    },
+        {
+        "categories": [
+            "Most Used",
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangareader.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimeHub/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Cartoons",
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/WCOS/module.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaNelo/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/NineMangaEng/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/TAADD/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Most Used",
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/MangaDex/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/NineManga/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaNelo/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangaworld/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Light Novels"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/lightnovelsfull/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Light Novels"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/LightNovels/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Anime",
+            "Utility"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/live%20chart/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Cusine",
+            "Utility"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Cusine%20recipies/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/video/animeunity.json"
+    },
+    {
+        "categories": [
+            "Comic"
+        ],
+        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/image/readcomiconline.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/image/coloredmanga.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/image/readm.json"
+    },
+    {
+        "categories": [
+            "WebToon",
+            "Manhwa",
+            "+18"
+        ],
+        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/image/toonily.json"
+    },
+    {
+        "categories": [
+            "WebToon",
+            "Manhwa",
+            "+18"
+        ],
+        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/image/webtoon.json"
+    },
+    {
+        "categories": [
+            "Hentai",
+            "+18"
+        ],
+        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/image/nhentai.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/KickAssAnime/module.json"
+    },
+    {
+        "categories": [
+            "Most Used",
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/letters01/letters01.github.io/main/modules/LectorTMO.json"
+    },
+    {
+        "categories": [
+            "Manga",
+            "Manhwa"
+        ],
+        "url": "https://raw.githubusercontent.com/letters01/letters01.github.io/main/modules/ManhwasDotNet.json"
+    },
+    {
+        "categories": [
+            "Manga",
+            "Manhwa"
+        ],
+        "url": "https://raw.githubusercontent.com/letters01/letters01.github.io/main/modules/TuManhwas.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/letters01/letters01.github.io/main/modules/MangaDoor.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/VostFree%20Ketsu/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/VoirAnime/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/FrenchAnime/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Drama"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/Drama_Cool/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/AnimeWorld/AnimeWorld.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/NineAnime/9anime.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Otakufr/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/Danyspb/Modules-Ketsu/main/Anime-Flex/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Drama"
+        ],
+        "url": "https://raw.githubusercontent.com/Danyspb/Modules-Ketsu/main/MyKDrama/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/Danyspb/Modules-Ketsu/main/IAnime/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Cartoons"
+        ],
+        "url": "https://raw.githubusercontent.com/Danyspb/Modules-Ketsu/main/SuperCartoons/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/ADKami/ADKami.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/ScansMangas/ScansMangasKETSU.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/NineManga/NineMangaFR.json"
+    },
+    {
+        "categories": [
+            "WebToon"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Asura/asura.json"
+    },
+    {
+        "categories": [
+            "Manga",
+            "WebToon"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Manga%20Weeb/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilnaa/bilnaa.github.io/main/Senmanga/senmanga.json"
+    },
+    {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/Danyspb/Modules-Ketsu/main/Mangas-Origines/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Books"
+        ],
+        "url": "https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/Livre1/Livre1.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/PhantomPainX/Modules-KETSU-KATSU/main/KETSU/DangoAnime/dangoanime.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/PhantomPainX/Modules-KETSU-KATSU/main/KETSU/AnimeFenix/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/PhantomPainX/Modules-KETSU-KATSU/main/KETSU/AnimeFLV/moduleTemplate.json"
+    },
+    {
+        "categories": [
+            "Hentai",
+            "+18"
+        ],
+        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/video/hanime.json"
+    },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimePahe/module.json"
+    }
+]
