@@ -1,15 +1,15 @@
 {
   "moduleInfo": {
-    "moduleName": "Mangaworld",
-    "moduleInitials": "MW",
-    "moduleDesc": "Module to read from Mangaworld",
+    "moduleName": "Mangaworld Adult",
+    "moduleInitials": "MWA",
+    "moduleDesc": "Module to read from Mangaworld Adult",
     "developer": "Giorgio Bertolotti",
-    "moduleID": "199809071",
-    "moduleImage": "https://www.mangaworld.ac/public/assets/images/MangaWorldSquareLogo.png",
-    "moduleVersion": 1.4,
+    "moduleID": "199809072",
+    "moduleImage": "https://www.mangaworldadult.net/public/assets/images/MangaWorldSquareLogo.png",
+    "moduleVersion": 1.1,
     "moduleLenguage": "ITA",
     "moduleType": "Image",
-    "baseURL": "https://www.mangaworld.ac/",
+    "baseURL": "https://www.mangaworldadult.net/",
     "moduleDeveloperSite": "https://bertolotti.dev/",
     "UpdateSite": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangaworld/moduleTemplate.json",
     "preferedServer": "UM",
@@ -39,7 +39,7 @@
   "mainPage": [
     {
       "request": {
-        "url": "https://www.mangaworld.ac/",
+        "url": "https://www.mangaworldadult.net/",
         "method": "get",
         "headers": [
           {
@@ -114,7 +114,7 @@
           "data": [
             {
               "image": {
-                "url": "https://www.mangaworld.ac/",
+                "url": "https://www.mangaworldadult.net/",
                 "method": "get",
                 "headers": [
                   {
@@ -152,7 +152,7 @@
   "search": [
     {
       "request": {
-        "url": "https://www.mangaworld.ac/archive?keyword=<searched>&page=<page>&sort=a-z",
+        "url": "https://www.mangaworldadult.net/archive?keyword=<searched>&page=<page>&sort=a-z",
         "method": "get",
         "headers": [
           {
@@ -228,7 +228,7 @@
           "data": [
             {
               "image": {
-                "url": "https://www.mangaworld.ac/",
+                "url": "https://www.mangaworldadult.net/",
                 "method": "get",
                 "headers": [
                   {
@@ -298,11 +298,11 @@
       "javascriptConfig": {
         "removeJavascript": true,
         "loadInWebView": false,
-        "javaScript": "function Info(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, params) { this.url = url; this.method = method; this.headers = headers; this.params = params; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Chapter(chapName, link, openInWebView) { this.chapName = chapName; this.link = link; this.openInWebView = openInWebView; } function Output( image, title, link, description, moduleID, genres, field1, field2, field3, field4, chapters ) { this.image = image; this.link = link; this.title = title; this.description = description; this.genres = genres; this.moduleID = moduleID; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.chapters = chapters; } const savedData = document.getElementById('ketsu-final-data'); const parsedJson = JSON.parse(savedData.innerHTML); const moduleID = '199809071'; const emptyKeyValue = [new KeyValue('', '')]; const chapters = []; let status = ''; let type = ''; let year = ''; let chaptersCount = ''; let genres = []; let desc = ''; var image = ''; let title = ''; image = document.querySelector('img.rounded').getAttribute('src'); image = new ModuleRequest(image, 'get', emptyKeyValue, emptyKeyValue); title = document.querySelector('.info > h1').innerText; status = document.querySelector( '.info > div.meta-data.row.px-1 > div:nth-child(6) > a' )?.innerText || ''; type = document.querySelector( '.info > div.meta-data.row > div:nth-child(5) > a' )?.innerText || ''; year = document.querySelector( '.info > div.meta-data.row.px-1 > div:nth-child(8) > a' )?.innerText || ''; chaptersCount = document.querySelector( '.info > div.meta-data.row.px-1 > div:nth-child(10) > span:nth-child(2)' )?.innerText || '0'; const genresBadges = document .querySelector('.info > div.meta-data.row.px-1 > div:nth-child(2)') .querySelectorAll('a'); for (let x = 0; x < genresBadges.length; x++) { const genreBadge = genresBadges[x]; genres.push(genreBadge.innerText); } desc = document.querySelector('#noidungm').innerHTML; const chaptersArray = document.querySelectorAll('.chapter'); for (let x = 0; x < chaptersArray.length; x++) { const chapter = chaptersArray[x]; const link = chapter.querySelector('a').href; const title = chapter.querySelector('a > span').textContent; chapters.push( new Chapter( title || 'Capitolo ' + (chaptersArray.length - x), new ModuleRequest(link, 'get', emptyKeyValue, emptyKeyValue), false ) ); } chapters.reverse(); const infoPageObject = new Info( new ModuleRequest('', '', emptyKeyValue, emptyKeyValue), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output( image, title, parsedJson.request, desc, moduleID, genres, status, type, year, 'Capitoli: ' + chaptersCount, chapters ) ); const finalJson = JSON.stringify(infoPageObject); savedData.innerHTML = finalJson;"
+        "javaScript": "function Info(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, params) { this.url = url; this.method = method; this.headers = headers; this.params = params; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Chapter(chapName, link, openInWebView) { this.chapName = chapName; this.link = link; this.openInWebView = openInWebView; } function Output( image, title, link, description, moduleID, genres, field1, field2, field3, field4, chapters ) { this.image = image; this.link = link; this.title = title; this.description = description; this.genres = genres; this.moduleID = moduleID; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.chapters = chapters; } const savedData = document.getElementById('ketsu-final-data'); const parsedJson = JSON.parse(savedData.innerHTML); const moduleID = '199809071'; const emptyKeyValue = [new KeyValue('', '')]; const chapters = []; let status = ''; let type = ''; let year = ''; let chaptersCount = ''; let genres = []; let desc = ''; var image = ''; let title = ''; image = document.querySelector('img.rounded').getAttribute('src'); image = new ModuleRequest(image, 'get', emptyKeyValue, emptyKeyValue); title = document.querySelector('.info > h1').innerText; status = document.querySelector( '.info > div.meta-data.row.px-1 > div:nth-child(6) > a' )?.innerText || ''; type = document.querySelector( '.info > div.meta-data.row > div:nth-child(5) > a' )?.innerText || ''; year = document.querySelector( '.info > div.meta-data.row.px-1 > div:nth-child(8) > a' )?.innerText || ''; chaptersCount = document.querySelector( '.info > div.meta-data.row.px-1 > div:nth-child(10) > span:nth-child(2)' )?.innerText; const genresBadges = document .querySelector('.info > div.meta-data.row.px-1 > div:nth-child(2)') .querySelectorAll('a'); for (let x = 0; x < genresBadges.length; x++) { const genreBadge = genresBadges[x]; genres.push(genreBadge.innerText); } desc = document.querySelector('#noidungm').innerHTML; const chaptersArray = document.querySelectorAll('.chapter'); for (let x = 0; x < chaptersArray.length; x++) { const chapter = chaptersArray[x]; const link = chapter.querySelector('a').href; const title = chapter.querySelector('a > span').textContent; chapters.push( new Chapter( title || 'Capitolo ' + (chaptersArray.length - x), new ModuleRequest(link, 'get', emptyKeyValue, emptyKeyValue), false ) ); } chapters.reverse(); chaptersCount = chaptersCount || chapters.length.toString(); const infoPageObject = new Info( new ModuleRequest('', '', emptyKeyValue, emptyKeyValue), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output( image, title, parsedJson.request, desc, moduleID, genres, status, type, year, 'Capitoli: ' + chaptersCount, chapters ) ); const finalJson = JSON.stringify(infoPageObject); savedData.innerHTML = finalJson;"
       },
       "output": {
         "image": {
-          "url": "https://www.mangaworld.ac/",
+          "url": "https://www.mangaworldadult.net/",
           "method": "get",
           "headers": [
             {
@@ -313,7 +313,7 @@
           "httpBody": null
         },
         "link": {
-          "url": "https://www.mangaworld.ac/",
+          "url": "https://www.mangaworldadult.net/",
           "method": "get",
           "headers": [
             {
@@ -395,7 +395,7 @@
             {
               "resolverIdentifier": "",
               "link": {
-                "url": "https://www.mangaworld.ac/",
+                "url": "https://www.mangaworldadult.net/",
                 "method": "get",
                 "headers": [
                   {
