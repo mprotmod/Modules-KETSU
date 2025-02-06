@@ -7,12 +7,7 @@
         "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/GoGoAnime/moduleTemplate.json"
     },
 
-        {
-        "categories": [
-            "Manga"
-        ],
-        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaNelo/moduleTemplate.json"
-    },
+ 
     {
         "categories": [
             "Most Used",
@@ -36,15 +31,7 @@
     },
 
 
-
-    {
-        "categories": [
-            "Anime"
-        ],
-        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimeHub/moduleTemplate.json"
-    },
- 
-    {
+   {
         "categories": [ 
                          "Most Used",
 
@@ -52,6 +39,14 @@
         ],
         "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaNelo/moduleTemplate.json"
     },
+    {
+        "categories": [
+            "Anime"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/AnimeHub/moduleTemplate.json"
+    },
+ 
+ 
     {
         "categories": [
                                      "Most Used",
