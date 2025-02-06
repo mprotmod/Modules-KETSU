@@ -64,6 +64,17 @@
         "url":"https://raw.githubusercontent.com/OffsetParts/KetsuModules/refs/heads/master/Modules/GalaxyAction/Galatic.json"
     },
 
+        
+      {
+        "categories": [
+            "Manga",
+            "webtoon",
+            "+18"
+        ],
+        "url":"https://raw.githubusercontent.com/mprotmod/Modules-KETSU/refs/heads/main/Module%20Parser%20KETSU/webtoon.json"
+    },
+
+
         {
         "categories": [
             "Manga"
