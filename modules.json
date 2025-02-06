@@ -20,20 +20,16 @@
         ],
         "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/JKAnime/moduleTemplate.json"
     },
-    {
-        "categories": [
-            "Most Used",
-            "Manga"
-        ],
-        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaPill/moduleTemplate.json"
-    },
+
+    
         {
         "categories": [
-            "Most Used",
             "Manga"
         ],
-        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangareader.json"
+        "url": "https://raw.githubusercontent.com/OffsetParts/KetsuModules/refs/heads/master/Modules/SenManga/moduleTemplate.json"
     },
+
+
     {
         "categories": [
             "Anime"
@@ -59,6 +55,16 @@
         ],
         "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/NineMangaEng/moduleTemplate.json"
     },
+
+
+    
+
+        {
+        "categories": [
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/OffsetParts/KetsuModules/refs/heads/master/Modules/AsurascansFree/AsuraFree.json"
+    },
     {
         "categories": [
             "Manga"
@@ -70,7 +76,7 @@
             "Most Used",
             "Manga"
         ],
-        "url": "https://raw.githubusercontent.com/dex"
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/refs/heads/main/Module%20Parser%20KETSU/mangadex.json"
     },
     {
         "categories": [
@@ -92,6 +98,21 @@
         "url": "https://raw.githubusercontent.com/OffsetParts/KetsuModules/refs/heads/master/Modules/VortexscansFree/VortexFree.json"
     },
 
+        {
+        "categories": [
+            "Most Used",
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaPill/moduleTemplate.json"
+    },
+        {
+        "categories": [
+            "Most Used",
+            "Manga"
+        ],
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/Mangareader.json"
+    },
+
           {
         "categories": [
             "Manga"
@@ -108,6 +129,15 @@
         "url":"https://raw.githubusercontent.com/OffsetParts/KetsuModules/refs/heads/master/Modules/GalaxyAction/Galatic.json"
     },
 
+          {
+        "categories": [
+            "Manga"
+        ],
+        "url":"https://raw.githubusercontent.com/mprotmod/Modules-KETSU/refs/heads/main/Module%20Parser%20KETSU/TMO.json"
+    },
+
+
+    
     
     {
         "categories": [
@@ -150,14 +180,14 @@
             "Hentai",
             "+18"
         ],
-        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/video/hanime.json"
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/refs/heads/main/Module%20Parser%20KETSU/hanime.json"
     },    {
         "categories": [
             "Manga",
             "Hentai",
             "+18"
         ],
-        "url": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/video/hanime.json"
+        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/refs/heads/main/Module%20Parser%20KETSU/nhentai.json"
     },
 
 
