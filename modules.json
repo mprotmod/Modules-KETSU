@@ -152,12 +152,7 @@
         ],
         "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/lightnovelsfull/moduleTemplate.json"
     },
-    {
-        "categories": [
-            "Light Novels"
-        ],
-        "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/LightNovels/moduleTemplate.json"
-    },
+
     {
         "categories": [
             "Anime",
