@@ -1,0 +1,951 @@
+{
+  "moduleInfo": {
+    "moduleName": "WC",
+    "moduleInitials": "WC",
+    "moduleDesc": "Top manga titles, latest releases and more from WeebCentral",
+    "developer": "wawoide",
+    "moduleID": "ויבסנטרל",
+    "moduleImage": "https://i.imgur.com/UW42RMy.png",
+    "moduleVersion": 1.0,
+    "moduleLenguage": "ENG",
+    "moduleType": "Image",
+    "baseURL": "https://weebcentral.com/",
+    "moduleDeveloperSite": "",
+    "UpdateSite": "https://gitlab.com/wawoide/ketsu-modules/-/raw/main/Modules/WeebCentral.json",
+    "preferedServer": "",
+    "preferedDownloadServer": "",
+    "blackListed": [
+      ""
+    ]
+  },
+  "global": {
+    "variables": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "cookies": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "headers": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ]
+  },
+  "mainPage": [
+    {
+      "request": {
+        "url": "https://weebcentral.com/",
+        "method": "get",
+        "headers": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": false,
+        "loadInWebView": false,
+        "javaScript": "const DefaultLayouts={ultraWideFull:'ultraWideFull',ultraWide:'ultraWide',wideFull:'wideFull',wide:'wide',wideStrechedFull:'wideStrechedFull',wideStrechedFullDouble:'WideStrechedFullDouble',wideStreched:'wideStreched',wideStrechedDouble:'wideStrechedDouble',wideStrechedFullList:'wideStrechedFullList',wideStrechedList:'wideStrechedList',doublets:'doublets',doubletsDouble:'doubletsDouble',doubletsFull:'doubletsFull',doubletsFullDouble:'doubletsFullDouble',doubletsConstant:'doubletsConstant',doubletsDoubleConstant:'doubletsDoubleConstant',doubletsFullConstant:'doubletsFullConstant',doubletsFullDoubleConstant:'doubletsFullDoubleConstant',longDoublets:'longDoublets',longDoubletsDouble:'longDoubletsDouble',longDoubletsFull:'longDoubletsFull',longDoubletsFullDouble:'longDoubletsFullDouble',longDoubletsConstant:'longDoubletsConstant',longDoubletsDoubleConstant:'longDoubletsDoubleConstant',longDoubletsFullConstant:'longDoubletsFullConstant',longDoubletsFullDoubleConstant:'longDoubletsFullDoubleConstant',triplets:'triplets',tripletsDouble:'tripletsDouble',tripletsFull:'tripletsFull',tripletsFullDouble:'tripletsFullDouble',tripletsConstant:'tripletsConstant',tripletsDoubleConstant:'tripletsDoubleConstant',tripletsFullConstant:'tripletsFullConstant',tripletsFullDoubleConstant:'tripletsFullDoubleConstant',longTriplets:'longTriplets',longTripletsDouble:'longTripletsDouble',longTripletsFull:'longTripletsFull',longTripletsFullDouble:'longTripletsFullDouble',longTripletsConstant:'longTripletsConstant',longTripletsDoubleConstant:'longTripletsDoubleConstant',longTripletsFullConstant:'longTripletsFullConstant',longTripletsFullDoubleConstant:'longTripletsFullDoubleConstant',none:''};const CellDesings={Special1:'Special1',Special2:'Special2',Special3:'Special3',CELLHelperText:'CELLHelperText',small1:'small1',small2:'small2',normal1:'normal1',normal2:'normal2',normal3:'normal3',normal4:'normal4',normal5:'normal5',normal6:'normal6',normal7:'normal7',wide1:'wide1s',wide2:'wide2',wide3:'wide3',wide4:'wide4',wide5:'wide5',wide6:'wide6',wide7:'wide7',wide8:'wide8',wide9:'wide9',wide1As0:'wide10',wide11:'wide11'};const Paging={leading:'leading',centered:'centered',none:''};const Orientation={horizontal:'horizontal',vertical:'vertical'};function MainPage(request,extra,javascriptConfig,output){this.request=request;this.extra=extra;this.javascriptConfig=javascriptConfig;this.output=output;}function ModuleRequest(url,method,headers,httpBody){this.url=url;this.method=method;this.headers=headers;this.httpBody=httpBody;}function Extra(commands,extraInfo){this.commands=commands;this.extraInfo=extraInfo;}function Commands(commandName,params){this.commandName=commandName;this.params=params;}function JavascriptConfig(removeJavascript,loadInWebView,javaScript){this.removeJavascript=removeJavascript;this.loadInWebView=loadInWebView;this.javaScript=javaScript;}function KeyValue(key,value){this.key=key;this.value=value;}function Output(cellDesing,orientation,defaultLayout,paging,section,layout,data){this.cellDesing=cellDesing;this.orientation=orientation;this.defaultLayout=defaultLayout;this.paging=paging;this.section=section;this.layout=layout;this.data=data;}function Section(sectionName,separator){this.sectionName=sectionName;this.separator=separator;}function Layout(insets,visibleCellsWidthS,visibleCellsWidthM,visibleCellsWidthL,visibleCellsHeight,heightForVisibleCells,cellSize,ratio,constant,horizontalSpacing,verticalSpacing){this.insets=insets;this.visibleCellsWidthS=visibleCellsWidthS;this.visibleCellsWidthM=visibleCellsWidthM;this.visibleCellsWidthL=visibleCellsWidthL;this.visibleCellsHeight=visibleCellsHeight;this.heightForVisibleCells=heightForVisibleCells;this.cellSize=cellSize;this.ratio=ratio;this.constant=constant;this.horizontalSpacing=horizontalSpacing;this.verticalSpacing=verticalSpacing;}function Insets(top,bottom,left,right){this.top=top;this.bottom=bottom;this.left=left;this.right=right;}function Size(width,height){this.width=width;this.height=height;}function Ratio(inRelation,number1,number2){this.inRelation=inRelation;this.number1=number1;this.number2=number2;}function Data(image,title,description,field1,field2,field3,field4,isChapter,link,openInWebView){this.image=image;this.title=title;this.description=description;this.field1=field1;this.field2=field2;this.field3=field3;this.field4=field4;this.isChapter=isChapter;this.link=link;this.openInWebView=openInWebView;}function quickData(link,image,title,field1){return new Data(image,title,'',field1,'','','',false,link);}function shuffle(a){var j,x,i;for(i=a.length-1;i>0;i--){j=Math.floor(Math.random()*(i+1));x=a[i];a[i]=a[j];a[j]=x;}return a;}var savedData=document.getElementById('ketsu-final-data');var parsedJson=JSON.parse(savedData.innerHTML);let output=[];let emptyKeyValue=[new KeyValue('','')];let recsData=[];const allSections=document.querySelectorAll('section');let recommendationsSection=null;for(const section of allSections){try{const titleEl=section.querySelector('h2 > span');if(titleEl&&titleEl.textContent.includes('Recommendations')){recommendationsSection=section;break;}}catch(e){}}if(recommendationsSection){try{const items=recommendationsSection.querySelectorAll('li.glide__slide > a');for(const item of items){let href=item.getAttribute('href');let imgSrc=item.querySelector('img').src;let titulo=item.querySelector('div.truncate').textContent.trim();let enlace=new ModuleRequest(href,'get',emptyKeyValue,null);let imagen=new ModuleRequest(imgSrc,'get',emptyKeyValue,null);recsData.push(quickData(enlace,imagen,titulo,'Manga'));}}catch(e){}}if(recsData.length>0){output.push(new Output(CellDesings.normal1,Orientation.horizontal,DefaultLayouts.longDoubletsConstant,Paging.leading,new Section('Recommendations',true),null,recsData));}let MainPageObject=new MainPage(new ModuleRequest('https://weebcentral.com/search?sort=Latest+Updates&order=Descending&official=Any&anime=Any&adult=Any&display_mode=Full+Display','get',emptyKeyValue,null),new Extra([new Commands('',emptyKeyValue)],emptyKeyValue),new JavascriptConfig(false,true,''),output);var finalJson=JSON.stringify(MainPageObject);savedData.innerHTML=finalJson;"
+      },
+      "output": [
+        {
+          "cellDesing": "normal1",
+          "orientation": "vertical",
+          "defaultLayout": "wide",
+          "paging": "",
+          "section": {
+            "sectionName": "",
+            "separator": false
+          },
+          "layout": {
+            "insets": {
+              "top": 0,
+              "bottom": 0,
+              "left": 0,
+              "right": 0
+            },
+            "visibleCellsWidthS": 2,
+            "visibleCellsWidthM": 2,
+            "visibleCellsWidthL": 2,
+            "visibleCellsHeight": 2,
+            "heightForVisibleCells": 400,
+            "cellSize": {
+              "width": 300,
+              "height": 300
+            },
+            "ratio": {
+              "inRelation": "width",
+              "number1": 1,
+              "number2": 2
+            },
+            "constant": {
+              "width": 1,
+              "height": 2
+            },
+            "horizontalSpacing": 0,
+            "verticalSpacing": 0
+          },
+          "data": [
+            {
+              "image": {
+                "url": "",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              },
+              "title": "",
+              "description": "",
+              "field1": "",
+              "field2": "",
+              "field3": "",
+              "field4": "",
+              "openInWebView": false,
+              "isChapter": false,
+              "link": {
+                "url": "",
+                "method": "",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "request": {
+        "url": "",
+        "method": "get",
+        "headers": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": false,
+        "loadInWebView": true,
+        "javaScript": "var KETSU_ASYNC = true; const DefaultLayouts = { ultraWideFull : 'ultraWideFull', ultraWide : 'ultraWide', wideFull : 'wideFull', wide : 'wide', wideStrechedFull : 'wideStrechedFull', wideStrechedFullDouble : 'WideStrechedFullDouble', wideStreched : 'wideStreched', wideStrechedDouble : 'wideStrechedDouble', wideStrechedFullList : 'wideStrechedFullList', wideStrechedList : 'wideStrechedList', doublets : 'doublets', doubletsDouble : 'doubletsDouble', doubletsFull : 'doubletsFull', doubletsFullDouble : 'doubletsFullDouble', doubletsConstant : 'doubletsConstant', doubletsDoubleConstant : 'doubletsDoubleConstant', doubletsFullConstant : 'doubletsFullConstant', doubletsFullDoubleConstant : 'doubletsFullDoubleConstant', longDoublets : 'longDoublets', longDoubletsDouble : 'longDoubletsDouble', longDoubletsFull : 'longDoubletsFull', longDoubletsFullDouble : 'longDoubletsFullDouble', longDoubletsConstant : 'longDoubletsConstant', longDoubletsDoubleConstant : 'longDoubletsDoubleConstant', longDoubletsFullConstant : 'longDoubletsFullConstant', longDoubletsFullDoubleConstant : 'longDoubletsFullDoubleConstant', triplets : 'triplets', tripletsDouble : 'tripletsDouble', tripletsFull : 'tripletsFull', tripletsFullDouble : 'tripletsFullDouble', tripletsConstant : 'tripletsConstant', tripletsDoubleConstant : 'tripletsDoubleConstant', tripletsFullConstant : 'tripletsFullConstant', tripletsFullDoubleConstant : 'tripletsFullDoubleConstant', longTriplets : 'longTriplets', longTripletsDouble : 'longTripletsDouble', longTripletsFull : 'longTripletsFull', longTripletsFullDouble : 'longTripletsFullDouble', longTripletsConstant : 'longTripletsConstant', longTripletsDoubleConstant : 'longTripletsDoubleConstant', longTripletsFullConstant : 'longTripletsFullConstant', longTripletsFullDoubleConstant : 'longTripletsFullDoubleConstant', none: '' }; const CellDesings = { Special1 : 'Special1', Special2 : 'Special2', Special3 : 'Special3', CELLHelperText : 'CELLHelperText', small1 : 'small1', small2 : 'small2', normal1 : 'normal1', normal2 : 'normal2', normal3 : 'normal3', normal4 : 'normal4', normal5 : 'normal5', normal6 : 'normal6', normal7 : 'normal7', wide1 : 'wide1', wide2 : 'wide2', wide3 : 'wide3', wide4 : 'wide4', wide5 : 'wide5', wide6 : 'wide6', wide7 : 'wide7', wide8 : 'wide8', wide9 : 'wide9', wide10 : 'wide10', wide11 : 'wide11' }; const Paging = { leading : 'leading', centered : 'centered', none : '' }; const Orientation = { horizontal : 'horizontal', vertical : 'vertical' }; function MainPage(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Output(cellDesing, orientation, defaultLayout, paging, section, layout, data) { this.cellDesing = cellDesing; this.orientation = orientation; this.defaultLayout = defaultLayout; this.paging = paging; this.section = section; this.layout = layout; this.data = data; } function Section(sectionName, separator) { this.sectionName = sectionName; this.separator = separator; } function Layout(insets, visibleCellsWidthS,visibleCellsWidthM,visibleCellsWidthL, visibleCellsHeight, heightForVisibleCells, cellSize, ratio, constant, horizontalSpacing, verticalSpacing) { this.insets = insets; this.visibleCellsWidthS = visibleCellsWidthS; this.visibleCellsWidthM = visibleCellsWidthM; this.visibleCellsWidthL = visibleCellsWidthL; this.visibleCellsHeight = visibleCellsHeight; this.heightForVisibleCells = heightForVisibleCells; this.cellSize = cellSize; this.ratio = ratio; this.constant = constant; this.horizontalSpacing = horizontalSpacing; this.verticalSpacing = verticalSpacing; } function Insets(top, bottom, left, right) { this.top = top; this.bottom = bottom; this.left = left; this.right = right; } function Size(width, height) { this.width = width; this.height = height; } function Ratio(inRelation, number1, number2) { this.inRelation = inRelation; this.number1 = number1; this.number2 = number2; } function Data(image, title, description, field1, field2, field3, field4, isChapter, link,openInWebView) { this.image = image; this.title = title; this.description = description; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.isChapter = isChapter; this.link = link; this.openInWebView = openInWebView; } function quickData(link,image,title,field1) { return new Data(image,title,'unknown',field1,'unknown','unknown','unknown',false,link); } function shuffle(a) { var j, x, i; for (i = a.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1)); x = a[i]; a[i] = a[j]; a[j] = x; } return a; } var savedData = document.getElementById('ketsu-final-data'); var parsedJson = JSON.parse(savedData.innerHTML); let output = parsedJson.output; let emptyKeyValue = [new KeyValue('','')]; const baseURL = 'https://weebcentral.com'; setTimeout(function() { try { let data_seccion_2 = []; let elementos = document.querySelectorAll('#search-results article.bg-base-300'); for (var i = 0; i < elementos.length; i++) { var elemento = elementos[i]; var linkElement = elemento.querySelector('a'); var imgElement = elemento.querySelector('img'); var titleElement = elemento.querySelector('a.line-clamp-1'); if (!titleElement) { titleElement = elemento.querySelector('div.text-ellipsis'); } var enlace = linkElement ? linkElement.href : ''; var imagen = imgElement ? imgElement.src : ''; var titulo = titleElement ? titleElement.textContent.trim() : ''; var year = ''; var status = ''; var type = ''; var tags = ''; var detailDivs = elemento.querySelectorAll('div.opacity-70'); for (var j = 0; j < detailDivs.length; j++) { var strong = detailDivs[j].querySelector('strong'); if (strong) { var key = strong.textContent.trim(); if (key.startsWith('Year')) { year = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Status')) { status = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Type')) { type = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Tag(s)')) { var tagSpans = detailDivs[j].querySelectorAll('span'); var tagList = []; for (var k = 0; k < tagSpans.length; k++) { tagList.push(tagSpans[k].textContent.trim().replace(',', '')); } tags = tagList.join(', '); } } } if (type === '') { var mobileType = elemento.querySelector('span.tooltip[data-tip]'); if (mobileType) { type = mobileType.getAttribute('data-tip'); } } if (enlace && !enlace.startsWith('http')) { enlace = new URL(enlace, baseURL).href; } if (imagen && !imagen.startsWith('http') && !imagen.startsWith('data:')) { imagen = new URL(imagen, baseURL).href; } if (enlace && imagen && titulo) { data_seccion_2.push(new Data(new ModuleRequest(imagen, 'get', emptyKeyValue, null), titulo, tags, year, status, type, '', false, new ModuleRequest(enlace, 'get', emptyKeyValue, null), false)); } } if (data_seccion_2.length > 0) { let seccion_2 = new Output(CellDesings.wide11, Orientation.horizontal, DefaultLayouts.wideFull, Paging.leading, new Section('Latest Updates', true), null, data_seccion_2); output.push(seccion_2); } } catch(e) {} var nextURL = 'https://weebcentral.com/search?sort=Popularity&order=Descending&official=Any&anime=Any&adult=Any&display_mode=Full+Display'; let MainPageObject = new MainPage(new ModuleRequest(nextURL,'get',emptyKeyValue,null), new Extra([new Commands('',emptyKeyValue)],emptyKeyValue), new JavascriptConfig(true,true,''), output); var finalJson = JSON.stringify(MainPageObject); savedData.innerHTML = finalJson; window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage(''); }, 3000);"
+      },
+      "output": [
+        {
+          "cellDesing": "normal1",
+          "orientation": "vertical",
+          "defaultLayout": "wide",
+          "paging": "",
+          "section": {
+            "sectionName": "",
+            "separator": false
+          },
+          "layout": {
+            "insets": {
+              "top": 0,
+              "bottom": 0,
+              "left": 0,
+              "right": 0
+            },
+            "visibleCellsWidthS": 2,
+            "visibleCellsWidthM": 2,
+            "visibleCellsWidthL": 2,
+            "visibleCellsHeight": 2,
+            "heightForVisibleCells": 400,
+            "cellSize": {
+              "width": 300,
+              "height": 300
+            },
+            "ratio": {
+              "inRelation": "width",
+              "number1": 1,
+              "number2": 2
+            },
+            "constant": {
+              "width": 1,
+              "height": 2
+            },
+            "horizontalSpacing": 0,
+            "verticalSpacing": 0
+          },
+          "data": [
+            {
+              "image": {
+                "url": "",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              },
+              "title": "",
+              "description": "",
+              "field1": "",
+              "field2": "",
+              "field3": "",
+              "field4": "",
+              "openInWebView": false,
+              "isChapter": false,
+              "link": {
+                "url": "",
+                "method": "",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "request": {
+        "url": "",
+        "method": "get",
+        "headers": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": false,
+        "loadInWebView": true,
+        "javaScript": "var KETSU_ASYNC = true; const DefaultLayouts = { ultraWideFull : 'ultraWideFull', ultraWide : 'ultraWide', wideFull : 'wideFull', wide : 'wide', wideStrechedFull : 'wideStrechedFull', wideStrechedFullDouble : 'WideStrechedFullDouble', wideStreched : 'wideStreched', wideStrechedDouble : 'wideStrechedDouble', wideStrechedFullList : 'wideStrechedFullList', wideStrechedList : 'wideStrechedList', doublets : 'doublets', doubletsDouble : 'doubletsDouble', doubletsFull : 'doubletsFull', doubletsFullDouble : 'doubletsFullDouble', doubletsConstant : 'doubletsConstant', doubletsDoubleConstant : 'doubletsDoubleConstant', doubletsFullConstant : 'doubletsFullConstant', doubletsFullDoubleConstant : 'doubletsFullDoubleConstant', longDoublets : 'longDoublets', longDoubletsDouble : 'longDoubletsDouble', longDoubletsFull : 'longDoubletsFull', longDoubletsFullDouble : 'longDoubletsFullDouble', longDoubletsConstant : 'longDoubletsConstant', longDoubletsDoubleConstant : 'longDoubletsDoubleConstant', longDoubletsFullConstant : 'longDoubletsFullConstant', longDoubletsFullDoubleConstant : 'longDoubletsFullDoubleConstant', triplets : 'triplets', tripletsDouble : 'tripletsDouble', tripletsFull : 'tripletsFull', tripletsFullDouble : 'tripletsFullDouble', tripletsConstant : 'tripletsConstant', tripletsDoubleConstant : 'tripletsDoubleConstant', tripletsFullConstant : 'tripletsFullConstant', tripletsFullDoubleConstant : 'tripletsFullDoubleConstant', longTriplets : 'longTriplets', longTripletsDouble : 'longTripletsDouble', longTripletsFull : 'longTripletsFull', longTripletsFullDouble : 'longTripletsFullDouble', longTripletsConstant : 'longTripletsConstant', longTripletsDoubleConstant : 'longTripletsDoubleConstant', longTripletsFullConstant : 'longTripletsFullConstant', longTripletsFullDoubleConstant : 'longTripletsFullDoubleConstant', none: '' }; const CellDesings = { Special1 : 'Special1', Special2 : 'Special2', Special3 : 'Special3', CELLHelperText : 'CELLHelperText', small1 : 'small1', small2 : 'small2', normal1 : 'normal1', normal2 : 'normal2', normal3 : 'normal3', normal4 : 'normal4', normal5 : 'normal5', normal6 : 'normal6', normal7 : 'normal7', wide1 : 'wide1', wide2 : 'wide2', wide3 : 'wide3', wide4 : 'wide4', wide5 : 'wide5', wide6 : 'wide6', wide7 : 'wide7', wide8 : 'wide8', wide9 : 'wide9', wide10 : 'wide10', wide11 : 'wide11' }; const Paging = { leading : 'leading', centered : 'centered', none : '' }; const Orientation = { horizontal : 'horizontal', vertical : 'vertical' }; function MainPage(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Output(cellDesing, orientation, defaultLayout, paging, section, layout, data) { this.cellDesing = cellDesing; this.orientation = orientation; this.defaultLayout = defaultLayout; this.paging = paging; this.section = section; this.layout = layout; this.data = data; } function Section(sectionName, separator) { this.sectionName = sectionName; this.separator = separator; } function Layout(insets, visibleCellsWidthS,visibleCellsWidthM,visibleCellsWidthL, visibleCellsHeight, heightForVisibleCells, cellSize, ratio, constant, horizontalSpacing, verticalSpacing) { this.insets = insets; this.visibleCellsWidthS = visibleCellsWidthS; this.visibleCellsWidthM = visibleCellsWidthM; this.visibleCellsWidthL = visibleCellsWidthL; this.visibleCellsHeight = visibleCellsHeight; this.heightForVisibleCells = heightForVisibleCells; this.cellSize = cellSize; this.ratio = ratio; this.constant = constant; this.horizontalSpacing = horizontalSpacing; this.verticalSpacing = verticalSpacing; } function Insets(top, bottom, left, right) { this.top = top; this.bottom = bottom; this.left = left; this.right = right; } function Size(width, height) { this.width = width; this.height = height; } function Ratio(inRelation, number1, number2) { this.inRelation = inRelation; this.number1 = number1; this.number2 = number2; } function Data(image, title, description, field1, field2, field3, field4, isChapter, link,openInWebView) { this.image = image; this.title = title; this.description = description; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.isChapter = isChapter; this.link = link; this.openInWebView = openInWebView; } function quickData(link,image,title,field1) { return new Data(image,title,'unknown',field1,'unknown','unknown','unknown',false,link); } function shuffle(a) { var j, x, i; for (i = a.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1)); x = a[i]; a[i] = a[j]; a[j] = x; } return a; } var savedData = document.getElementById('ketsu-final-data'); var parsedJson = JSON.parse(savedData.innerHTML); let output = parsedJson.output; let emptyKeyValue = [new KeyValue('','')]; const baseURL = 'https://weebcentral.com'; setTimeout(function() { try { let data_seccion_3 = []; let elementos = document.querySelectorAll('#search-results article.bg-base-300'); for (var i = 0; i < elementos.length; i++) { var elemento = elementos[i]; var linkElement = elemento.querySelector('a'); var imgElement = elemento.querySelector('img'); var titleElement = elemento.querySelector('a.line-clamp-1'); if (!titleElement) { titleElement = elemento.querySelector('div.text-ellipsis'); } var enlace = linkElement ? linkElement.href : ''; var imagen = imgElement ? imgElement.src : ''; var titulo = titleElement ? titleElement.textContent.trim() : ''; var year = ''; var status = ''; var type = ''; var tags = ''; var detailDivs = elemento.querySelectorAll('div.opacity-70'); for (var j = 0; j < detailDivs.length; j++) { var strong = detailDivs[j].querySelector('strong'); if (strong) { var key = strong.textContent.trim(); if (key.startsWith('Year')) { year = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Status')) { status = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Type')) { type = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Tag(s)')) { var tagSpans = detailDivs[j].querySelectorAll('span'); var tagList = []; for (var k = 0; k < tagSpans.length; k++) { tagList.push(tagSpans[k].textContent.trim().replace(',', '')); } tags = tagList.join(', '); } } } if (type === '') { var mobileType = elemento.querySelector('span.tooltip[data-tip]'); if (mobileType) { type = mobileType.getAttribute('data-tip'); } } if (enlace && !enlace.startsWith('http')) { enlace = new URL(enlace, baseURL).href; } if (imagen && !imagen.startsWith('http') && !imagen.startsWith('data:')) { imagen = new URL(imagen, baseURL).href; } if (enlace && imagen && titulo) { data_seccion_3.push(new Data(new ModuleRequest(imagen, 'get', emptyKeyValue, null), titulo, tags, titulo, status, type, '', false, new ModuleRequest(enlace, 'get', emptyKeyValue, null), false)); } } if (data_seccion_3.length > 0) { var customLayout = new Layout(new Insets(10, 10, 10, 10), 1, 3, 5, 1, 500, new Size(400, 400), new Ratio('width', 11, 10), new Size(-60, 0), 10, 10); let seccion_3 = new Output(CellDesings.Special2, Orientation.horizontal, DefaultLayouts.none, Paging.leading, new Section('Popularity', true), customLayout, data_seccion_3); output.push(seccion_3); } } catch(e) {} var nextURL = 'https://weebcentral.com/search?sort=Popularity&order=Descending&official=Any&anime=Any&adult=True&display_mode=Full+Display'; let MainPageObject = new MainPage(new ModuleRequest(nextURL, 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, true, ''), output); var finalJson = JSON.stringify(MainPageObject); savedData.innerHTML = finalJson; window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage(''); }, 3000);"
+      },
+      "output": [
+        {
+          "cellDesing": "normal1",
+          "orientation": "vertical",
+          "defaultLayout": "wide",
+          "paging": "",
+          "section": {
+            "sectionName": "",
+            "separator": false
+          },
+          "layout": {
+            "insets": {
+              "top": 0,
+              "bottom": 0,
+              "left": 0,
+              "right": 0
+            },
+            "visibleCellsWidthS": 2,
+            "visibleCellsWidthM": 2,
+            "visibleCellsWidthL": 2,
+            "visibleCellsHeight": 2,
+            "heightForVisibleCells": 400,
+            "cellSize": {
+              "width": 300,
+              "height": 300
+            },
+            "ratio": {
+              "inRelation": "width",
+              "number1": 1,
+              "number2": 2
+            },
+            "constant": {
+              "width": 1,
+              "height": 2
+            },
+            "horizontalSpacing": 0,
+            "verticalSpacing": 0
+          },
+          "data": [
+            {
+              "image": {
+                "url": "",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              },
+              "title": "",
+              "description": "",
+              "field1": "",
+              "field2": "",
+              "field3": "",
+              "field4": "",
+              "openInWebView": false,
+              "isChapter": false,
+              "link": {
+                "url": "",
+                "method": "",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "request": {
+        "url": "",
+        "method": "get",
+        "headers": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": false,
+        "loadInWebView": true,
+        "javaScript": "var KETSU_ASYNC = true; const DefaultLayouts = { ultraWideFull : 'ultraWideFull', ultraWide : 'ultraWide', wideFull : 'wideFull', wide : 'wide', wideStrechedFull : 'wideStrechedFull', wideStrechedFullDouble : 'WideStrechedFullDouble', wideStreched : 'wideStreched', wideStrechedDouble : 'wideStrechedDouble', wideStrechedFullList : 'wideStrechedFullList', wideStrechedList : 'wideStrechedList', doublets : 'doublets', doubletsDouble : 'doubletsDouble', doubletsFull : 'doubletsFull', doubletsFullDouble : 'doubletsFullDouble', doubletsConstant : 'doubletsConstant', doubletsDoubleConstant : 'doubletsDoubleConstant', doubletsFullConstant : 'doubletsFullConstant', doubletsFullDoubleConstant : 'doubletsFullDoubleConstant', longDoublets : 'longDoublets', longDoubletsDouble : 'longDoubletsDouble', longDoubletsFull : 'longDoubletsFull', longDoubletsFullDouble : 'longDoubletsFullDouble', longDoubletsConstant : 'longDoubletsConstant', longDoubletsDoubleConstant : 'longDoubletsDoubleConstant', longDoubletsFullConstant : 'longDoubletsFullConstant', longDoubletsFullDoubleConstant : 'longDoubletsFullDoubleConstant', triplets : 'triplets', tripletsDouble : 'tripletsDouble', tripletsFull : 'tripletsFull', tripletsFullDouble : 'tripletsFullDouble', tripletsConstant : 'tripletsConstant', tripletsDoubleConstant : 'tripletsDoubleConstant', tripletsFullConstant : 'tripletsFullConstant', tripletsFullDoubleConstant : 'tripletsFullDoubleConstant', longTriplets : 'longTriplets', longTripletsDouble : 'longTripletsDouble', longTripletsFull : 'longTripletsFull', longTripletsFullDouble : 'longTripletsFullDouble', longTripletsConstant : 'longTripletsConstant', longTripletsDoubleConstant : 'longTripletsDoubleConstant', longTripletsFullConstant : 'longTripletsFullConstant', longTripletsFullDoubleConstant : 'longTripletsFullDoubleConstant', none: '' }; const CellDesings = { Special1 : 'Special1', Special2 : 'Special2', Special3 : 'Special3', CELLHelperText : 'CELLHelperText', small1 : 'small1', small2 : 'small2', normal1 : 'normal1', normal2 : 'normal2', normal3 : 'normal3', normal4 : 'normal4', normal5 : 'normal5', normal6 : 'normal6', normal7 : 'normal7', wide1 : 'wide1', wide2 : 'wide2', wide3 : 'wide3', wide4 : 'wide4', wide5 : 'wide5', wide6 : 'wide6', wide7 : 'wide7', wide8 : 'wide8', wide9 : 'wide9', wide10 : 'wide10', wide11 : 'wide11' }; const Paging = { leading : 'leading', centered : 'centered', none : '' }; const Orientation = { horizontal : 'horizontal', vertical : 'vertical' }; function MainPage(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Output(cellDesing, orientation, defaultLayout, paging, section, layout, data) { this.cellDesing = cellDesing; this.orientation = orientation; this.defaultLayout = defaultLayout; this.paging = paging; this.section = section; this.layout = layout; this.data = data; } function Section(sectionName, separator) { this.sectionName = sectionName; this.separator = separator; } function Layout(insets, visibleCellsWidthS,visibleCellsWidthM,visibleCellsWidthL, visibleCellsHeight, heightForVisibleCells, cellSize, ratio, constant, horizontalSpacing, verticalSpacing) { this.insets = insets; this.visibleCellsWidthS = visibleCellsWidthS; this.visibleCellsWidthM = visibleCellsWidthM; this.visibleCellsWidthL = visibleCellsWidthL; this.visibleCellsHeight = visibleCellsHeight; this.heightForVisibleCells = heightForVisibleCells; this.cellSize = cellSize; this.ratio = ratio; this.constant = constant; this.horizontalSpacing = horizontalSpacing; this.verticalSpacing = verticalSpacing; } function Insets(top, bottom, left, right) { this.top = top; this.bottom = bottom; this.left = left; this.right = right; } function Size(width, height) { this.width = width; this.height = height; } function Ratio(inRelation, number1, number2) { this.inRelation = inRelation; this.number1 = number1; this.number2 = number2; } function Data(image, title, description, field1, field2, field3, field4, isChapter, link,openInWebView) { this.image = image; this.title = title; this.description = description; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.isChapter = isChapter; this.link = link; this.openInWebView = openInWebView; } function quickData(link,image,title,field1) { return new Data(image,title,'unknown',field1,'unknown','unknown','unknown',false,link); } function shuffle(a) { var j, x, i; for (i = a.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1)); x = a[i]; a[i] = a[j]; a[j] = x; } return a; } var savedData = document.getElementById('ketsu-final-data'); var parsedJson = JSON.parse(savedData.innerHTML); let output = parsedJson.output; let emptyKeyValue = [new KeyValue('','')]; const baseURL = 'https://weebcentral.com'; setTimeout(function() { try { let data_seccion_4 = []; let elementos = document.querySelectorAll('#search-results article.bg-base-300'); for (var i = 0; i < elementos.length; i++) { var elemento = elementos[i]; var linkElement = elemento.querySelector('a'); var imgElement = elemento.querySelector('img'); var titleElement = elemento.querySelector('a.line-clamp-1'); if (!titleElement) { titleElement = elemento.querySelector('div.text-ellipsis'); } var enlace = linkElement ? linkElement.href : ''; var imagen = imgElement ? imgElement.src : ''; var titulo = titleElement ? titleElement.textContent.trim() : ''; var year = ''; var status = ''; var type = ''; var tags = ''; var detailDivs = elemento.querySelectorAll('div.opacity-70'); for (var j = 0; j < detailDivs.length; j++) { var strong = detailDivs[j].querySelector('strong'); if (strong) { var key = strong.textContent.trim(); if (key.startsWith('Year')) { year = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Status')) { status = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Type')) { type = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Tag(s)')) { var tagSpans = detailDivs[j].querySelectorAll('span'); var tagList = []; for (var k = 0; k < tagSpans.length; k++) { tagList.push(tagSpans[k].textContent.trim().replace(',', '')); } tags = tagList.join(', '); } } } if (type === '') { var mobileType = elemento.querySelector('span.tooltip[data-tip]'); if (mobileType) { type = mobileType.getAttribute('data-tip'); } } if (enlace && !enlace.startsWith('http')) { enlace = new URL(enlace, baseURL).href; } if (imagen && !imagen.startsWith('http') && !imagen.startsWith('data:')) { imagen = new URL(imagen, baseURL).href; } if (enlace && imagen && titulo) { data_seccion_4.push(new Data(new ModuleRequest(imagen, 'get', emptyKeyValue, null), titulo, year, status, status, type, '', false, new ModuleRequest(enlace, 'get', emptyKeyValue, null), false)); } } if (data_seccion_4.length > 0) { let seccion_4 = new Output(CellDesings.wide2, Orientation.horizontal, DefaultLayouts.wideStrechedList, Paging.leading, new Section('🔞', true), null, data_seccion_4); output.push(seccion_4); } } catch(e) {} var nextURL = ''; let MainPageObject = new MainPage(new ModuleRequest(nextURL, 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(true, true, ''), output); var finalJson = JSON.stringify(MainPageObject); savedData.innerHTML = finalJson; window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage(''); }, 3000);"
+      },
+      "output": [
+        {
+          "cellDesing": "normal1",
+          "orientation": "vertical",
+          "defaultLayout": "wide",
+          "paging": "",
+          "section": {
+            "sectionName": "",
+            "separator": false
+          },
+          "layout": {
+            "insets": {
+              "top": 0,
+              "bottom": 0,
+              "left": 0,
+              "right": 0
+            },
+            "visibleCellsWidthS": 2,
+            "visibleCellsWidthM": 2,
+            "visibleCellsWidthL": 2,
+            "visibleCellsHeight": 2,
+            "heightForVisibleCells": 400,
+            "cellSize": {
+              "width": 300,
+              "height": 300
+            },
+            "ratio": {
+              "inRelation": "width",
+              "number1": 1,
+              "number2": 2
+            },
+            "constant": {
+              "width": 1,
+              "height": 2
+            },
+            "horizontalSpacing": 0,
+            "verticalSpacing": 0
+          },
+          "data": [
+            {
+              "image": {
+                "url": "",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              },
+              "title": "",
+              "description": "",
+              "field1": "",
+              "field2": "",
+              "field3": "",
+              "field4": "",
+              "openInWebView": false,
+              "isChapter": false,
+              "link": {
+                "url": "",
+                "method": "",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "search": [
+    {
+      "request": {
+        "url": "https://weebcentral.com/search?text=<searched>",
+        "method": "get",
+        "headers": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "httpBody": null
+      },
+      "separator": "+",
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": false,
+        "loadInWebView": true,
+        "javaScript": "var KETSU_ASYNC = true; const DefaultLayouts = { ultraWideFull : 'ultraWideFull', ultraWide : 'ultraWide', wideFull : 'wideFull', wide : 'wide', wideStrechedFull : 'wideStrechedFull', wideStrechedFullDouble : 'WideStrechedFullDouble', wideStreched : 'wideStreched', wideStrechedDouble : 'wideStrechedDouble', wideStrechedFullList : 'wideStrechedFullList', wideStrechedList : 'wideStrechedList', doublets : 'doublets', doubletsDouble : 'doubletsDouble', doubletsFull : 'doubletsFull', doubletsFullDouble : 'doubletsFullDouble', doubletsConstant : 'doubletsConstant', doubletsDoubleConstant : 'doubletsDoubleConstant', doubletsFullConstant : 'doubletsFullConstant', doubletsFullDoubleConstant : 'doubletsFullDoubleConstant', longDoublets : 'longDoublets', longDoubletsDouble : 'longDoubletsDouble', longDoubletsFull : 'longDoubletsFull', longDoubletsFullDouble : 'longDoubletsFullDouble', longDoubletsConstant : 'longDoubletsConstant', longDoubletsDoubleConstant : 'longDoubletsDoubleConstant', longDoubletsFullConstant : 'longDoubletsFullConstant', longDoubletsFullDoubleConstant : 'longDoubletsFullDoubleConstant', triplets : 'triplets', tripletsDouble : 'tripletsDouble', tripletsFull : 'tripletsFull', tripletsFullDouble : 'tripletsFullDouble', tripletsConstant : 'tripletsConstant', tripletsDoubleConstant : 'tripletsDoubleConstant', tripletsFullConstant : 'tripletsFullConstant', tripletsFullDoubleConstant : 'tripletsFullDoubleConstant', longTriplets : 'longTriplets', longTripletsDouble : 'longTripletsDouble', longTripletsFull : 'longTripletsFull', longTripletsFullDouble : 'longTripletsFullDouble', longTripletsConstant : 'longTripletsConstant', longTripletsDoubleConstant : 'longTripletsDoubleConstant', longTripletsFullConstant : 'longTripletsFullConstant', longTripletsFullDoubleConstant : 'longTripletsFullDoubleConstant', none: '' }; const CellDesings = { Special1 : 'Special1', Special2 : 'Special2', Special3 : 'Special3', CELLHelperText : 'CELLHelperText', small1 : 'small1', small2 : 'small2', normal1 : 'normal1', normal2 : 'normal2', normal3 : 'normal3', normal4 : 'normal4', normal5 : 'normal5', normal6 : 'normal6', normal7 : 'normal7', wide1 : 'wide1', wide2 : 'wide2', wide3 : 'wide3', wide4 : 'wide4', wide5 : 'wide5', wide6 : 'wide6', wide7 : 'wide7', wide8 : 'wide8', wide9 : 'wide9', wide10 : 'wide10', wide11 : 'wide11' }; const Paging = { leading : 'leading', centered : 'centered', none : '' }; const Orientation = { horizontal : 'horizontal', vertical : 'vertical' }; function Search(request, extra, separator, javascriptConfig, output) { this.request = request; this.extra = extra; this.separator = separator; this.javascriptConfig = javascriptConfig; this.output = output; } function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; } function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; } function Commands(commandName, params) { this.commandName = commandName; this.params = params; } function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; } function KeyValue(key, value) { this.key = key; this.value = value; } function Output(cellDesing, orientation, defaultLayout, paging, section, layout, data) { this.cellDesing = cellDesing; this.orientation = orientation; this.defaultLayout = defaultLayout; this.paging = paging; this.section = section; this.layout = layout; this.data = data; } function Section(sectionName, separator) { this.sectionName = sectionName; this.separator = separator; } function Layout(insets, visibleCellsWidthS, visibleCellsWidthM, visibleCellsWidthL, visibleCellsHeight, heightForVisibleCells, cellSize, ratio, constant, horizontalSpacing, verticalSpacing) { this.insets = insets; this.visibleCellsWidthS = visibleCellsWidthS; this.visibleCellsWidthM = visibleCellsWidthM; this.visibleCellsWidthL = visibleCellsWidthL; this.visibleCellsHeight = visibleCellsHeight; this.heightForVisibleCells = heightForVisibleCells; this.cellSize = cellSize; this.ratio = ratio; this.constant = constant; this.horizontalSpacing = horizontalSpacing; this.verticalSpacing = verticalSpacing; } function Insets(top, bottom, left, right) { this.top = top; this.bottom = bottom; this.left = left; this.right = right; } function Size(width, height) { this.width = width; this.height = height; } function Ratio(inRelation, number1, number2) { this.inRelation = inRelation; this.number1 = number1; this.number2 = number2; } function Data(image, title, description, field1, field2, field3, field4, isChapter, link, openInWebView) { this.image = image; this.title = title; this.description = description; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.isChapter = isChapter; this.link = link; this.openInWebView = openInWebView; } function quickData(link, image, title, field1) { return new Data(image, title, 'unknown', field1, 'unknown', 'unknown', 'unknown', false, link); } function shuffle(a) { var j, x, i; for (i = a.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1)); x = a[i]; a[i] = a[j]; a[j] = x; } return a; } var savedData = document.getElementById('ketsu-final-data'); var parsedJson = JSON.parse(savedData.innerHTML); let output = []; let emptyKeyValue = [new KeyValue('', '')]; const baseURL = 'https://weebcentral.com'; setTimeout(function() { try { let data_search = []; let elementos = document.querySelectorAll('#search-results article.bg-base-300'); for (var i = 0; i < elementos.length; i++) { var elemento = elementos[i]; var linkElement = elemento.querySelector('a'); var imgElement = elemento.querySelector('img'); var titleElement = elemento.querySelector('a.line-clamp-1'); if (!titleElement) { titleElement = elemento.querySelector('div.text-ellipsis'); } var enlace = linkElement ? linkElement.href : ''; var imagen = imgElement ? imgElement.src : ''; var titulo = titleElement ? titleElement.textContent.trim() : ''; var year = ''; var status = ''; var type = ''; var detailDivs = elemento.querySelectorAll('div.opacity-70'); for (var j = 0; j < detailDivs.length; j++) { var strong = detailDivs[j].querySelector('strong'); if (strong) { var key = strong.textContent.trim(); if (key.startsWith('Year')) { year = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Status')) { status = detailDivs[j].querySelector('span').textContent.trim(); } else if (key.startsWith('Type')) { type = detailDivs[j].querySelector('span').textContent.trim(); } } } if (type === '') { var mobileType = elemento.querySelector('span.tooltip[data-tip]'); if (mobileType) { type = mobileType.getAttribute('data-tip'); } } if (enlace && !enlace.startsWith('http')) { enlace = new URL(enlace, baseURL).href; } if (imagen && !imagen.startsWith('http') && !imagen.startsWith('data:')) { imagen = new URL(imagen, baseURL).href; } if (enlace && imagen && titulo) { data_search.push(new Data(new ModuleRequest(imagen, 'get', emptyKeyValue, null), titulo, year, status, status, type, '', false, new ModuleRequest(enlace, 'get', emptyKeyValue, null), false)); } } if (data_search.length > 0) { output.push(new Output(CellDesings.wide6, Orientation.vertical, DefaultLayouts.doubletsFull, Paging.none, new Section('', true), null, data_search)); } } catch (e) {} let searchPageObject = new Search(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), '', new JavascriptConfig(true, true, ''), output); var finalJson = JSON.stringify(searchPageObject); savedData.innerHTML = finalJson; window.webkit.messageHandlers.EXECUTE_KETSU_ASYNC.postMessage(''); }, 5000);"
+      },
+      "output": [
+        {
+          "cellDesing": "normal1",
+          "orientation": "vertical",
+          "defaultLayout": "wide",
+          "paging": "",
+          "section": {
+            "sectionName": "",
+            "separator": false
+          },
+          "layout": {
+            "insets": {
+              "top": 0,
+              "bottom": 0,
+              "left": 0,
+              "right": 0
+            },
+            "visibleCellsWidthS": 2,
+            "visibleCellsWidthM": 2,
+            "visibleCellsWidthL": 2,
+            "visibleCellsHeight": 2,
+            "heightForVisibleCells": 400,
+            "cellSize": {
+              "width": 300,
+              "height": 300
+            },
+            "ratio": {
+              "inRelation": "width",
+              "number1": 1,
+              "number2": 2
+            },
+            "constant": {
+              "width": 1,
+              "height": 2
+            },
+            "horizontalSpacing": 0,
+            "verticalSpacing": 0
+          },
+          "data": [
+            {
+              "image": {
+                "url": "",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              },
+              "title": "",
+              "description": "",
+              "field1": "",
+              "field2": "",
+              "field3": "",
+              "field4": "",
+              "openInWebView": false,
+              "isChapter": false,
+              "link": {
+                "url": "empty",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "key",
+                    "value": "value"
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "info": [
+    {
+      "request": {
+        "url": "",
+        "method": "get",
+        "headers": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": false,
+        "loadInWebView": false,
+        "javaScript": "try { function Info(r,e,j,o){this.request=r;this.extra=e;this.javascriptConfig=j;this.output=o}function ModuleRequest(u,m,h,b){this.url=u;this.method=m;this.headers=h;this.httpBody=b}function Extra(c,e){this.commands=c;this.extraInfo=e}function Commands(c,p){this.commandName=c;this.params=p}function JavascriptConfig(r,l,j){this.removeJavascript=r;this.loadInWebView=l;this.javaScript=j}function KeyValue(k,v){this.key=k;this.value=v}function Chapter(c,l,o){this.chapName=c;this.link=l;this.openInWebView=o}function Output(i,t,l,d,g,f1,f2,f3,f4,c){this.image=i;this.link=l;this.title=t;this.description=d;this.genres=g;this.field1=f1;this.field2=f2;this.field3=f3;this.field4=f4;this.chapters=c}function getStuff(a,m){for(var x=0;x<a.length;x++){var d=a[x].innerText;if(d.includes(m)){return d.replace(m,'').trim();}}return '';}function getHtmlStuff(a,m){for(var x=0;x<a.length;x++){var d=a[x].innerText;if(d.includes(m)){return a[x];}}return null;}var savedData=document.getElementById('ketsu-final-data');var parsedJson=JSON.parse(savedData.innerHTML);let emptyKeyValue=[new KeyValue('','')];var episodes=[];var infoPageObject=null;var titleEl=document.querySelector('h1[class*=\"font-bold\"]');if(titleEl){var type='empty';var status='Unknown';var genres=[];var desc='';var title='';var image='';var nextRequest=null;try{title=titleEl.textContent.trim();}catch(e){}try{image=document.querySelector('section[class*=\"md:w-4/12\"] img').src;}catch(e){}try{desc=document.querySelector('p.whitespace-pre-wrap').textContent.trim();}catch(e){}try{var allInfo=document.querySelectorAll('section[class*=\"md:w-4/12\"] li');status=getStuff(allInfo,'Status:');type=getStuff(allInfo,'Type:');}catch(e){}try{var genreElements=document.querySelectorAll('a[href*=\"/search?included_tag=\"]');for(var g=0;g<genreElements.length;g++){genres.push(genreElements[g].textContent.trim());}}catch(e){}try{var apiButton=document.querySelector('div#chapter-list button[hx-get]');if(apiButton){var apiUrl=apiButton.getAttribute('hx-get');if(!apiUrl.startsWith('http')){apiUrl=new URL(apiUrl,parsedJson.request.url).href;}nextRequest=new ModuleRequest(apiUrl,'get',emptyKeyValue,null);}}catch(e){}if(!nextRequest){try{var chapterElements=document.querySelectorAll('div#chapter-list a[href*=\"/chapters/\"]');var totalChapters=chapterElements.length;for(var i=0;i<totalChapters;i++){var item=chapterElements[i];var href=item.getAttribute('href');if(!href.startsWith('http')){href=new URL(href,parsedJson.request.url).href;}var link=new ModuleRequest(href,'get',emptyKeyValue,null);var name='Chapter '+(totalChapters-i);episodes.push(new Chapter(name,link,false));}episodes.reverse();}catch(e){}}image=new ModuleRequest(image,'get',emptyKeyValue,null);var config=new JavascriptConfig(true,false,'');infoPageObject=new Info(nextRequest,new Extra([new Commands('',emptyKeyValue)],emptyKeyValue),config,new Output(image,title,parsedJson.request,desc,genres,status,'Manga',type,'Eps: '+episodes.length,episodes));}else{try{var targetScript=null;var allScripts=document.querySelectorAll('script[type=\"text/javascript\"]');for(var s=0;s<allScripts.length;s++){if(allScripts[s].innerHTML.trim().startsWith('/*')){targetScript=allScripts[s];break;}}if(targetScript){var scriptContent=targetScript.innerHTML;var htmlComment=scriptContent.match(/\\/\\*([\\s\\S]*?)\\*\\//);if(htmlComment&&htmlComment[1]){var chapterHtml=htmlComment[1];var dummyElement=document.createElement('div');dummyElement.innerHTML=chapterHtml;var chapterElements=dummyElement.querySelectorAll('a[href*=\"/chapters/\"]');var totalChapters=chapterElements.length;for(var i=0;i<totalChapters;i++){var item=chapterElements[i];var href=item.getAttribute('href');var link=new ModuleRequest(href,'get',emptyKeyValue,null);var name='Chapter '+(totalChapters-i);episodes.push(new Chapter(name,link,false));}episodes.reverse();}}}catch(e){console.error('Ketsu Error en Paso 2 (Extraccion): '+e.message);}var oldOutput=parsedJson.output;infoPageObject=new Info(new ModuleRequest('','get',emptyKeyValue,null),new Extra([new Commands('',emptyKeyValue)],emptyKeyValue),new JavascriptConfig(false,false,''),new Output(oldOutput.image,oldOutput.title,oldOutput.link,oldOutput.description,oldOutput.genres,oldOutput.field1,oldOutput.field2,oldOutput.field3,'Eps: '+episodes.length,episodes));}var finalJson=JSON.stringify(infoPageObject);savedData.innerHTML=finalJson;}catch(e){console.error('Ketsu Info Global Error: '+e.message);}"
+      },
+      "output": {
+        "image": {
+          "url": "",
+          "method": "get",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "httpBody": null
+        },
+        "link": {
+          "url": "",
+          "method": "get",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "httpBody": null
+        },
+        "title": "",
+        "description": "",
+        "genres": [
+          ""
+        ],
+        "field1": "",
+        "field2": "",
+        "field3": "",
+        "field4": "",
+        "chapters": [
+          {
+            "chapName": "",
+            "openInWebView": false,
+            "link": {
+              "url": "empty",
+              "method": "get",
+              "headers": [
+                {
+                  "key": "key",
+                  "value": "value"
+                }
+              ],
+              "httpBody": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "chapters": [
+    {
+      "request": {
+        "url": "",
+        "method": "get",
+        "headers": [
+          {
+            "key": "key",
+            "value": "value"
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": false,
+        "loadInWebView": false,
+        "javaScript": "function Chapters(request, extra, javascriptConfig, output) {\n        this.request = request;\n        this.extra = extra;\n        this.javascriptConfig = javascriptConfig;\n        this.output = output;\n    }\n    \n    function ModuleRequest(url, method, headers, httpBody) {\n        this.url = url;\n        this.method = method;\n        this.headers = headers;\n        this.httpBody = httpBody;\n    }\n    \n    function Extra(commands, extraInfo) {\n        this.commands = commands;\n        this.extraInfo = extraInfo;\n    }\n    \n    function Commands(commandName, params) {\n        this.commandName = commandName;\n        this.params = params;\n    }\n    \n    function JavascriptConfig(removeJavascript, loadInWebView, javaScript) {\n        this.removeJavascript = removeJavascript;\n        this.loadInWebView = loadInWebView;\n        this.javaScript = javaScript;\n    }\n    \n    function KeyValue(key, value) {\n        this.key = key;\n        this.value = value;\n    }\n    \n    function Output( videos, images, text) {\n        this.videos = videos;\n        this.images = images;\n        this.text = text;\n    }\n    \n    function Videos(needsResolver, rawVideo) {\n        this.needsResolver = needsResolver;\n        this.rawVideo = rawVideo;\n    }\n    \n    function NeedsResolver(resolverIdentifier, link) {\n        this.resolverIdentifier = resolverIdentifier;\n        this.link = link;\n    }\n    \n    function RawVideo(video) {\n        this.video = video;\n    }\n    \n    function Video(videoQuality, videoLink) {\n        this.videoQuality = videoQuality;\n        this.videoLink = videoLink;\n    }\n    \n    function Text(text) {\n        this.text = text;\n    }\n    \n    var savedData = document.getElementById('ketsu-final-data');\n    var parsedJson = JSON.parse(savedData.innerHTML);\n    var emptyKeyValue = [new KeyValue('', '')];\n    let images = [];\n    var nextRequest = null;\n\n    if (parsedJson.request.url.includes('/images?')) {\n        var rawHTML = document.documentElement.innerHTML;\n        const regex = /src=\\\"([^\\\"]+\\.(?:png|jpg|webp|jpeg))\\\"/gi;\n        let match;\n        while ((match = regex.exec(rawHTML)) !== null) {\n            images.push(new ModuleRequest(match[1], 'get', emptyKeyValue, null));\n        }\n        nextRequest = new ModuleRequest('', 'get', emptyKeyValue, null);\n    } else {\n        try {\n            const urlParts = parsedJson.request.url.split('/');\n            const chapId = urlParts[urlParts.length - 1].split('?')[0];\n            if (chapId) {\n                var apiUrl = `https://weebcentral.com/chapters/${chapId}/images?reading_style=long_strip`;\n                nextRequest = new ModuleRequest(apiUrl, 'get', emptyKeyValue, null);\n            }\n        } catch(e) {\n            nextRequest = new ModuleRequest('', 'get', emptyKeyValue, null);\n        }\n    }\n\n    let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);\n    var chaptersObject = new Chapters(nextRequest, emptyExtra, new JavascriptConfig(false, false, ''), new Output(null, images, null));\n    var finalJson = JSON.stringify(chaptersObject);\n    savedData.innerHTML = finalJson;"
+      },
+      "output": {
+        "videos": {
+          "needsResolver": [
+            {
+              "resolverIdentifier": "",
+              "link": {
+                "url": "",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "key",
+                    "value": "value"
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ],
+          "rawVideo": [
+            {
+              "video": [
+                {
+                  "videoQuality": "",
+                  "videoLink": {
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                    "method": "get",
+                    "headers": [
+                      {
+                        "key": "key",
+                        "value": "value"
+                      }
+                    ],
+                    "httpBody": null
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "images": [
+          {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "httpBody": null
+          }
+        ],
+        "text": {
+          "text": ""
+        }
+      }
+    }
+  ],
+  "moduleResolvers": [
+    {
+      "resolverInfo": {
+        "resolverName": "",
+        "nameMatches": [
+          ""
+        ],
+        "developer": "",
+        "moduleID": "",
+        "resolverVersion": 1,
+        "baseURL": ""
+      },
+      "resolver": [
+        {
+          "request": {
+            "url": "",
+            "method": "get",
+            "headers": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "httpBody": null
+          },
+          "extra": {
+            "commands": [
+              {
+                "commandName": "",
+                "params": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "extraInfo": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          },
+          "javascriptConfig": {
+            "removeJavascript": false,
+            "loadInWebView": false,
+            "javaScript": ""
+          },
+          "output": {
+            "moduleID": "",
+            "video": [
+              {
+                "videoQuality": "720",
+                "videoLink": {
+                  "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                  "method": "get",
+                  "headers": [
+                    {
+                      "key": "key",
+                      "value": "value"
+                    }
+                  ],
+                  "httpBody": null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "responseCodeFunctions": [
+    {
+      "code": 0,
+      "msgTitle": "",
+      "msgBody": "",
+      "type": "normal",
+      "functions": [
+        {
+          "request": {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "httpBody": null
+          },
+          "extra": {
+            "commands": [
+              {
+                "commandName": "",
+                "params": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "extraInfo": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          },
+          "javascriptConfig": {
+            "removeJavascript": true,
+            "loadInWebView": false,
+            "javaScript": ""
+          }
+        }
+      ]
+    }
+  ],
+  "helperFunctions": [
+    {
+      "functionName": "example",
+      "msgTitle": "",
+      "msgBody": "",
+      "type": "normal",
+      "functions": [
+        {
+          "request": {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "httpBody": null
+          },
+          "extra": {
+            "commands": [
+              {
+                "commandName": "",
+                "params": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "extraInfo": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          },
+          "javascriptConfig": {
+            "removeJavascript": true,
+            "loadInWebView": false,
+            "javaScript": ""
+          }
+        }
+      ]
+    }
+  ]
+}
