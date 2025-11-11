@@ -13,6 +13,13 @@
     ],
     "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/aniwatch.json"
   },
+    {
+    "categories": [
+      "Most Used",
+      "Manga"
+    ],
+    "url": "https://gitlab.com/wawoide/ketsu-modules/-/raw/main/Modules/WeebCentral.json"
+  },
   {
     "categories": [
       "Most Used",
