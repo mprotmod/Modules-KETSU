@@ -18,6 +18,13 @@
       "Most Used",
       "Manga"
     ],
+    "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/TAADD/moduleTemplate.json"
+  },
+    {
+    "categories": [
+      "Most Used",
+      "Manga"
+    ],
     "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/refs/heads/main/Module%20Parser%20KETSU/WeebCentral.json"
   },
   {
@@ -86,13 +93,7 @@
     ],
     "url": "https://raw.githubusercontent.com/OffsetParts/KetsuModules/refs/heads/master/Modules/AsurascansFree/AsuraFree.json"
   },
-  {
-    "categories": [
-      "Most Used",
-      "Manga"
-    ],
-    "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/TAADD/moduleTemplate.json"
-  },
+
   {
     "categories": [
       "Manga"
