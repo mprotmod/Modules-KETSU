@@ -1,10 +1,17 @@
 [
   {
     "categories": [
-      "Most Used",
       "Anime"
     ],
     "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/GoGoAnime/moduleTemplate.json"
+  },
+        {
+    "categories": [
+      "Most Used",
+      "Manhwa",
+      "Manga"
+    ],
+    "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/asura.json"
   },
           {
     "categories": [
@@ -16,19 +23,11 @@
   },
   {
     "categories": [
-      "Most Used",
       "Anime"
     ],
     "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/aniwatch.json"
   },
-      {
-    "categories": [
-      "Most Used",
-      "Manhwa",
-      "Manga"
-    ],
-    "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/asura.json"
-  },
+
 
     {
     "categories": [
@@ -53,7 +52,6 @@
   },
   {
     "categories": [
-      "Most Used",
       "Anime"
     ],
     "url": "https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/JKAnime/moduleTemplate.json"
